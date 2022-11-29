@@ -48,6 +48,23 @@ form {
 
 .form-group {
     margin-bottom: 20px;
+    position: relative;
+}
+
+input {
+    padding-left: 10% !important;
+}
+
+.form-group>.icon_input {
+    position: absolute;
+    left: 15px;
+    bottom: 15%;
+}
+
+.form-group>.eye {
+    position: absolute;
+    right: 10px;
+    top: 25%;
 }
 
 button {
@@ -72,7 +89,7 @@ button {
     left: 130px;
 }
 
-span {
+.signUp span {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
