@@ -18,7 +18,7 @@
                 <!-- <span>
                     <ion-icon name="bus" size="large"></ion-icon>
                 </span> -->
-                <img src="/Front_End/Assets/Image/bus.svg" width="50" height="45" class="d-inline-block align-center"
+                <img src="/Front_End/Assets/Image/bus.svg" width="55" height="45" class="d-inline-block align-center"
                     alt="">
             </a>
             <a class="text">
@@ -26,9 +26,39 @@
             </a>
         </div>
         <div class="btn_auth">
-            <button type="button" class="btn btn-signUp">Đăng nhập</button>
+            <button type="button" class="btn btn_signIn">
+                <ion-icon class="signIn_icon" name="person-circle"></ion-icon>
+                Đăng nhập
+            </button>
+            <button type="button" class="btn btn_signUp">Đăng ký</button>
         </div>
     </nav>
+    <div class="form_search_wrapper">
+        <div class="form_search container">
+            <form>
+                <div class="row form-row align-items-center">
+                    <div class="form-group col-md-4">
+                        <label for="from">Điểm đi</label>
+                        <select class="form-control" id="formPlace">
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="to">Điểm đến</label>
+                        <select class="form-control" id="toPlace">
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4">Số lượng hành khách</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 
