@@ -30,7 +30,8 @@ section>div {
 .img_signIn {
     background-image: url(/Front_End/Assets/Image/1.png);
     background-size: cover;
-    border-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
 }
 
 .wrapper {
@@ -59,7 +60,7 @@ input {
 .form-group>.icon_input {
     position: absolute;
     left: 15px;
-    bottom: 15%;
+    bottom: 13%;
 }
 
 .form-group>.eye {
@@ -85,9 +86,9 @@ button {
     top: 783.11px;
     display: block; */
     /* margin-left: -150px; */
-    position: absolute;
-    bottom: 100px;
-    left: 130px;
+    /* position: absolute;
+    bottom: 10%;
+    left: 15%; */
 }
 
 .signUp span {
