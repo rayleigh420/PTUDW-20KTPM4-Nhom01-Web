@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Denk+One&display=swap');
+
+body {
+    --radius: 12px;
+}
+
+h1 {
+    font-family: 'Denk One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 81px;
+    text-align: center;
+    letter-spacing: 0.045em;
+
+    color: #166FE5;
+}
+
+section {
+    background-color: #CFCFCF;
+}
+
+section>div {
+    box-shadow: 0px 4px 26px 9px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    border-radius: var(--radius);
+
+}
+
+.img_signIn {
+    background-image: url(/Front_End/Assets/Image/1.png);
+    background-size: cover;
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+.wrapper {
+    height: 75%;
+    width: 85%;
+}
+
+.form_wrapper {
+    position: relative;
+}
+
+form {
+    width: 400px;
+    height: 320px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+input {
+    padding-left: 10% !important;
+}
+
+.form-group>.icon_input {
+    position: absolute;
+    left: 15px;
+    bottom: 13%;
+}
+
+.form-group>.eye {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+}
+
+button {
+    border-radius: 18px !important;
+}
+
+.form-control {
+    border-radius: 18px !important;
+    /* border-top-right-radius: 18px !important;
+    border-bottom-right-radius: 18px !important; */
+    /* border-left: none !important; */
+}
+
+.signUp {
+    /* position: absolute;
+    left: 793.26px;
+    top: 783.11px;
+    display: block; */
+    /* margin-left: -150px; */
+    /* position: absolute;
+    bottom: 10%;
+    left: 15%; */
+}
+
+.signUp span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #166FE5;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+/* @media only screen and (max-device-width: 480px) {
+
+    .img_signIn {
+        background-image: none;
+        display: hidden;
+    }
+} */
