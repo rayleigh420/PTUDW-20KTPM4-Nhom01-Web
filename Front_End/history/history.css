@@ -8,11 +8,19 @@ nav {
     background: #166FE5 !important;
     border-bottom: 3px solid #ABABAB;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 4.44% !important;
+    padding-right: 4.44% !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000000 !important;
 }
 
 span {
     /* background-color: red; */
-    /* width: 30px;
+    /* width: 30px;a
+    
     height: 35px; */
 }
 
@@ -21,18 +29,90 @@ span {
     font-family: 'Denk One';
     font-style: normal;
     font-weight: 400;
-    font-size: 35px;
+    font-size: 30px;
     line-height: 44px;
 
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.btn_person {
-    margin-right: 50px;
-    background-color: white;
-    border: 1.25px solid #000000;
-    border-radius: 15px;
+.text:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.btn_auth {
+    position: relative;
+}
+
+.btn_auth>button {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    border: 1.25px solid #000000 !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_signIn a {
+    background-color: transparent;
+    color: #FFFFFF !important;
+}
+
+.user_icon,
+.signIn_icon {
+    transform: translateY(20%);
+    font-size: 1.3rem;
+}
+
+.btn_signUp {
+    background: #FFFFFF !important;
+    margin-left: 15px;
+}
+
+.btn_user {
+    background: #FFFFFF !important;
+}
+
+.list {
+    position: absolute;
+    width: 150%;
+    z-index: 1000;
+    display: none;
+    right: 0;
+}
+
+.btn_user:hover+.list {
+    display: block;
+}
+
+.list_title {
+    border-bottom: none !important;
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 5% !important;
+}
+
+.list {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+    color: #000000;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.list-group-item:not(:last-child) {
+    border-bottom: none !important;
+}
+
+.list:hover {
+    display: block;
+}
+
+.user_option_icon {
+    transform: translate(-40%, 20%);
 }
 
 .container {
