@@ -4,6 +4,10 @@ body {
     --radius: 12px;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 h1 {
     font-family: 'Denk One', sans-serif;
     font-style: normal;
@@ -71,6 +75,10 @@ input {
 
 button {
     border-radius: 18px !important;
+}
+
+button a{
+    color: #fff !important;
 }
 
 .form-control {

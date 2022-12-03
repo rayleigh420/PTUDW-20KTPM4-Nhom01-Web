@@ -4,6 +4,10 @@ body {
     --radius: 12px;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 h1 {
     font-family: 'Denk One', sans-serif;
     font-style: normal;
@@ -73,6 +77,10 @@ button {
     border-radius: 18px !important;
 }
 
+button a{
+    color: #fff !important;
+}
+
 .form-control {
     border-radius: 18px !important;
     /* border-top-right-radius: 18px !important;
@@ -91,13 +99,13 @@ button {
     left: 15%; */
 }
 
-.signUp span {
+.signUp span{ 
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 16px;
 
-    color: #166FE5;
+    color: #166FE5 !important;
 }
 
 span:hover {

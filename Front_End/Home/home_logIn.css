@@ -3,6 +3,11 @@
 
 body {
     box-sizing: border-box;
+    
+}
+a{
+    text-decoration: none !important;
+    color: #000000 !important;
 }
 
 nav {
