@@ -1,6 +1,6 @@
 let test = (req, res) => {
-    // res.render('index')
-    res.send("Hello Word!");
+    res.render('index')
+    //res.send("Hello Word!");
 }
 
 module.exports = {
