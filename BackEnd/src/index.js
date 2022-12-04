@@ -21,15 +21,15 @@ const port = process.env.PORT || 8080
 //app.use(connectLiveReload());
 
 app.engine('hbs', engine({
-    layoutsDir: path.join(__dirname, "views", "layouts"),
-    partialsDir: path.join(__dirname, "views", "partials"),
+    layoutsDir: path.join(__dirname, "resources", "views", "layouts"),
+    partialsDir: path.join(__dirname, "resources", "views", "partials"),
     defaultLayout: "layout",
     extname: "hbs",
 }))
 
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "views"))
-app.use(express.static(__dirname + "BackEnd/"));
+app.set("views", path.join(__dirname, "resources", "views"))
+app.use(express.static(path.join(__dirname, "resources", "public")));
 
 // Get post data
 app.use(express.json());
