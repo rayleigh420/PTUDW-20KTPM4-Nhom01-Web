@@ -27,28 +27,54 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar flex-row justify-content-between">
-      <div class="nav_item d-flex flex-row align-items-center">
-        <a class=" navbar-brand" href="#">
-          <i class="fa fa-train" style="color: black ;font-size:50px; padding-left: 30px ;"></i>
+  <nav class="navbar flex-row justify-content-between">
+    <div class="nav_item d-flex flex-row align-items-center">
+      <a class=" navbar-brand" href="#">
+        <img src="/Front_End/Assets/Image/bus.svg" width="55" height="45" class="d-inline-block align-center" alt="">
+      </a>
+      <a class="text">
+        Vexere
+      </a>
+    </div>
+    <div class="btn_auth">
+      <button type="button" class="btn btn_signIn">
+        <a href="../Auth/SignIn/signIn.html">
+          <ion-icon class="signIn_icon" name="people-circle"></ion-icon>
+          Đăng nhập
         </a>
-        <a class="text">
-          Vexere
+      </button>
+      <button type="button" class="btn btn_signUp">
+        <a href="../Auth/SignUp/signUp.html">
+          Đăng ký
         </a>
-      </div>
-      <div class="btn_person">
-        <button type="button" class="btn d-flex align-content-center justify-content-center">
-          <ion-icon name="person-circle-outline" style="font-size: 20px;"></ion-icon>
-          Nhất Duy
-        </button>
-      </div>
-    </nav>
-  </header>
+      </button>
+      <!-- <button type="button" class="btn btn_user">
+                <ion-icon class="user_icon" name="person-circle"></ion-icon>
+                Nhất Duy
+            </button>
+            <div class="list">
+                <ul class="list-group">
+                    <li class="list-group-item list_title">
+                        Tài khoản
+                    </li>
+                    <li class="list-group-item">
+                        <a href="../history/history.html">
+                            <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./home.html">
+                            <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>Đăng xuất
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+    </div>
+  </nav>
 
   <main>
 
-    <h1>Thông tin liên hệ</h1>
+    <h1>Thông tin liên hệ</h1>
     <div class="container">
       <form class="row g-3 align-items-center" style="--bs-columns: 4; --bs-gap: 5rem">
         <div class=" col-md-4">
@@ -197,7 +223,7 @@
         border: 1px solid rgba(0, 0, 0, 0.38);
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 20px;">
-        <ion-icon name="bus-outline" style="
+      <ion-icon name="bus-outline" style="
                 position: absolute;
                 left: 20px;
                 right: 86.05%;
@@ -206,8 +232,8 @@
                 width: 50px;
                 font-weight: bold;
                 background: #ffffff;"></ion-icon>
-         <h4>TP.HCM </h4>
-        <ion-icon name="arrow-forward-outline" style="
+      <h4>TP.HCM </h4>
+      <ion-icon name="arrow-forward-outline" style="
                  position: absolute;
                  left: 195px;
                  right: 0px;
@@ -216,7 +242,7 @@
                  width: 50px;
                  font-weight: bold;
                  background: #ffffff;"></ion-icon>
-        <h4 style="position: absolute;
+      <h4 style="position: absolute;
                 width: 200px;
                 height:10;
                 left: 250px;
