@@ -7,7 +7,9 @@ import livereload from 'livereload';
 import connectLiveReload from 'connect-livereload'
 
 import configViewEngine from './config/viewEngine';
+import connectDB from './config/connectDB'
 import initTestRoute from './routes/testRoute';
+
 
 
 // const liveReloadServer = livereload.createServer();
@@ -44,6 +46,7 @@ configViewEngine(app, __dirname)
 // });
 
 initTestRoute(app);
+connectDB();
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
