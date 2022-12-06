@@ -1,6 +1,6 @@
 import express from 'express'
 require('dotenv').config()
-// const expressHbs = require("express-handlebars")
+
 import path from 'path'
 import { engine } from 'express-handlebars';
 import livereload from 'livereload';
@@ -10,7 +10,8 @@ import configViewEngine from './config/viewEngine';
 import connectDB from './config/connectDB'
 import initTestRoute from './routes/testRoute';
 
-
+const app = express()
+const port = process.env.PORT || 8080
 
 // const liveReloadServer = livereload.createServer();
 // liveReloadServer.watch(path.join(__dirname, 'views'));
@@ -20,8 +21,6 @@ import initTestRoute from './routes/testRoute';
 //     }, 100);
 // });
 
-const app = express()
-const port = process.env.PORT || 8080
 //app.use(connectLiveReload());
 
 // Get post data
@@ -46,8 +45,8 @@ configViewEngine(app, __dirname)
 // });
 
 initTestRoute(app);
-connectDB();
+// connectDB();
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`-------------Web is listening on port ${port}------------`)
 })

@@ -1,0 +1,111 @@
+body {
+    background-color: #F7F9FA;
+    box-sizing: border-box;
+}
+
+main {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    margin-top: 40px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.search_info {
+    width: 90%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .info {
+        color: #000000;
+
+        .info_place {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 36px;
+            letter-spacing: 0.045em;
+
+        }
+
+        .info_other {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 33px;
+            letter-spacing: 0.045em;
+        }
+    }
+
+    button.btn_search_again {
+        color: #ffff;
+        width: 15%;
+        height: 70%;
+
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 34px;
+        letter-spacing: 0.045em;
+    }
+
+    button>.find_icon {
+        color: #000000;
+        transform: translateY(20%);
+        font-size: 1.3rem;
+    }
+}
+
+.filter {
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 33px;
+        letter-spacing: 0.045em;
+
+        color: #000000;
+    }
+
+    select {
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        color: #0194F3;
+        border-radius: 15px;
+
+        font-weight: 400;
+        font-size: 15px;
+        letter-spacing: 0.045em;
+
+        text-align: center;
+    }
+
+}
+
+.list_ticket {
+    width: 90%;
+    margin-top: 15px;
+    padding: 0;
+    display: flex;
+
+    .ticket {
+        width: 100%;
+
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+    }
+}
