@@ -8,7 +8,6 @@ let test = async (req, res) => {
     } catch (e) {
         console.log(e)
     }
-    //res.send("Hello Word!");
 }
 
 module.exports = {

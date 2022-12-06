@@ -77,8 +77,9 @@ main {
 .list_ticket {
   width: 90%;
   margin-top: 0px;
-  padding: 0;
+  padding: 0 0 20px 0;
   display: flex;
+  flex-direction: column;
 }
 .list_ticket .ticket {
   width: 100%;
@@ -86,7 +87,7 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.38);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  padding: 20px;
+  padding: 40px;
   display: flex;
 }
 .list_ticket .ticket .ticket_car {
@@ -120,7 +121,68 @@ main {
 }
 .list_ticket .ticket .ticket_time {
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_time p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.045em;
+}
+.list_ticket .ticket .ticket_time .time_from {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_time .where {
+  background: rgba(217, 217, 217, 0.33);
+  border-radius: 40px;
+  transform: translateY(-10px);
+}
+.list_ticket .ticket .ticket_time .total_time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+.list_ticket .ticket .ticket_time .total_time p {
+  font-size: 14px;
+}
+.list_ticket .ticket .ticket_time .total_time .line {
+  height: 0.5px;
+  width: 90px;
+  border: 1px solid #000000;
+  transform: translateY(-15px);
+}
+.list_ticket .ticket .ticket_time .time_to {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .list_ticket .ticket .ticket_price {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+.list_ticket .ticket .ticket_price .price {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0.045em;
+  color: #FF5E1F;
+}
+.list_ticket .ticket .ticket_price .price span {
+  font-size: 14px;
+  color: #000000;
+}
+.list_ticket .ticket .ticket_price button {
+  width: 160px;
+  font-weight: 500;
+}
+.ticket + .ticket {
+  margin-top: 35px;
 }
