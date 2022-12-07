@@ -4,6 +4,7 @@ import webController from "../controllers/webController"
 let router = express.Router();
 
 const initWebRoute = (app) => {
+    router.get('/', webController.getHomePage)
     router.get('/signUp', webController.getSignUpPage)
     router.get('/signIn', webController.getSignInPage)
     router.get('/list', webController.getListPage)

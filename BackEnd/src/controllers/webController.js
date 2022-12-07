@@ -1,5 +1,16 @@
 import db from '../models/index';
 
+let getHomePage = async (req, res) => {
+    try {
+        res.render('home', {
+            style: "css/home.css"
+        })
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
+
 let getSignUpPage = async (req, res) => {
     try {
         res.render('signUp', {
@@ -75,5 +86,5 @@ let getDetailPage = async (req, res) => {
 }
 
 module.exports = {
-    getInfoFormPage, getInfoCheckPage, getListPage, getSignInPage, getSignUpPage, getHistoryPage, getDetailPage
+    getHomePage, getInfoFormPage, getInfoCheckPage, getListPage, getSignInPage, getSignUpPage, getHistoryPage, getDetailPage
 }
