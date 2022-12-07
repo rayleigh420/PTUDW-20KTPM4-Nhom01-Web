@@ -9,6 +9,7 @@ import connectLiveReload from 'connect-livereload'
 import configViewEngine from './config/viewEngine';
 import connectDB from './config/connectDB'
 import initTestRoute from './routes/testRoute';
+import initWebRoute from './routes/webRoute';
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -44,7 +45,8 @@ configViewEngine(app, __dirname)
 //     res.render("index", { title: "Jeopardize Contest" });
 // });
 
-initTestRoute(app);
+// initTestRoute(app);
+initWebRoute(app);
 // connectDB();
 
 app.listen(port, () => {

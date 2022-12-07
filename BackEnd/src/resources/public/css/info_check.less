@@ -1,0 +1,225 @@
+body {
+    background-color: #F7F9FA;
+    box-sizing: border-box;
+}
+
+main {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    margin-top: 40px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+.info{
+    width: 90%;
+    background: transparent;
+    // border: 1px solid rgba(0, 0, 0, 0.38);
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between; 
+    padding: 20px 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+
+    .info_check{
+        flex-grow: 3;
+
+        display: flex;
+        flex-direction: column;
+
+        h3{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 41px;
+            letter-spacing: 0.045em;
+
+            color: #000000;
+        }
+        
+        .form_wrapper{
+            padding: 15px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.38);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            padding-bottom: 35px;
+
+            font-family: 'Roboto';
+            font-style: normal;
+
+            .info_name{
+                display: flex;
+                justify-content: space-between;
+
+                .name_span{
+                    font-weight: 449;
+                    font-size: 21px;
+                    line-height: 33px;
+        
+                    color: #000000;
+                    font-stretch: 100;
+                }
+        
+                .edit_span{
+                    font-weight: 449;
+                    font-size: 19px;
+                    line-height: 33px;
+
+                    font-stretch: 100;
+                    
+                    a{
+                        text-decoration: none;
+                        color: #0194F3 !important;
+                    }
+
+                }
+            }
+            
+
+            form{
+                margin-top: 20px;
+
+
+                label{
+                    margin-bottom: 10px;
+
+                    font-weight: 449;
+                    font-size: 16.5px;
+                    line-height: 23px;
+                    font-stretch: 100;
+                }
+
+                .row + .row{
+                    margin-top: 19px;
+                }
+            }
+        }
+    }
+
+    .info_ticket{
+        flex-grow: 1;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .info{
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.38);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 75%;
+            padding: 10px;
+
+            span{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 34px;
+                letter-spacing: 0.045em;
+
+                ion-icon{
+                    transform: translateY(20%);
+                }
+            }
+
+            p{
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 26px;
+                letter-spacing: 0.045em;
+                margin: 10px 0;
+            }
+
+            .car_name {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+
+                img {
+                    width: 30px;
+                    height: 32px;
+                    margin-right: 15px;
+                }
+
+                span {
+                    font-weight: 500;
+                    font-size: 16.5px;
+                    letter-spacing: 0.045em;
+
+                    color: #000000;
+                }
+            }
+
+            .ticket_time {
+                margin-top: 13px;
+                flex-grow: 1;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 500;
+                    letter-spacing: 0.045em;
+                }
+
+                .time_from{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .where{
+                    font-weight: 500;
+                    background: rgba(217, 217, 217, 0.33);
+                    border-radius: 40px;
+                    transform: translateY(-10px);
+                }
+
+                .total_time{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    margin: 0 20px;
+
+                    p{
+                        font-size: 14px;
+                    }
+
+                    .line{
+                        height: 0.5px;
+                        width: 90px;
+                        border: 1px solid #000000;
+                        transform: translateY(-15px);
+                    }
+                }
+
+                .time_to{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+
+        button{
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{{> header}}
+
+<main>
+    <div class="info">
+        <div class="info_form">
+            <h3>Thông tin liên hệ</h3>
+            <div class="form_wrapper">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label>Họ và tên</label>
+                            <input type="text" class="form-control" placeholder="Vui lòng điền tên">
+                        </div>
+                        <div class="col">
+                            <label>Ngày sinh</label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Số điện thoại</label>
+                            <input type="text" class="form-control" placeholder="Vui lòng điền số điện thoại">
+                        </div>
+                        <div class="col">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="Vui lòng điền email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>CMND/CCCD</label>
+                            <input type="text" class="form-control" placeholder="Vui lòng điền số CMND/CCCD">
+                        </div>
+                        <div class="col">
+                            <label>Quốc tịch</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Việt Nam</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>Điểm đón</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Đại học KHTN</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>Điểm đến</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Quảng Ngãi</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="info_ticket">
+            <div class="info">
+                <span>
+                    <ion-icon name="ticket"></ion-icon>
+                    TP. HCM (HCM) <span>&#8594</span> Quảng Ngãi
+                </span>
+                <p>Chuyến xe đi Wed, 9 Nov 2022</p>
+                <div class="car_name">
+                    <img src="img/PT_logo.png" alt="Phuong Trang">
+                    <span>Phương Trang</span>
+                </div>
+                <div class="ticket_time">
+                    <div class="time_from">
+                        <p>09:30</p>
+                        <div class="where">TP.HCM</div>
+                    </div>
+                    <div class="total_time">
+                        <p>12h</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="time_to">
+                        <p>21:30</p>
+                        <div class="where">QN</div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn_continue">
+                <a href="/info_check">
+                    Tiếp tục
+                </a>
+            </button>
+        </div>
+    </div>
+</main>
