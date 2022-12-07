@@ -183,6 +183,12 @@ main {
   width: 160px;
   font-weight: 500;
 }
+.list_ticket .ticket .ticket_price button a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
 .ticket + .ticket {
   margin-top: 35px;
 }
