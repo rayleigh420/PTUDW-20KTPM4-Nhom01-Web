@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Denk+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Denk+One&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+
+nav {
+    background: #166FE5 !important;
+    border-bottom: 3px solid #ABABAB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-left: 4.44% !important;
+    padding-right: 4.44% !important;
+}
+
+a{
+    text-decoration: none !important;
+    color: #000000 !important;
+}
+
+span {
+    /* background-color: red; */
+    /* width: 30px;a
+    
+    height: 35px; */
+}
+
+.text {
+    display: inline-block;
+    font-family: 'Denk One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.text:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.btn_auth{
+    position: relative;
+}
+
+.btn_auth>button {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    border: 1.25px solid #000000 !important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_signIn a {
+    background-color: transparent;
+    color: #FFFFFF !important;
+}
+
+.user_icon, .signIn_icon {
+    transform: translateY(20%);
+    font-size: 1.3rem;
+}
+
+.btn_signUp {
+    background: #FFFFFF !important;
+    margin-left: 15px;
+}
+
+.btn_user{
+    background: #FFFFFF !important;
+}
+
+.list{
+    position: absolute;
+    width: 150%;
+    z-index: 1000;
+    display: none;
+    right: 0;
+}
+
+.btn_user:hover + .list{
+    display: block;
+}
+
+.list_title{
+    border-bottom: none !important;
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 5% !important;
+}
+
+.list{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+    color: #000000;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.list-group-item:not(:last-child){
+    border-bottom: none !important;
+}
+
+.list:hover{
+    display: block;
+}
+
+.user_option_icon{
+    transform: translate(-40%, 20%);
+}
+
+body {
+  background-color: #F7F9FA;
+  box-sizing: border-box;
+}
+main {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+.search_info {
+  width: 90%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.search_info .info {
+  color: #000000;
+}
+.search_info .info .info_place {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.045em;
+}
+.search_info .info .info_other {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 33px;
+  letter-spacing: 0.045em;
+}
+.search_info button.btn_search_again {
+  color: #ffff;
+  width: 15%;
+  height: 70%;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 34px;
+  letter-spacing: 0.045em;
+}
+.search_info button > .find_icon {
+  color: #000000;
+  transform: translateY(20%);
+  font-size: 1.3rem;
+}
+.filter {
+  width: 90%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.filter p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 33px;
+  letter-spacing: 0.045em;
+  color: #000000;
+}
+.filter select {
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  color: #0194F3;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.045em;
+  text-align: center;
+}
+.list_ticket {
+  width: 90%;
+  margin-top: 0px;
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+.list_ticket .ticket {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+}
+.list_ticket .ticket .ticket_car {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.list_ticket .ticket .ticket_car .car_name {
+  display: flex;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_car .car_name img {
+  width: 35px;
+  height: 37px;
+  margin-right: 15px;
+}
+.list_ticket .ticket .ticket_car .car_name span {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.045em;
+  color: #000000;
+}
+.list_ticket .ticket .ticket_car .chair {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 29px;
+  letter-spacing: 0.045em;
+  color: #0194F3;
+}
+.list_ticket .ticket .ticket_time {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_time p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.045em;
+}
+.list_ticket .ticket .ticket_time .time_from {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_time .where {
+  background: rgba(217, 217, 217, 0.33);
+  border-radius: 40px;
+  transform: translateY(-10px);
+}
+.list_ticket .ticket .ticket_time .total_time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+.list_ticket .ticket .ticket_time .total_time p {
+  font-size: 14px;
+}
+.list_ticket .ticket .ticket_time .total_time .line {
+  height: 0.5px;
+  width: 90px;
+  border: 1px solid #000000;
+  transform: translateY(-15px);
+}
+.list_ticket .ticket .ticket_time .time_to {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list_ticket .ticket .ticket_price {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+.list_ticket .ticket .ticket_price .price {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0.045em;
+  color: #FF5E1F;
+}
+.list_ticket .ticket .ticket_price .price span {
+  font-size: 14px;
+  color: #000000;
+}
+.list_ticket .ticket .ticket_price button {
+  width: 160px;
+  font-weight: 500;
+}
+.list_ticket .ticket .ticket_price button a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #FFFFFF !important;
+}
+.ticket + .ticket {
+  margin-top: 35px;
+}
