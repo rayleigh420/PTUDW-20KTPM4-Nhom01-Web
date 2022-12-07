@@ -173,3 +173,9 @@ main {
 .info .info_ticket button {
   width: 50%;
 }
+.info .info_ticket button a {
+  display: block;
+  width: 100%;
+  color: #FFFFFF;
+  text-decoration: none;
+}

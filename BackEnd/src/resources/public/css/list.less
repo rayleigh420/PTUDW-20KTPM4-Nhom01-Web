@@ -47,7 +47,7 @@ main {
     }
 
     button.btn_search_again {
-        color: #ffff;
+        color: #ffff !important;
         width: 15%;
         height: 70%;
 
@@ -55,11 +55,18 @@ main {
         font-size: 17px;
         line-height: 34px;
         letter-spacing: 0.045em;
+
+        a{
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            color: #FFFFFF !important;
+        }
     }
 
     button>.find_icon {
-        color: #000000;
-        transform: translateY(20%);
+        color: #000000 !important;
+        transform: translateY(100px) !important;
         font-size: 1.3rem;
     }
 }
