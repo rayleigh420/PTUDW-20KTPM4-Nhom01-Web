@@ -53,6 +53,27 @@ let getInfoCheckPage = async (req, res) => {
     }
 }
 
+let getHistoryPage = async (req, res) => {
+    try {
+        res.render('history', {
+            style: "css/history.css"
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+let getDetailPage = async (req, res) => {
+    try {
+        res.render('detail', {
+            style: "css/detail.css",
+            js: "js/detail.js"
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
-    getInfoFormPage, getInfoCheckPage, getListPage, getSignInPage, getSignUpPage
+    getInfoFormPage, getInfoCheckPage, getListPage, getSignInPage, getSignUpPage, getHistoryPage, getDetailPage
 }
