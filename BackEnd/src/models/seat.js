@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Seat.init({
-    isBook: DataTypes.BOOLEAN
+
   }, {
     sequelize,
     modelName: 'Seat',

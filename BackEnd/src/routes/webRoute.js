@@ -1,5 +1,6 @@
 import express from 'express'
 import webController from "../controllers/webController"
+import userController from "../controllers/userController"
 import dbController from "../controllers/dbController"
 
 let router = express.Router();
@@ -13,6 +14,9 @@ const initWebRoute = (app) => {
     router.get('/info_check', webController.getInfoCheckPage)
     router.get('/history', webController.getHistoryPage)
     router.get('/detail', webController.getDetailPage)
+
+    router.post('/signUp', userController.signUp)
+    router.post('/signIn', userController.signIn)
 
     router.get('/createTable', dbController.createTable)
 
