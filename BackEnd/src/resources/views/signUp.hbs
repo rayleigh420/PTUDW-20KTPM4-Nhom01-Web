@@ -8,12 +8,12 @@
                 class="col-md-6 col-xs-12 d-flex flex-column justify-content-center align-items-center p-3 form_wrapper">
                 <a href="./" class="name">Vexere</a>
 
-                <form class="form_signIn d-flex flex-column justify-content-center">
+                <form class="form_signIn d-flex flex-column justify-content-center" action="signUp" method="POST">
                     <div class="form-group">
                         <span class="icon_input">
                             <ion-icon name="person"></ion-icon>
                         </span>
-                        <input type="text" class="form-control" id="name" placeholder="Name">
+                        <input type="text" class="form-control" id="name" placeholder="Name" name="name">
                     </div>
 
                     <div class="form-group">
@@ -21,7 +21,7 @@
                             <ion-icon name="mail"></ion-icon>
                         </span>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Email Address">
+                            placeholder="Email Address" name="email">
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small> -->
                     </div>
@@ -30,7 +30,8 @@
                         <span class="icon_input">
                             <ion-icon name="lock-closed"></ion-icon>
                         </span>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" placeholder="Password"
+                            name="password">
                         <span class="eye">
                             <ion-icon name="eye" size="small"></ion-icon>
                         </span>
@@ -41,16 +42,16 @@
                             <ion-icon name="lock-closed"></ion-icon>
                         </span>
 
-                        <input type="password" class="form-control" id="rePassword"
+                        <input type="password" class="form-control" id="rePassword" name="re_password"
                             placeholder="Re-enter your Password">
                         <span class="eye">
                             <ion-icon name="eye" size="small"></ion-icon>
                         </span>
                     </div>
                     <button type="submit" class="btn btn-primary">
-                        <a href="./">
-                            Sign Up
-                        </a>
+                        {{!-- <a href="./">
+                        </a> --}}
+                        Sign Up
                     </button>
                 </form>
 

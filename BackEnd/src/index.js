@@ -47,7 +47,7 @@ configViewEngine(app, __dirname)
 
 // initTestRoute(app);
 initWebRoute(app);
-// connectDB();
+connectDB();
 
 app.listen(port, () => {
     console.log(`-------------Web is listening on port ${port}------------`)

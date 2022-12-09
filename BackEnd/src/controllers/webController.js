@@ -3,7 +3,8 @@ import db from '../models/index';
 let getHomePage = async (req, res) => {
     try {
         res.render('home', {
-            style: "css/home.css"
+            style: "css/home.css",
+            js: "js/navigation.js"
         })
     }
     catch (e) {
