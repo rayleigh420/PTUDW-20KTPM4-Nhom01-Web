@@ -1,7 +1,5 @@
 import userService from "../services/userService"
 
-
-
 let signIn = async (req, res) => {
 
 }

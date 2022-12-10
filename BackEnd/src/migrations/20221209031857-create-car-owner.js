@@ -18,6 +18,9 @@ module.exports = {
       phone: {
         type: Sequelize.STRING
       },
+      imgCar: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

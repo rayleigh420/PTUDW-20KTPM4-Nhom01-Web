@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
   CarOwner.init({
     name: DataTypes.STRING,
     address: DataTypes.STRING,
-    phone: DataTypes.STRING
+    phone: DataTypes.STRING,
+    imgCar: DataTypes.ARRAY(DataTypes.STRING)
   }, {
     sequelize,
     modelName: 'CarOwner',
