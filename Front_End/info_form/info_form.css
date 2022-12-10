@@ -267,3 +267,36 @@ main {
   text-decoration: none;
   color: #FFFFFF !important;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  background-color: #1b1b1b;
+  height: 100px;
+  margin-top: 30px;
+  padding: 0 30px;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer_link {
+  margin-top: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer .footer_link ion-icon {
+  color: #fff;
+  width: 30px;
+  height: 40px;
+}
+.footer .footer_copyright {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  background-color: #1b1d1e;
+}
