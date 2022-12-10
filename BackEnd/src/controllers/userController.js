@@ -1,5 +1,7 @@
 import userService from "../services/userService"
 
+
+
 let signIn = async (req, res) => {
 
 }
@@ -14,7 +16,11 @@ let signUp = async (req, res) => {
                 name: req.body.name,
                 email: req.body.email
             }
-            // localStorage.setItem('auth', JSON.stringify(userInfo))
+            if (typeof localStorage === "undefined" || localStorage === null) {
+                var LocalStorage = require('node-localstorage').LocalStorage
+                let localStorage = new LocalStorage('./scratch');
+                localStorage.setItem('auth', JSON.stringify(userInfo))
+            }
             res.redirect('./')
         }
         else {

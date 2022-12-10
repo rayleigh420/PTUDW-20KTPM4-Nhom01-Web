@@ -15,7 +15,8 @@ let getHomePage = async (req, res) => {
 let getSignUpPage = async (req, res) => {
     try {
         res.render('signUp', {
-            style: "css/signUp.css"
+            style: "css/signUp.css",
+            js: ['js/signUp.js']
         })
     }
     catch (e) {
