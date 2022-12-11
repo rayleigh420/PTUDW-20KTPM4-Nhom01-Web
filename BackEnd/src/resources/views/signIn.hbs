@@ -8,16 +8,15 @@
                 class="col col-md-6 col-sm-12 col-xs-12 d-flex flex-column justify-content-center align-items-center p-3 form_wrapper">
                 <a href="./" class="name">Vexere</a>
 
-                <form class="form_signIn d-flex flex-column justify-content-center">
+                <form class="form_signIn d-flex flex-column justify-content-center" action="signIn" method="POST">
 
                     <div class="form-group">
                         <span class="icon_input">
                             <ion-icon name="mail"></ion-icon>
                         </span>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Email Address" name="email" required>
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small> -->
+                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="Email Address"
+                            name="email" required>
                     </div>
 
                     <div class="form-group">
@@ -30,10 +29,10 @@
                             <ion-icon name="eye" size="small"></ion-icon>
                         </span>
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        <a href="./">
-                            Sign In
-                        </a>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        {{!-- <a href="./">
+                        </a> --}}
+                        Sign In
                     </button>
                 </form>
 

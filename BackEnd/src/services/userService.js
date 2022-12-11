@@ -18,11 +18,58 @@ let handleSignUp = async (data) => {
 
                 userData.errCode = 0;
                 userData.errMessage = 'OK';
+                userData.user = {
+                    name: data.name,
+                    email: data.email
+                }
             }
             else {
                 userData.errCode = 1;
                 userData.errMessage = 'Email is exist';
             }
+            resolve(userData)
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
+
+let handleSignIn = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let userData = {};
+            let check = await checkUserEmail(data.email)
+            if (check == true) {
+                let user = await db.User.findOne({
+                    attributes: ['name', 'email', 'password'],
+                    where: { email: data.email },
+                    raw: true,
+                });
+
+                if (user) {
+                    let check = await bcrypt.compare(data.password, user.password);
+
+                    if (check) {
+                        userData.errCode = 0;
+                        userData.errMessage = 'OK';
+
+                        delete user.password;
+                        userData.user = user;
+                    }
+                    else {
+                        userData.errCode = 3;
+                        userData.errMessage = 'Wrong password';
+                    }
+                } else {
+                    userData.errCode = 2;
+                    userData.errMessage = `User not found`;
+                }
+            }
+            else {
+                userData.errCode = 1;
+                userData.errMessage = 'Email is not exist';
+            }
+
             resolve(userData)
         } catch (e) {
             console.log(e);
@@ -60,5 +107,5 @@ let hashUserPassword = (password) => {
 }
 
 module.exports = {
-    handleSignUp
+    handleSignUp, handleSignIn
 }

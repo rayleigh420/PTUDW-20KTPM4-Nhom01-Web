@@ -27,7 +27,8 @@ let getSignUpPage = async (req, res) => {
 let getSignInPage = async (req, res) => {
     try {
         res.render('signIn', {
-            style: "css/signIn.css"
+            style: "css/signIn.css",
+            js: ['js/signIn.js']
         })
     }
     catch (e) {
