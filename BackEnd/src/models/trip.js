@@ -11,9 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       Trip.hasMany(models.Ticket, {
         foreignKey: "idTicket",
       });
-      Trip.belongsTo(models.CarOwner, {
-        foreignKey: "idCarOwner",
-      });
       // define association here
     }
   }
@@ -21,8 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       from: DataTypes.TEXT,
       to: DataTypes.TEXT,
-      start: DataTypes.DATE,
-      end: DataTypes.DATE,
     },
     {
       sequelize,
