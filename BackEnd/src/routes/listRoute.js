@@ -1,12 +1,10 @@
 import express from 'express'
-import webController from "../controllers/webController"
-import userController from "../controllers/userController"
-import dbController from "../controllers/dbController"
+import listController from '../controllers/listController'
 
 let router = express.Router();
 
 const initListRoute = (app) => {
-    router.get('/list', webController.getListPage)
+    router.get('/list', listController.getListPage)
 
     return app.use('/', router)
 
