@@ -1,12 +1,29 @@
 import db from "../models/index";
 import moment from "moment/moment";
+import { Sequelize } from "sequelize";
 
 let getTicketInfo = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
             let items = await db.Ticket.findAll({
+                // attributes: {
+                //     include: [
+                //         "id",
+                //         [
+                //             Sequelize.fn(
+                //                 "DATE_FORMAT",
+                //                 Sequelize.col("start"),
+                //                 "%Y-%m-%d"
+                //             ),
+                //             "start",
+                //         ],
+                //         "end",
+                //         "price",
+                //     ],
+                // },
                 raw: true,
             });
+            console.log(items)
             items.map(async (item) => {
                 let dateStart = moment(new Date(item.start));
                 let dateEnd = moment(new Date(item.end));
