@@ -16,7 +16,7 @@ let getListPage = async (req, res) => {
             let FromTo = await db.Trip.findOne({
                 where: { id: item.idTrip },
             });
-            let seatBlank = await db.Seat.findAll({
+            let seatBlank = await db.Seat.findAndCountAll({
                 where: {
                     idTicket: item.id,
                     idUser: null
@@ -28,6 +28,7 @@ let getListPage = async (req, res) => {
             item.timeStart = dateStart.getHours() + ":" + dateStart.getMinutes();
             item.timeEnd = dateEnd.getHours() + ":" + dateEnd.getMinutes();
             item.price = item.price + " VND/";
+            item.black = seatBlank
         });
         res.locals.list = items;
         res.render("list", {

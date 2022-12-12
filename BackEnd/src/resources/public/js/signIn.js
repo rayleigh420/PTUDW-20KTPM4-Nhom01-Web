@@ -15,23 +15,26 @@ eyePassword.forEach(item => {
 
 let password = document.querySelector('#password')
 
-let btnSubmit = document.querySelector('.btn-submit');
-// btnSubmit.onclick = async (e) => {
+let btnSubmit = document.querySelector('#signInForm');
+// btnSubmit.onsubmit = async (e) => {
+//     console.log(123)
 //     e.preventDefault();
 
-//     let res = await fetch("/signIn", {
-//         method: 'post',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             email: "nhatduy0409@gmail.com",
-//             password: password.value
-//         }),
-//     })
-//     console.log(res);
-//     if (res.redirected == true) {
-//         res.redirected('/')
-//     }
+//     window.location.href = "http://localhost:3000/list"
+
+//     // let res = await fetch("/signIn", {
+//     //     method: 'post',
+//     //     headers: {
+//     //         'Content-Type': 'application/json'
+//     //     },
+//     //     body: JSON.stringify({
+//     //         email: "nhatduy0409@gmail.com",
+//     //         password: password.value
+//     //     }),
+//     // })
+//     // console.log(res);
+//     // if (res.redirected == true) {
+//     //     res.redirected('/')
+//     // }
 
 // }
