@@ -10,6 +10,7 @@ import configViewEngine from './config/viewEngine';
 import connectDB from './config/connectDB'
 import initTestRoute from './routes/testRoute';
 import initWebRoute from './routes/webRoute';
+import initListRoute from './routes/listRoute';
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -47,6 +48,7 @@ configViewEngine(app, __dirname)
 
 // initTestRoute(app);
 initWebRoute(app);
+initListRoute(app)
 connectDB();
 
 app.listen(port, () => {

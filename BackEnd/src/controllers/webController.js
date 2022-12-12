@@ -1,11 +1,13 @@
 import { where } from "sequelize";
 import db from "../models/index";
+import province from '../data/provinces'
 
 let getHomePage = async (req, res) => {
   try {
     res.render("home", {
       style: "css/home.css",
-      js: "js/navigation.js",
+      js: ["navigation.js", "home.js"],
+      province: province.province
     });
   } catch (e) {
     console.log(e);
@@ -27,7 +29,7 @@ let getSignInPage = async (req, res) => {
   try {
     res.render("signIn", {
       style: "css/signIn.css",
-      js: ["js/signIn.js"],
+      js: ["signIn.js"],
     });
   } catch (e) {
     console.log(e);
@@ -98,7 +100,7 @@ let getDetailPage = async (req, res) => {
   try {
     res.render("detail", {
       style: "css/detail.css",
-      js: "js/detail.js",
+      js: ["detail.js"]
     });
   } catch (e) {
     console.log(e);

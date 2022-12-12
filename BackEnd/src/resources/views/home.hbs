@@ -3,7 +3,7 @@
 <main>
     <div class="form_search_wrapper">
         <div class="form_search">
-            <form>
+            <form action="list?from={from}&?to={to}&?date={date}" method="GET">
                 <div class="form_title">
                     <p>
                         Nhập thông tin chuyến xe cần tìm
@@ -12,34 +12,38 @@
                 <div class="row form-row ">
                     <div class="form-group col-md-3">
                         <label for="from">Điểm đi</label>
-                        <select class="form-control" id="formPlace">
-                            <option>TP. Hồ Chí Minh</option>
-                            <option>2</option>
+                        <select name="from" class="form-control from" id="formPlace" required>
+                            <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option>
+                            {{#each province}}
+                            <option value={{this}} onclick="getValue(e)">{{this}}</option>
+                            {{/each}}
                         </select>
                         <ion-icon class="select_icon" name="location" size="small"></ion-icon>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="to">Điểm đến</label>
-                        <select class="form-control" id="toPlace">
-                            <option>Quảng Ngãi</option>
-                            <option>2</option>
+                        <select name="to" class="form-control to" id="toPlace" required>
+                            <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option>
+                            {{#each province}}
+                            <option value={{this}} onclick="getValue(e)">{{this}}</option>
+                            {{/each}}
                         </select>
                         <ion-icon class="select_icon" name="location" size="small"></ion-icon>
                         <!-- <ion-icon class="swap_icon" name="swap-horizontal-outline" size="large"></ion-icon> -->
                     </div>
                     <div class="form-group col-md-3 offset-md-1">
                         <label for="amount">Số lượng hành khách</label>
-                        <input type="date" id="date" name="date" class="date">
+                        <input type="date" id="date" name="date" class="date" required>
                         <ion-icon class="select_icon" name="today" size="small"></ion-icon>
                         <!-- <ion-icon name="people"></ion-icon> -->
                     </div>
                 </div>
                 <div class="row btn_find_wrapper">
-                    <button type="button" class="btn btn-primary btn_search col-md-2 offset-md-10">
+                    <button type="submit" class="btn btn-primary btn_search col-md-2 offset-md-10">
                         <a href="list">
-                            <ion-icon class="find_icon" name="search"></ion-icon>
-                            Tìm chuyến xe
                         </a>
+                        <ion-icon class="find_icon" name="search"></ion-icon>
+                        Tìm chuyến xe
                     </button>
                 </div>
             </form>
