@@ -19,6 +19,7 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "livereload": "^0.9.3",
+    "moment": "^2.29.4",
     "node-localstorage": "^2.2.1",
     "path": "^0.12.7",
     "pg": "^8.8.0",
