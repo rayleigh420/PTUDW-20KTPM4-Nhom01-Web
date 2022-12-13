@@ -1,13 +1,15 @@
 import { where } from "sequelize";
 import db from "../models/index";
-import province from '../data/provinces'
+// import province from '../data/provinces'
+import provinceService from "../services/provinceService"
 
 let getHomePage = async (req, res) => {
   try {
+    let provinces = await provinceService.getProvince();
     res.render("home", {
       style: "css/home.css",
       js: ["navigation.js", "home.js"],
-      province: province.province
+      provinces: provinces
     });
   } catch (e) {
     console.log(e);

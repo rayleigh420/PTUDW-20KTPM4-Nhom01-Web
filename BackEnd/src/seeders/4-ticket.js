@@ -5,6 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let items = [
       {
+        dayStart: "2023-1-6",
         start: "2023-1-6 05:30:00",
         end: "2023-1-6 17:30:00",
         price: 450000,
@@ -13,6 +14,7 @@ module.exports = {
         idTicket: 1,
       },
       {
+        dayStart: "2023-1-6",
         start: "2023-1-6 05:30:00",
         end: "2023-1-6 17:30:00",
         price: 250000,
@@ -21,6 +23,7 @@ module.exports = {
         idTicket: 2,
       },
       {
+        dayStart: "2023-1-6",
         start: "2023-1-6 05:30:00",
         end: "2023-1-6 17:30:00",
         price: 550000,
@@ -29,6 +32,7 @@ module.exports = {
         idTicket: 3,
       },
       {
+        dayStart: "2023-1-6",
         start: "2023-1-6 05:30:00",
         end: "2023-1-6 17:30:00",
         price: 550000,

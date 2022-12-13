@@ -14,8 +14,8 @@
                         <label for="from">Điểm đi</label>
                         <select name="from" class="form-control from" id="formPlace" required>
                             <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option>
-                            {{#each province}}
-                            <option value={{this}} onclick="getValue(e)">{{this}}</option>
+                            {{#each provinces}}
+                            <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
                             {{/each}}
                         </select>
                         <ion-icon class="select_icon" name="location" size="small"></ion-icon>
@@ -24,8 +24,8 @@
                         <label for="to">Điểm đến</label>
                         <select name="to" class="form-control to" id="toPlace" required>
                             <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option>
-                            {{#each province}}
-                            <option value={{this}} onclick="getValue(e)">{{this}}</option>
+                            {{#each provinces}}
+                            <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
                             {{/each}}
                         </select>
                         <ion-icon class="select_icon" name="location" size="small"></ion-icon>

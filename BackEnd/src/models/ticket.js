@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Ticket.init({
+    dayStart: DataTypes.DATEONLY,
     start: DataTypes.DATE,
     end: DataTypes.DATE,
     price: DataTypes.DECIMAL

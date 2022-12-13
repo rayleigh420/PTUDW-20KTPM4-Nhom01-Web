@@ -5,6 +5,7 @@ import { Sequelize } from "sequelize";
 let getTicketInfo = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
+            console.log(data);
             let items = await db.Ticket.findAll({
                 // attributes: {
                 //     include: [
@@ -23,7 +24,7 @@ let getTicketInfo = async (data) => {
                 // },
                 raw: true,
             });
-            console.log(items)
+            // console.log(items)
             items.map(async (item) => {
                 let dateStart = moment(new Date(item.start));
                 let dateEnd = moment(new Date(item.end));

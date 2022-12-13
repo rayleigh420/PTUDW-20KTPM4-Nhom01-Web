@@ -9,6 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      dayStart: {
+        type: Sequelize.DATEONLY
+      },
       start: {
         type: Sequelize.DATE
       },
