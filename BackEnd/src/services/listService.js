@@ -1,67 +1,95 @@
 import db from "../models/index";
 import moment from "moment/moment";
-import { Sequelize } from "sequelize";
 
 let getTicketInfo = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            console.log(data);
-            let items = await db.Ticket.findAll({
-                // attributes: {
-                //     include: [
-                //         "id",
-                //         [
-                //             Sequelize.fn(
-                //                 "DATE_FORMAT",
-                //                 Sequelize.col("start"),
-                //                 "%Y-%m-%d"
-                //             ),
-                //             "start",
-                //         ],
-                //         "end",
-                //         "price",
-                //     ],
-                // },
-                raw: true,
-            });
-            // console.log(items)
+            let items = await db.Trip.findAll({
+                include: { model: db.Ticket, required: true },
+                where: {
+                    from: data.from,
+                    to: data.to,
+                },
+                raw: true
+            })
+            items = items.filter(item => {
+                return item['Tickets.dayStart'] == data.date
+            })
+            console.log(items)
+
+            let ticket = []
+
             items.map(async (item) => {
-                let dateStart = moment(new Date(item.start));
-                let dateEnd = moment(new Date(item.end));
+                let dateStart = moment(new Date(item['Tickets.start']));
+                let dateEnd = moment(new Date(item['Tickets.end']));
 
                 let carOwner = await db.CarOwner.findOne({
                     attributes: ["name"],
-                    where: { id: item.idCarOwner },
-                });
-
-                let FromTo = await db.Trip.findOne({
-                    where: { id: item.idTrip },
+                    where: { id: item['Tickets.idCarOwner'] },
                 });
 
                 let seatBlank = await db.Seat.findAndCountAll({
                     where: {
-                        idTicket: item.id,
+                        idTicket: item['Tickets.id'],
                         idUser: null
                     }
                 })
 
-                item.carOwnerName = carOwner.name;
-                item.from = FromTo.from;
-                item.to = FromTo.to;
-                item.timeStart = dateStart.hour() + ":" + dateStart.minute();
-                item.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
-                item.price = item.price + " VND/";
-                item.black = seatBlank
-                item.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
+                let tk = {}
+
+                tk.carOwnerName = carOwner.name;
+                tk.from = item.from;
+                tk.to = item.to;
+                tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
+                tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
+                tk.price = item['Tickets.price'] + " VND/";
+                tk.black = seatBlank
+                tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
+
+                ticket.push(tk)
             });
 
-            resolve(items)
+            resolve(ticket)
         } catch (e) {
             console.log(e)
         }
     })
 }
 
+let getProvinceName = (name) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let province = await db.Province.findOne({
+                attributes: ['provinceName'],
+                where: {
+                    province: name
+                },
+                raw: true
+            })
+            resolve(province.provinceName)
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
+let getWeekDay = (date) => {
+    let day = ''
+    date = moment(date)
+    const weekDay = date.day() + 1;
+
+    if (weekDay == 8) {
+        day = "CN, "
+    }
+    else {
+        day = "T" + weekDay + ", "
+    }
+
+    day = day + date.date() + " Thg " + (date.month() + 1) + " " + date.year()
+
+    return day;
+}
+
 module.exports = {
-    getTicketInfo
+    getTicketInfo, getProvinceName, getWeekDay
 }

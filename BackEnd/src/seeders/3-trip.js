@@ -5,19 +5,19 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let items = [
       {
-        from: "TPHCM",
-        to: "QN", //1
+        from: "SG",
+        to: "QNg", //1
       },
       {
-        from: "TPHCM",
+        from: "SG",
         to: "BT", //2
       },
       {
-        from: "TPHCM",
+        from: "SG",
         to: "GL", //3
       },
       {
-        from: "TPHCM",
+        from: "SG",
         to: "NH", //4
       },
     ];
