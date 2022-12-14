@@ -18,6 +18,12 @@ module.exports = {
       phone: {
         type: Sequelize.STRING
       },
+      imgLogo: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
       imgCar: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
