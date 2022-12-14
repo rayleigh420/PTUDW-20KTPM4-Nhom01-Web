@@ -37,6 +37,7 @@ let getTicketInfo = async (data) => {
 
                 let tk = {}
 
+                tk.id = item.id
                 tk.carOwnerName = carOwner.name;
                 tk.from = item.from;
                 tk.to = item.to;

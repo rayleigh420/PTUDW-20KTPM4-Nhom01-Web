@@ -38,35 +38,35 @@ let getSignInPage = async (req, res) => {
   }
 };
 
-let getListPage = async (req, res) => {
-  try {
-    let items = await db.Ticket.findAll();
-    // console.log("All:", JSON.stringify(items, null, 2));
-    items.forEach(async (item) => {
-      let dateStart = new Date(item.start);
-      let dateEnd = new Date(item.end);
-      let carOwner = await db.CarOwner.findOne({
-        attributes: ["name"],
-        where: { id: item.idCarOwner },
-      });
-      let FromTo = await db.Trip.findOne({
-        where: { id: item.idTrip },
-      });
-      item.carOwnerName = carOwner.name;
-      item.from = FromTo.from;
-      item.to = FromTo.to;
-      item.timeStart = dateStart.getHours() + ":" + dateStart.getMinutes();
-      item.timeEnd = dateEnd.getHours() + ":" + dateEnd.getMinutes();
-      item.price = item.price + " VND/";
-    });
-    res.locals.list = items;
-    res.render("list", {
-      style: "css/list.css",
-    });
-  } catch (e) {
-    console.log(e);
-  }
-};
+// let getListPage = async (req, res) => {
+//   try {
+//     let items = await db.Ticket.findAll();
+//     // console.log("All:", JSON.stringify(items, null, 2));
+//     items.forEach(async (item) => {
+//       let dateStart = new Date(item.start);
+//       let dateEnd = new Date(item.end);
+//       let carOwner = await db.CarOwner.findOne({
+//         attributes: ["name"],
+//         where: { id: item.idCarOwner },
+//       });
+//       let FromTo = await db.Trip.findOne({
+//         where: { id: item.idTrip },
+//       });
+//       item.carOwnerName = carOwner.name;
+//       item.from = FromTo.from;
+//       item.to = FromTo.to;
+//       item.timeStart = dateStart.getHours() + ":" + dateStart.getMinutes();
+//       item.timeEnd = dateEnd.getHours() + ":" + dateEnd.getMinutes();
+//       item.price = item.price + " VND/";
+//     });
+//     res.locals.list = items;
+//     res.render("list", {
+//       style: "css/list.css",
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
 
 let getInfoFormPage = async (req, res) => {
   try {
@@ -98,24 +98,24 @@ let getHistoryPage = async (req, res) => {
   }
 };
 
-let getDetailPage = async (req, res) => {
-  try {
-    res.render("detail", {
-      style: "css/detail.css",
-      js: ["detail.js"]
-    });
-  } catch (e) {
-    console.log(e);
-  }
-};
+// let getDetailPage = async (req, res) => {
+//   try {
+//     res.render("detail", {
+//       style: "css/detail.css",
+//       js: ["detail.js"]
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
 
 module.exports = {
   getHomePage,
   getInfoFormPage,
   getInfoCheckPage,
-  getListPage,
+  // getListPage,
   getSignInPage,
   getSignUpPage,
   getHistoryPage,
-  getDetailPage,
+  // getDetailPage,
 };

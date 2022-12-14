@@ -1,4 +1,3 @@
-console.log("123")
 
 let eyePassword = document.querySelectorAll('.eye');
 
