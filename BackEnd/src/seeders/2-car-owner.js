@@ -8,6 +8,7 @@ module.exports = {
         name: "An Anh Limousine",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/F4msnjv",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -18,6 +19,7 @@ module.exports = {
         name: "An Tiến Phát",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/WV7SPT2",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -28,6 +30,7 @@ module.exports = {
         name: "An Phú Busline",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/2W4kr5x",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -38,16 +41,18 @@ module.exports = {
         name: "Cao Lâm",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
           "https://ibb.co/HrTBm7K",
         ],
-      },
+      }, //
       {
         name: "Dũng Lệ",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -58,6 +63,7 @@ module.exports = {
         name: "Hoàng Nhân",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -68,6 +74,7 @@ module.exports = {
         name: "Thiên Kim Limousine",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -78,6 +85,7 @@ module.exports = {
         name: "Thúy Hà Linh",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -88,6 +96,7 @@ module.exports = {
         name: "Trung Nga",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -98,6 +107,7 @@ module.exports = {
         name: "Việt Nhật",
         address: "",
         phone: "",
+        imgLogo: "https://ibb.co/tzzs5rg",
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
