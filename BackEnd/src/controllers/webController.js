@@ -2,6 +2,7 @@ import { where } from "sequelize";
 import db from "../models/index";
 // import province from '../data/provinces'
 import provinceService from "../services/provinceService"
+import ticketService from "../services/ticketService"
 
 let getHomePage = async (req, res) => {
   try {
@@ -70,6 +71,10 @@ let getSignInPage = async (req, res) => {
 
 let getInfoFormPage = async (req, res) => {
   try {
+    let idTicket = req.params.idTicket;
+
+    // let result = await ticketService.getTicketInfoById(idTicket);
+
     res.render("info_form", {
       style: ["info_form.css"],
     });
