@@ -3,7 +3,7 @@ import detailService from "../services/listService";
 let getDetailPage = async (req, res) => {
   try {
     res.render("detail", {
-      style: "../css/detail.css",
+      style: ["detail.css"],
       js: ["detail.js"],
     });
   } catch (e) {

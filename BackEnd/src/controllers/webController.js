@@ -7,7 +7,7 @@ let getHomePage = async (req, res) => {
   try {
     let provinces = await provinceService.getProvince();
     res.render("home", {
-      style: "css/home.css",
+      style: ["home.css"],
       js: ["navigation.js", "home.js"],
       provinces: provinces
     });
@@ -19,8 +19,8 @@ let getHomePage = async (req, res) => {
 let getSignUpPage = async (req, res) => {
   try {
     res.render("signUp", {
-      style: "css/signUp.css",
-      js: ["js/signUp.js"],
+      style: ["signUp.css"],
+      js: ["signUp.js"],
     });
   } catch (e) {
     console.log(e);
@@ -30,7 +30,7 @@ let getSignUpPage = async (req, res) => {
 let getSignInPage = async (req, res) => {
   try {
     res.render("signIn", {
-      style: "css/signIn.css",
+      style: ["signIn.css"],
       js: ["signIn.js"],
     });
   } catch (e) {
@@ -71,7 +71,7 @@ let getSignInPage = async (req, res) => {
 let getInfoFormPage = async (req, res) => {
   try {
     res.render("info_form", {
-      style: "css/info_form.css",
+      style: ["info_form.css"],
     });
   } catch (e) {
     console.log(e);

@@ -9,7 +9,7 @@ let getListPage = async (req, res) => {
         console.log(weekDay)
 
         res.render("list", {
-            style: "css/list.css",
+            style: ["list.css"],
             list: list,
             fromName: fromName,
             toName: toName,
