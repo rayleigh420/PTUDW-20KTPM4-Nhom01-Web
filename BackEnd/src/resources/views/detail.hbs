@@ -1,47 +1,4 @@
-<nav class="navbar flex-row justify-content-between">
-    <div class="nav_item d-flex flex-row align-items-center">
-        <a class=" navbar-brand" href="./">
-            <img src="../img/bus.svg" width="55" height="45" class="d-inline-block align-center" alt="">
-        </a>
-        <a class="text" href="../">
-            Vexere
-        </a>
-    </div>
-    <div class="btn_auth">
-        <button type="button" class="btn btn_signIn">
-            <a href="../signIn">
-                <ion-icon class="signIn_icon" name="people-circle"></ion-icon>
-                Đăng nhập
-            </a>
-        </button>
-        <button type="button" class="btn btn_signUp">
-            <a href="../signUp">
-                Đăng ký
-            </a>
-        </button>
-        <button type="button" class="btn btn_user">
-            <ion-icon class="user_icon" name="person-circle"></ion-icon>
-            Nhất Duy
-        </button>
-        <div class="list">
-            <ul class="list-group">
-                <li class="list-group-item list_title">
-                    Tài khoản
-                </li>
-                <li class="list-group-item">
-                    <a href="../history">
-                        <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="../">
-                        <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>Đăng xuất
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+{{> header}}
 
 <main>
     <div class="ctcx">Chi tiết chuyến xe</div>
@@ -50,13 +7,13 @@
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../img/1.jpg" class="d-block" alt="1">
+                    <img src="/img/1.jpg" class="d-block" alt="1">
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/2.jpg" class="d-block " alt="2">
+                    <img src="/img/2.jpg" class="d-block " alt="2">
                 </div>
                 <div class="carousel-item">
-                    <img src="../img/3.jpg" class="d-block" alt="3">
+                    <img src="/img/3.jpg" class="d-block" alt="3">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -68,9 +25,9 @@
                 <span class="visually-hidden">Next</span>
             </button>
             <div class="small-img">
-                <img src="../img/1.jpg" class="small" alt="">
-                <img src="../img/2.jpg" class="small" alt="">
-                <img src="../img/3.jpg" class="small" alt="">
+                <img src="/img/1.jpg" class="small" alt="">
+                <img src="/img/2.jpg" class="small" alt="">
+                <img src="/img/3.jpg" class="small" alt="">
             </div>
 
         </div>
@@ -84,24 +41,24 @@
     <div class="choose_seat">
         <span class="wanted">Chỗ ngồi mong muốn</span>
         <div class="car-9">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
             <div class="blank"></div>
             <div class="blank"></div>
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="wheel" src="../img/wheel.svg" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
-            <img class="seat" src="../img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="wheel" src="/img/wheel.svg" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
+            <img class="seat" src="/img/seat.png" alt="">
 
         </div>
         <div class="price">
             <span>Tổng tiền: 540.000đ</span>
             <button type="button" class="btn btn-danger">
-                <a href="info_form">
+                <a href="/info_form">
                     Đặt vé
                 </a>
             </button>

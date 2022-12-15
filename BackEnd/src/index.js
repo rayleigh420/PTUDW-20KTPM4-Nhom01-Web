@@ -48,9 +48,9 @@ configViewEngine(app, __dirname)
 // });
 
 // initTestRoute(app);
+initWebRoute(app);
 initDetailRoute(app)
 initListRoute(app)
-initWebRoute(app);
 connectDB();
 
 app.listen(port, () => {
