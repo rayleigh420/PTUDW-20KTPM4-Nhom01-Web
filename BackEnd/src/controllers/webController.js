@@ -91,7 +91,7 @@ let getInfoCheckPage = async (req, res) => {
 let getHistoryPage = async (req, res) => {
   try {
     res.render("history", {
-      style: "css/history.css",
+      style: ["history.css"],
     });
   } catch (e) {
     console.log(e);
