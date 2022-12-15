@@ -65,37 +65,41 @@
                 </form>
             </div>
         </div>
+        {{#each ticket}}
         <div class="info_ticket">
+            
             <div class="info">
                 <span>
                     <ion-icon name="ticket"></ion-icon>
-                    HCM <span>&#8594</span> QN
+                    {{from}} <span>&#8594</span> {{to}}
                 </span>
                 <p>Chuyến xe đi Wed, 9 Nov 2022</p>
                 <div class="car_name">
                     <img src="/img/PT_logo.png" alt="Phuong Trang">
-                    <span>Phương Trang</span>
+                    <span>{{carOwner}}</span>
                 </div>
                 <div class="ticket_time">
                     <div class="time_from">
-                        <p>09:30</p>
-                        <div class="where">TP.HCM</div>
+                        <p>{{timeStart}}</p>
+                        <div class="where">{{from}}</div>
                     </div>
                     <div class="total_time">
-                        <p>12h</p>
+                        <p>{{hours}}</p>
                         <div class="line"></div>
                     </div>
                     <div class="time_to">
-                        <p>21:30</p>
-                        <div class="where">QN</div>
+                        <p>{{timeEnd}}</p>
+                        <div class="where">{{to}}</div>
                     </div>
                 </div>
             </div>
             <button type="button" class="btn btn-primary btn_continue">
-                <a href="/info_check">
+                <a href="/info_check/{{id}}">
                     Tiếp tục
                 </a>
             </button>
+            
         </div>
+        {{/each}}
     </div>
 </main>

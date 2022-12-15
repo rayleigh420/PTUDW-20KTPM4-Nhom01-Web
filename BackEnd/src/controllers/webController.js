@@ -1,8 +1,8 @@
 import { where } from "sequelize";
 import db from "../models/index";
 // import province from '../data/provinces'
-import provinceService from "../services/provinceService"
-import ticketService from "../services/ticketService"
+import provinceService from "../services/provinceService";
+import ticketService from "../services/ticketService";
 
 let getHomePage = async (req, res) => {
   try {
@@ -10,7 +10,7 @@ let getHomePage = async (req, res) => {
     res.render("home", {
       style: ["home.css"],
       js: ["navigation.js", "home.js"],
-      provinces: provinces
+      provinces: provinces,
     });
   } catch (e) {
     console.log(e);
@@ -73,10 +73,12 @@ let getInfoFormPage = async (req, res) => {
   try {
     let idTicket = req.params.idTicket;
 
-    // let result = await ticketService.getTicketInfoById(idTicket);
-
+    let ticket = await ticketService.getTicketInfoById(idTicket);
+    console.log(ticket);
     res.render("info_form", {
       style: ["info_form.css"],
+      ticket: ticket,
+      id: idTicket,
     });
   } catch (e) {
     console.log(e);
@@ -85,8 +87,11 @@ let getInfoFormPage = async (req, res) => {
 
 let getInfoCheckPage = async (req, res) => {
   try {
+    let idTicket = req.params.idTicket;
+    let ticket = await ticketService.getTicketInfoById(idTicket);
     res.render("info_check", {
-      style: "css/info_check.css",
+      style: ["info_check.css"],
+      ticket: ticket,
     });
   } catch (e) {
     console.log(e);
