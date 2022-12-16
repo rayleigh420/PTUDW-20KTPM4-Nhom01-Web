@@ -10,7 +10,7 @@ nav {
     padding-right: 4.44% !important;
 }
 
-a{
+a {
     text-decoration: none !important;
     color: #000000 !important;
 }
@@ -39,7 +39,7 @@ span {
     color: #FFFFFF;
 }
 
-.btn_auth{
+.btn_auth {
     position: relative;
 }
 
@@ -56,7 +56,8 @@ span {
     color: #FFFFFF !important;
 }
 
-.user_icon, .signIn_icon {
+.user_icon,
+.signIn_icon {
     transform: translateY(20%);
     font-size: 1.3rem;
 }
@@ -66,11 +67,12 @@ span {
     margin-left: 15px;
 }
 
-.btn_user{
+.btn_user {
     background: #FFFFFF !important;
+    min-width: 125px;
 }
 
-.list{
+.list {
     position: absolute;
     width: 150%;
     z-index: 1000;
@@ -78,18 +80,18 @@ span {
     right: 0;
 }
 
-.btn_user:hover + .list{
+.btn_user:hover+.list {
     display: block;
 }
 
-.list_title{
+.list_title {
     border-bottom: none !important;
     font-size: 17px;
     font-weight: 500;
     padding-left: 5% !important;
 }
 
-.list{
+.list {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -100,14 +102,14 @@ span {
     border-radius: 20px;
 }
 
-.list-group-item:not(:last-child){
+.list-group-item:not(:last-child) {
     border-bottom: none !important;
 }
 
-.list:hover{
+.list:hover {
     display: block;
 }
 
-.user_option_icon{
+.user_option_icon {
     transform: translate(-40%, 20%);
 }

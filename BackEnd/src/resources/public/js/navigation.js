@@ -18,7 +18,7 @@ if (auth.isLogin) {
                         <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
                     </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item log_out">
                     <a href="/">
                         <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>Đăng xuất
                     </a>
@@ -39,4 +39,9 @@ else {
                 Đăng ký
             </a>
         </button> `
+}
+
+let logOut = document.querySelector('.log_out')
+logOut.onclick = () => {
+    localStorage.removeItem("Auth");
 }
