@@ -1,4 +1,4 @@
-console.log(123)
+
 let eyePassword = document.querySelectorAll('.eye');
 
 eyePassword.forEach(item => {
@@ -13,28 +13,40 @@ eyePassword.forEach(item => {
     }
 })
 
+let email = document.querySelector('#email')
 let password = document.querySelector('#password')
+let user = {
+    isLogin: false
+}
 
-let btnSubmit = document.querySelector('#signInForm');
-// btnSubmit.onsubmit = async (e) => {
-//     console.log(123)
-//     e.preventDefault();
+let btnSubmit = document.querySelector('.btn-submit');
+btnSubmit.onmouseover = async () => {
+    if (email.value && password.value) {
 
-//     window.location.href = "http://localhost:3000/list"
+        let res = await fetch('user/signIn', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email.value,
+                password: password.value
+            }),
+        })
 
-//     // let res = await fetch("/signIn", {
-//     //     method: 'post',
-//     //     headers: {
-//     //         'Content-Type': 'application/json'
-//     //     },
-//     //     body: JSON.stringify({
-//     //         email: "nhatduy0409@gmail.com",
-//     //         password: password.value
-//     //     }),
-//     // })
-//     // console.log(res);
-//     // if (res.redirected == true) {
-//     //     res.redirected('/')
-//     // }
+        let result = await res.json()
+        if (result.errCode == 0) {
+            user = {
+                isLogin: true,
+                email: result.user.email,
+                name: result.user.name
+            }
+        }
+    }
+}
 
-// }
+btnSubmit.onclick = () => {
+    if (user.isLogin) {
+        localStorage.setItem('Auth', JSON.stringify(user))
+    }
+}

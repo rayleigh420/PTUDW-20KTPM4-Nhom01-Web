@@ -21,6 +21,16 @@ let signIn = async (req, res) => {
     }
 }
 
+let apiSignIn = async (req, res) => {
+    try {
+        let result = await userService.handleSignIn(req.body)
+        console.log(result)
+        res.json(result)
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 let signUp = async (req, res) => {
     try {
         let result = await userService.handleSignUp(req.body)
@@ -46,6 +56,16 @@ let signUp = async (req, res) => {
     }
 }
 
+let apiSignUp = async (req, res) => {
+    try {
+        let result = await userService.handleSignUp(req.body)
+        console.log(result)
+        res.json(result)
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 module.exports = {
-    signIn, signUp
+    signIn, signUp, apiSignIn, apiSignUp
 }

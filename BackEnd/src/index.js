@@ -10,6 +10,7 @@ import configViewEngine from './config/viewEngine';
 import connectDB from './config/connectDB'
 import initTestRoute from './routes/testRoute';
 import initWebRoute from './routes/webRoute';
+import initUserRoute from './routes/userRoute';
 import initListRoute from './routes/listRoute';
 import initDetailRoute from './routes/detailRoute';
 
@@ -48,6 +49,7 @@ configViewEngine(app, __dirname)
 // });
 
 // initTestRoute(app);
+initUserRoute(app)
 initWebRoute(app);
 initDetailRoute(app)
 initListRoute(app)
