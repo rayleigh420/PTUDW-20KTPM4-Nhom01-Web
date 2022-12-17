@@ -35,7 +35,6 @@ btnSubmit.onmouseover = async () => {
         })
 
         let result = await res.json()
-        console.log(result)
         errorMess = result.errMessage
         if (result.errCode == 0) {
             user = {
