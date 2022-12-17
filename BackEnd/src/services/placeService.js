@@ -18,7 +18,22 @@ let getListPlace = async (province) => {
     })
 }
 
+let getPlacaNameById = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let place = db.Place.findByPk(id, {
+                attributes: ['places'],
+                raw: true
+            })
+
+            resolve(place)
+        } catch (e) {
+
+        }
+    })
+}
+
 module.exports = {
-    getListPlace
+    getListPlace, getPlacaNameById
 }
 

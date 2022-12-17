@@ -98,15 +98,13 @@ let getInfoCheckPage = async (req, res) => {
     console.log(req.body)
     let idTicket = req.body.id
     let ticket = await ticketService.getTicketInfoById(idTicket);
-    let fromList = await placeService.getListPlace(ticket.from)
-    let toList = await placeService.getListPlace(ticket.to);
+    let fromPlace = await placeService.getPlacaNameById(req.body.fromPlace)
+    let toPlace = await placeService.getPlacaNameById(req.body.toPlace)
 
     res.render("info_check", {
       style: ["info_check.css"],
       js: ["navigation.js"],
       id: idTicket,
-      fromList: fromList,
-      toList: toList,
       date: ticket.dayStart,
       ...ticket
     });
