@@ -73,18 +73,17 @@ let getSignInPage = async (req, res) => {
 let getInfoFormPage = async (req, res) => {
   try {
     let idTicket = req.params.idTicket;
-
     let ticket = await ticketService.getTicketInfoById(idTicket);
-    console.log(ticket)
     let fromList = await placeService.getListPlace(ticket.from)
     let toList = await placeService.getListPlace(ticket.to)
-    console.log(toList)
+
     res.render("info_form", {
       style: ["info_form.css"],
       js: ["navigation.js"],
       id: idTicket,
       fromList: fromList,
       toList: toList,
+      date: ticket.dayStart,
       ...ticket
     });
   } catch (e) {
@@ -96,10 +95,17 @@ let getInfoCheckPage = async (req, res) => {
   try {
     let idTicket = req.params.idTicket;
     let ticket = await ticketService.getTicketInfoById(idTicket);
+    let fromList = await placeService.getListPlace(ticket.from)
+    let toList = await placeService.getListPlace(ticket.to);
+
     res.render("info_check", {
       style: ["info_check.css"],
       js: ["navigation.js"],
-      ticket: ticket,
+      id: idTicket,
+      fromList: fromList,
+      toList: toList,
+      date: ticket.dayStart,
+      ...ticket
     });
   } catch (e) {
     console.log(e);

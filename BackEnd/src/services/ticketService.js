@@ -27,6 +27,7 @@ let getTicketInfoById = async (id) => {
       tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
       tk.price = items["price"] + " VND/";
       tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
+      tk.dayStart = getDayName(dateStart)
       resolve(tk);
     } catch (e) {
       console.log(e);
@@ -107,6 +108,14 @@ let getProvinceName = (name) => {
   });
 };
 
+let getDayName = (date) => {
+  let day = "";
+  date = moment(date);
+  day = day + date.format('ddd') + ", " + date.date() + " " + date.format('MMM') + " " + date.year();
+
+  return day
+}
+
 let getWeekDay = (date) => {
   let day = "";
   date = moment(date);
@@ -128,4 +137,5 @@ module.exports = {
   getProvinceName,
   getWeekDay,
   getTicketInfoById,
+  getDayName
 };
