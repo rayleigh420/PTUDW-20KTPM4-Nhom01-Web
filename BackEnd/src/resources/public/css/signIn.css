@@ -4,7 +4,7 @@ body {
     --radius: 12px;
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
@@ -77,7 +77,7 @@ button {
     border-radius: 18px !important;
 }
 
-button a{
+button a {
     display: block;
     color: #fff !important;
     width: 100%;
@@ -101,7 +101,7 @@ button a{
     left: 15%; */
 }
 
-.signUp span{ 
+.signUp span {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -110,7 +110,7 @@ button a{
     color: #166FE5 !important;
 }
 
-.signUp span a{
+.signUp span a {
     color: #166FE5 !important;
 }
 
@@ -124,4 +124,10 @@ span:hover {
         background-image: none;
         display: hidden;
     }
-} */    
+} */
+
+.errMess {
+    transform: translate(10px, -15px);
+    font-size: 14.5px;
+    color: red;
+}

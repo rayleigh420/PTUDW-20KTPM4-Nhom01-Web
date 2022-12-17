@@ -1,4 +1,3 @@
-
 let eyePassword = document.querySelectorAll('.eye');
 
 eyePassword.forEach(item => {
@@ -18,6 +17,7 @@ let password = document.querySelector('#password')
 let user = {
     isLogin: false
 }
+let errorMess = ""
 
 let btnSubmit = document.querySelector('.btn-submit');
 btnSubmit.onmouseover = async () => {
@@ -35,6 +35,8 @@ btnSubmit.onmouseover = async () => {
         })
 
         let result = await res.json()
+        console.log(result)
+        errorMess = result.errMessage
         if (result.errCode == 0) {
             user = {
                 isLogin: true,
@@ -45,8 +47,16 @@ btnSubmit.onmouseover = async () => {
     }
 }
 
-btnSubmit.onclick = () => {
-    if (user.isLogin) {
-        localStorage.setItem('Auth', JSON.stringify(user))
+btnSubmit.onclick = (e) => {
+    console.log(errorMess)
+    if (errorMess == 'OK') {
+        if (user.isLogin) {
+            localStorage.setItem('Auth', JSON.stringify(user))
+        }
+    }
+    else {
+        e.preventDefault();
+        let error = document.querySelector('.errMess')
+        error.innerHTML = `<ion-icon name="alert"></ion-icon>${errorMess}`
     }
 }
