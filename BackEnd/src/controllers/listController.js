@@ -10,6 +10,7 @@ let getListPage = async (req, res) => {
 
         res.render("list", {
             style: ["list.css"],
+            js: ["navigation.js"],
             list: list,
             fromName: fromName,
             toName: toName,

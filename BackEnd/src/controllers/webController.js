@@ -77,6 +77,7 @@ let getInfoFormPage = async (req, res) => {
     console.log(ticket);
     res.render("info_form", {
       style: ["info_form.css"],
+      js: ["navigation.js"],
       ticket: ticket,
       id: idTicket,
     });
@@ -91,6 +92,7 @@ let getInfoCheckPage = async (req, res) => {
     let ticket = await ticketService.getTicketInfoById(idTicket);
     res.render("info_check", {
       style: ["info_check.css"],
+      js: ["navigation.js"],
       ticket: ticket,
     });
   } catch (e) {
@@ -102,6 +104,7 @@ let getHistoryPage = async (req, res) => {
   try {
     res.render("history", {
       style: ["history.css"],
+      js: ["navigation.js"],
     });
   } catch (e) {
     console.log(e);
