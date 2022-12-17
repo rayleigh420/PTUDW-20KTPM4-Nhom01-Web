@@ -6,7 +6,7 @@
             <h3>Xác nhận thông tin</h3>
             <div class="form_wrapper">
                 <div class="info_name">
-                    <span class="name_span">Ông Lê Nhất Duy</span>
+                    <span class="name_span">Ông {{name}}</span>
                     <span class="edit_span"><a href="/info_form">Chỉnh sửa thông tin</a></span>
                 </div>
 
@@ -14,21 +14,21 @@
                     <div class="row">
                         <div class="col">
                             <label>Số điện thoại</label>
-                            <input type="text" class="form-control-plaintext" value="0905811741">
+                            <input type="text" class="form-control-plaintext" value={{phone}}>
                         </div>
                         <div class="col">
                             <label>Email</label>
-                            <input type="email" class="form-control-plaintext" value="nhatduy0409@gmail.com">
+                            <input type="email" class="form-control-plaintext" value={{email}}>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>CMND/CCCD</label>
-                            <input type="text" class="form-control-plaintext" value="2002200210">
+                            <input type="text" class="form-control-plaintext" value={{cmnd}}>
                         </div>
                         <div class="col">
                             <label>Quốc tịch</label>
-                            <input type="text" class="form-control-plaintext" value="Việt Nam">
+                            <input type="text" class="form-control-plaintext" value={{country}}>
 
                         </div>
                     </div>
@@ -36,8 +36,7 @@
                     <div class="row">
                         <div class="col">
                             <label>Điểm đón</label>
-                            <input type="text" class="form-control-plaintext"
-                                value="Tu Viện Khánh An , Phường An Phú Đông, Quận 12, Hồ Chí Minh ">
+                            <input type="text" class="form-control-plaintext" value={{fromPlaces}}>
                         </div>
                     </div>
                     <div class="row">
