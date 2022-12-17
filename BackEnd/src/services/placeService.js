@@ -11,7 +11,6 @@ let getListPlace = async (province) => {
                 },
                 raw: true
             })
-            console.log(places)
             resolve(places)
         } catch (e) {
             console.log(e)

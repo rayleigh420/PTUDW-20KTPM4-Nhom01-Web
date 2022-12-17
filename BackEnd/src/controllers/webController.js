@@ -76,13 +76,15 @@ let getInfoFormPage = async (req, res) => {
 
     let ticket = await ticketService.getTicketInfoById(idTicket);
     console.log(ticket)
-    // let fromList = await placeService.getListPlace(ticket.from)
-    // console.log(fromList)
+    let fromList = await placeService.getListPlace(ticket.from)
+    let toList = await placeService.getListPlace(ticket.to)
+    console.log(toList)
     res.render("info_form", {
       style: ["info_form.css"],
       js: ["navigation.js"],
-      // ticket: ticket,
       id: idTicket,
+      fromList: fromList,
+      toList: toList,
       ...ticket
     });
   } catch (e) {

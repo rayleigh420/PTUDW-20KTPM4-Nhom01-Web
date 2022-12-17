@@ -7,7 +7,6 @@ let getTicketInfoById = async (id) => {
       let items = await db.Ticket.findByPk(id, {
         raw: true,
       });
-      // let ticket = [];
       let tk = {};
       let dateStart = moment(new Date(items["start"]));
       let dateEnd = moment(new Date(items["end"]));

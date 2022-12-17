@@ -46,19 +46,19 @@
                         <div class="col">
                             <label>Điểm đón</label>
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Đại học KHTN</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected value="">Vui lòng chọn điểm đón</option>
+                                {{#each fromList}}
+                                <option value={{places}}>{{places}}</option>
+                                {{/each}}
                             </select>
                         </div>
                         <div class="col">
                             <label>Điểm đến</label>
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Quảng Ngãi</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected value="">Vui lòng chọn điểm trả</option>
+                                {{#each toList}}
+                                <option value={{places}}>{{places}}</option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
