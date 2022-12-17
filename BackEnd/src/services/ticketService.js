@@ -7,7 +7,7 @@ let getTicketInfoById = async (id) => {
       let items = await db.Ticket.findByPk(id, {
         raw: true,
       });
-      let ticket = [];
+      // let ticket = [];
       let tk = {};
       let dateStart = moment(new Date(items["start"]));
       let dateEnd = moment(new Date(items["end"]));
@@ -28,8 +28,7 @@ let getTicketInfoById = async (id) => {
       tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
       tk.price = items["price"] + " VND/";
       tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
-      ticket.push(tk);
-      resolve(ticket);
+      resolve(tk);
     } catch (e) {
       console.log(e);
     }

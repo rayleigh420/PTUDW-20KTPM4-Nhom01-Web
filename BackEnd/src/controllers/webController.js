@@ -3,6 +3,7 @@ import db from "../models/index";
 // import province from '../data/provinces'
 import provinceService from "../services/provinceService";
 import ticketService from "../services/ticketService";
+import placeService from "../services/placeService";
 
 let getHomePage = async (req, res) => {
   try {
@@ -74,12 +75,15 @@ let getInfoFormPage = async (req, res) => {
     let idTicket = req.params.idTicket;
 
     let ticket = await ticketService.getTicketInfoById(idTicket);
-    console.log(ticket);
+    console.log(ticket)
+    // let fromList = await placeService.getListPlace(ticket.from)
+    // console.log(fromList)
     res.render("info_form", {
       style: ["info_form.css"],
       js: ["navigation.js"],
-      ticket: ticket,
+      // ticket: ticket,
       id: idTicket,
+      ...ticket
     });
   } catch (e) {
     console.log(e);
