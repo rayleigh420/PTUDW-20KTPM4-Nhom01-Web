@@ -5,7 +5,7 @@ let getListPlace = async (province) => {
     return new Promise(async (resolve, reject) => {
         try {
             let places = db.Place.findAll({
-                attributes: ['places'],
+                attributes: ['id', 'places'],
                 where: {
                     province: province
                 },

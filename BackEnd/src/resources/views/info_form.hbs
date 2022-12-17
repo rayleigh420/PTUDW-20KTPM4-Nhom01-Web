@@ -5,12 +5,13 @@
         <div class="info_form">
             <h3>Thông tin liên hệ</h3>
             <div class="form_wrapper">
-                <form id="myform" action="/info_check/{{id}}" method="POST">
+                <form id="myform" action="/info_check" method="POST">
+                    <input type="hidden" name="id" value={{id}}>
                     <div class="row">
                         <div class="col">
                             <label>Họ và tên</label>
-                            <input type="text" class="form-control" placeholder="Vui lòng điền tên" name="name"
-                                required>
+                            <input type="text" class="form-control form_name" placeholder="Vui lòng điền tên"
+                                name="name" required>
                         </div>
                         <div class="col">
                             <label>Ngày sinh</label>
@@ -25,8 +26,8 @@
                         </div>
                         <div class="col">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Vui lòng điền email" name="email"
-                                required>
+                            <input type="email" class="form-control form_email" placeholder="Vui lòng điền email"
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" name="email" required>
                         </div>
                     </div>
                     <div class="row">
@@ -53,7 +54,7 @@
                             <select class="form-select" aria-label="Default select example" name="fromPlace" required>
                                 <option selected value="">Vui lòng chọn điểm đón</option>
                                 {{#each fromList}}
-                                <option value={{places}}>{{places}}</option>
+                                <option value={{id}}>{{places}}</option>
                                 {{/each}}
                             </select>
                         </div>
@@ -62,7 +63,7 @@
                             <select class="form-select" aria-label="Default select example" name="toPlace" required>
                                 <option selected value="">Vui lòng chọn điểm trả</option>
                                 {{#each toList}}
-                                <option value={{places}}>{{places}}</option>
+                                <option value={{id}}>{{places}}</option>
                                 {{/each}}
                                 <option value="Hello">Hello</option>
                             </select>

@@ -10,7 +10,7 @@ const initWebRoute = (app) => {
     router.get('/signUp', webController.getSignUpPage)
     router.get('/signIn', webController.getSignInPage)
     router.get('/info_form/:idTicket', webController.getInfoFormPage);
-    router.get('/info_check/:idTicket', webController.getInfoCheckPage)
+    router.post('/info_check', webController.getInfoCheckPage)
     router.get('/history', webController.getHistoryPage)
 
     router.post('/signUp', userController.signUp)
