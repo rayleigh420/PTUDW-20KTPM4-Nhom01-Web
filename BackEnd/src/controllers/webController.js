@@ -1,6 +1,6 @@
 import { where } from "sequelize";
 import db from "../models/index";
-// import province from '../data/provinces'
+import countries from '../data/country'
 import provinceService from "../services/provinceService";
 import ticketService from "../services/ticketService";
 import placeService from "../services/placeService";
@@ -77,6 +77,7 @@ let getInfoFormPage = async (req, res) => {
     let fromList = await placeService.getListPlace(ticket.from)
     let toList = await placeService.getListPlace(ticket.to)
 
+
     res.render("info_form", {
       style: ["info_form.css"],
       js: ["navigation.js"],
@@ -84,6 +85,7 @@ let getInfoFormPage = async (req, res) => {
       fromList: fromList,
       toList: toList,
       date: ticket.dayStart,
+      countries: countries.countries,
       ...ticket
     });
   } catch (e) {

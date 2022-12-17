@@ -5,39 +5,44 @@
         <div class="info_form">
             <h3>Thông tin liên hệ</h3>
             <div class="form_wrapper">
-                <form>
+                <form id="myform" action="/info_check/{{id}}" method="POST">
                     <div class="row">
                         <div class="col">
                             <label>Họ và tên</label>
-                            <input type="text" class="form-control" placeholder="Vui lòng điền tên">
+                            <input type="text" class="form-control" placeholder="Vui lòng điền tên" name="name"
+                                required>
                         </div>
                         <div class="col">
                             <label>Ngày sinh</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control" name="birth" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>Số điện thoại</label>
-                            <input type="text" class="form-control" placeholder="Vui lòng điền số điện thoại">
+                            <input type="text" class="form-control" placeholder="Vui lòng điền số điện thoại"
+                                name="phone" required>
                         </div>
                         <div class="col">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Vui lòng điền email">
+                            <input type="email" class="form-control" placeholder="Vui lòng điền email" name="email"
+                                required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <label>CMND/CCCD</label>
-                            <input type="text" class="form-control" placeholder="Vui lòng điền số CMND/CCCD">
+                            <input type="text" class="form-control" placeholder="Vui lòng điền số CMND/CCCD" name="cmnd"
+                                required>
                         </div>
                         <div class="col">
                             <label>Quốc tịch</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Việt Nam</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select class="form-select country_option" aria-label="Default select example"
+                                name="country" required>
+                                <option value="" selected>Vui lòng chọn quốc tịch</option>
+                                {{#each countries}}
+                                <option value={{this}}>{{this}}</option>
+                                {{/each}}
                             </select>
                         </div>
                     </div>
@@ -45,7 +50,7 @@
                     <div class="row">
                         <div class="col">
                             <label>Điểm đón</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="fromPlace" required>
                                 <option selected value="">Vui lòng chọn điểm đón</option>
                                 {{#each fromList}}
                                 <option value={{places}}>{{places}}</option>
@@ -54,11 +59,12 @@
                         </div>
                         <div class="col">
                             <label>Điểm đến</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="toPlace" required>
                                 <option selected value="">Vui lòng chọn điểm trả</option>
                                 {{#each toList}}
                                 <option value={{places}}>{{places}}</option>
                                 {{/each}}
+                                <option value="Hello">Hello</option>
                             </select>
                         </div>
                     </div>
@@ -92,10 +98,10 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn_continue">
-                <a href="/info_check/{{id}}">
-                    Tiếp tục
-                </a>
+            <button type="submit" class="btn btn-primary btn_continue" form="myform">
+                {{!-- <a href=" /info_check/{{id}}">
+                </a> --}}
+                Tiếp tục
             </button>
 
         </div>
