@@ -4,7 +4,7 @@ body {
     --radius: 12px;
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
@@ -78,7 +78,7 @@ button {
     border-radius: 18px !important;
 }
 
-button a{
+button a {
     color: #fff !important;
     display: block;
     width: 100%;
@@ -111,10 +111,16 @@ button a{
     color: #166FE5;
 }
 
-.signIn span a{
+.signIn span a {
     color: #166FE5 !important;
 }
 
 span:hover {
     cursor: pointer;
+}
+
+.errMess {
+    transform: translate(10px, -15px);
+    font-size: 14.5px;
+    color: red;
 }

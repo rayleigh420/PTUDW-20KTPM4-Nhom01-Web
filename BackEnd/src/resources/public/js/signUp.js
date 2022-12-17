@@ -1,4 +1,3 @@
-
 let eyePassword = document.querySelectorAll('.eye');
 
 eyePassword.forEach(item => {
@@ -20,9 +19,14 @@ let user = {
     isLogin: false
 }
 
+let errorMess = ''
+
 let btnSubmit = document.querySelector('.btn-submit');
 btnSubmit.onmouseover = async () => {
+    console.log(password.value)
+    console.log(re_password.value)
     if (password.value == re_password.value) {
+        console.log(123123123)
         if (email.value && password.value) {
 
             let res = await fetch('user/signUp', {
@@ -37,7 +41,7 @@ btnSubmit.onmouseover = async () => {
             })
 
             let result = await res.json()
-            console.log(result)
+            errorMess = result.errMessage
             if (result.errCode == 0) {
                 user = {
                     isLogin: true,
@@ -47,10 +51,22 @@ btnSubmit.onmouseover = async () => {
             }
         }
     }
+    else {
+        errorMess = 'Re-enter password does not match!'
+    }
 }
 
-btnSubmit.onclick = () => {
-    if (user.isLogin) {
-        localStorage.setItem('Auth', JSON.stringify(user))
+btnSubmit.onclick = (e) => {
+    e.preventDefault
+    console.log(errorMess)
+    if (errorMess == 'OK') {
+        if (user.isLogin) {
+            localStorage.setItem('Auth', JSON.stringify(user))
+        }
+    }
+    else {
+        e.preventDefault();
+        let error = document.querySelector('.errMess')
+        error.innerHTML = `<ion-icon name="alert"></ion-icon>${errorMess}`
     }
 }
