@@ -110,6 +110,34 @@ div .name {
     margin-bottom: 20px;
     border-radius: 15px;
 }
+
+.car-32 {
+    width: 80%;
+    height: 320px;
+    background-color: lightgray;
+    display: inline-grid;
+    grid-template-columns: calc(100%/7) calc(100%/7 - 15px) calc(100%/7 - 15px) calc(100%/7 - 15px) calc(100%/7 - 15px) calc(100%/7 - 15px) calc(100%/7 - 15px);
+    grid-template-rows: calc(100%/3) calc(100%/3) calc(100%/3);
+    grid-gap: 3px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.car-22 {
+    width: 80%;
+    height: 320px;
+    background-color: lightgray;
+    display: inline-grid;
+    grid-template-columns: calc(100%/6) calc(100%/6 - 15px) calc(100%/6 - 15px) calc(100%/6 - 15px) calc(100%/6 - 15px) calc(100%/6 - 15px);
+    grid-template-rows: calc(100%/2) calc(100%/2);
+    grid-gap: 3px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
 .seat,.wheel,.blank {
     width: 62px;
     height:62px;
@@ -118,6 +146,10 @@ div .name {
 }
 .seat:hover {
     cursor: pointer;
+}
+.floor {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 .price {
     /* width: 100%; */

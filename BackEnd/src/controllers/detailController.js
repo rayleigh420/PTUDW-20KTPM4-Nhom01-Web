@@ -22,6 +22,7 @@ let getDetailPage = async (req, res) => {
       fromPlace: fromPlace,
       toPlace: toPlace,
       id: req.params.idTicket,
+      type: 32,
     });
   } catch (e) {
     console.log(e);
