@@ -12,14 +12,16 @@ let getDetailPage = async (req, res) => {
     console.log(fromPlace.length);
     console.log(toPlace.length);
 
+    console.log(idTicket)
+
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
-      id: req.params.idTicket,
       ...carOwner,
       imgCar: imgCar,
       fromPlace: fromPlace,
       toPlace: toPlace,
+      id: req.params.idTicket,
     });
   } catch (e) {
     console.log(e);

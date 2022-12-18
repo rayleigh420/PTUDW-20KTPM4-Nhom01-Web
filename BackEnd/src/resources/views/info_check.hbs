@@ -7,7 +7,7 @@
             <div class="form_wrapper">
                 <div class="info_name">
                     <span class="name_span">Ông {{name}}</span>
-                    <span class="edit_span"><a href="/info_form">Chỉnh sửa thông tin</a></span>
+                    <span class="edit_span"><a href="/info_form/{{id}}">Chỉnh sửa thông tin</a></span>
                 </div>
 
                 <form>
@@ -42,8 +42,7 @@
                     <div class="row">
                         <div class="col">
                             <label>Điểm đến</label>
-                            <input type="text" class="form-control-plaintext"
-                                value=" Sa Huỳnh Quốc lộ 1A, Xã Phổ An, Đức Phổ, Quảng Ngãi">
+                            <input type="text" class="form-control-plaintext" value="{{toPlaces}}">
                         </div>
                     </div>
                 </form>

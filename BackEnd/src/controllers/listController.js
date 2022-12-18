@@ -6,7 +6,7 @@ let getListPage = async (req, res) => {
         let fromName = await ticketService.getProvinceName(req.query.from) + " (" + req.query.from + ")"
         let toName = await ticketService.getProvinceName(req.query.to) + " (" + req.query.to + ")"
         let weekDay = ticketService.getWeekDay(req.query.date)
-        console.log(weekDay)
+        console.log("list", list)
 
         res.render("list", {
             style: ["list.css"],

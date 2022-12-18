@@ -78,7 +78,7 @@ let getTicketInfo = async (data) => {
         tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
         tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
         tk.price = item["Tickets.price"] + " VND/";
-        tk.black = seatBlank;
+        tk.blank = seatBlank;
         tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
 
         ticket.push(tk);

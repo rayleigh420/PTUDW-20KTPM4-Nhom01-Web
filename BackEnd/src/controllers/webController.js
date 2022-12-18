@@ -77,7 +77,6 @@ let getInfoFormPage = async (req, res) => {
     let fromList = await placeService.getListPlace(ticket.from)
     let toList = await placeService.getListPlace(ticket.to)
 
-
     res.render("info_form", {
       style: ["info_form.css"],
       js: ["navigation.js", "info_form.js"],
