@@ -8,11 +8,11 @@ let getDetailPage = async (req, res) => {
     let fromPlace = items["FromDB"];
     let toPlace = items["ToDB"];
     let imgCar = carOwner.imgCar;
-    console.log(carOwner);
-    console.log(fromPlace.length);
-    console.log(toPlace.length);
+    // console.log(carOwner);
+    // console.log(fromPlace.length);
+    // console.log(toPlace.length);
 
-    console.log(idTicket)
+    // console.log(idTicket)
 
     res.render("detail", {
       style: ["detail.css"],
