@@ -102,7 +102,7 @@ let getInfoCheckPage = async (req, res) => {
 
     res.render("info_check", {
       style: ["info_check.css"],
-      js: ["navigation.js"],
+      js: ["navigation.js", "info_check.js"],
       id: idTicket,
       date: ticket.dayStart,
       ...req.body,
