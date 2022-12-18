@@ -21,12 +21,14 @@ let getListPlace = async (province) => {
 let getPlacaNameById = (id) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let place = db.Place.findByPk(id, {
+            let place = await db.Place.findOne({
                 attributes: ['places'],
+                where: {
+                    id: id,
+                },
                 raw: true
             })
-
-            resolve(place)
+            resolve(place.places)
         } catch (e) {
 
         }
