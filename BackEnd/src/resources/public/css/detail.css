@@ -28,7 +28,7 @@
     left: 6%;
     top: 17.5%;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: none;
     font-family: 'Roboto';
 }
 #myCarousel {
@@ -73,7 +73,7 @@ img.small {
     margin-top: 20px;
     margin-left: 20px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: none;
     line-height: 30px;
 }
 div .name {
@@ -91,7 +91,7 @@ div .name {
 }
 .wanted {
     color: #166FE5;
-    font-weight: bold;
+    font-weight: none;
     font-size: 24px;
     margin-bottom: 20px;
     width: 100%;
@@ -157,7 +157,7 @@ div .name {
 .detail_nhaxe span {
     display: inline;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: none;
     height: 20px;
     width: 100%;
 }
@@ -174,7 +174,7 @@ div .name {
 .policy span {
     display: inline;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: none;
     margin-bottom: px;
     height: 20px;
     width: 100%;
@@ -185,7 +185,7 @@ div .name {
     line-height: 30px;
 }
 .policy-detail p:nth-of-type(1) {
-    font-weight: bold;
+    font-weight: none;
 }
 .rating {
     margin-top: 20px;
@@ -195,7 +195,7 @@ div .name {
 .rate-overall  {
     display: inline;
         font-size: 30px;
-        font-weight: bold;
+        font-weight: none;
         margin-bottom: px;
         height: 20px;
         width: 100%;
@@ -232,7 +232,7 @@ div .name {
     line-height: 30px;
 }
 .rate .users {
-    font-weight: bold;
+    font-weight: none;
 }
 .rate .comments{
     width: 100% !important;

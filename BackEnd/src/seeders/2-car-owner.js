@@ -10,9 +10,9 @@ module.exports = {
         phone: "",
         imgLogo: "https://ibb.co/F4msnjv",
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://i.ibb.co/cXX4MTz/1.jpg",
+          "https://i.ibb.co/Dr6mBqq/2.jpg",
+          "https://i.ibb.co/ZhzGydf/3.jpg",
         ],
       },
       {
@@ -21,9 +21,9 @@ module.exports = {
         phone: "",
         imgLogo: "https://ibb.co/WV7SPT2",
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://i.ibb.co/kxDpnZq/1661771439561.jpg",
+          "https://i.ibb.co/Sx5mTQC/1661771440079.jpg",
+          "https://i.ibb.co/wRw9Tz4/1661771440795.jpg",
         ],
       },
       {

@@ -1,11 +1,22 @@
-import detailService from "../services/ticketService";
-
+import detailService from "../services/detailService";
+import placeService from "../services/placeService";
 let getDetailPage = async (req, res) => {
   try {
+    let idTicket = req.params.idTicket;
+    let items = await detailService.getDetailPage(idTicket);
+    let carOwner = items["carOwner"];
+    let fromPlace = items["FromDB"];
+    let toPlace = items["ToDB"];
+    let imgCar = carOwner.imgCar;
+    console.log(carOwner);
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
-      id: req.params.idTicket
+      id: req.params.idTicket,
+      ...carOwner,
+      imgCar: imgCar,
+      ...fromPlace,
+      ...toPlace,
     });
   } catch (e) {
     console.log(e);
