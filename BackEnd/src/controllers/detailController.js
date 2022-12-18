@@ -9,14 +9,17 @@ let getDetailPage = async (req, res) => {
     let toPlace = items["ToDB"];
     let imgCar = carOwner.imgCar;
     console.log(carOwner);
+    console.log(fromPlace.length);
+    console.log(toPlace.length);
+
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
       id: req.params.idTicket,
       ...carOwner,
       imgCar: imgCar,
-      ...fromPlace,
-      ...toPlace,
+      fromPlace: fromPlace,
+      toPlace: toPlace,
     });
   } catch (e) {
     console.log(e);

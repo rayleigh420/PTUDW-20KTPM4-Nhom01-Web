@@ -20,6 +20,18 @@ module.exports = {
         from: "SG",
         to: "NH", //4
       },
+      {
+        from: "SG",
+        to: "BTh", //5
+      },
+      {
+        from: "SG",
+        to: "NT", //6
+      },
+      {
+        from: "SG",
+        to: "ĐL", //7
+      },
     ];
     items.forEach((item) => {
       item.createdAt = Sequelize.literal("NOW() ");

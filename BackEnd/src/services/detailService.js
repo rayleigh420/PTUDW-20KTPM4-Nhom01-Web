@@ -24,14 +24,14 @@ let getDetailPage = async (id) => {
       let FromDB = await db.Place.findAll({
         limit: 3,
         where: {
-          province: "\t" + Trip["from"],
+          province: Trip["from"],
         },
         raw: true,
       });
       let ToDB = await db.Place.findAll({
         limit: 3,
         where: {
-          province: "\t" + Trip["to"],
+          province: Trip["to"],
         },
         raw: true,
       });
@@ -39,6 +39,8 @@ let getDetailPage = async (id) => {
       // tk.push(carOwner.id);
       // tk.push(items);
       tk.carOwner = carOwner;
+      tk.FromProvince = Trip["from"];
+      tk.ToProvince = Trip["to"];
       // console.log(Trip["from"]);
       // console.log(Trip["to"]);
       tk.FromDB = FromDB;

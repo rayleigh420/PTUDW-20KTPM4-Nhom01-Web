@@ -8,7 +8,7 @@
             <div class="carousel-inner">
                 {{#each imgCar}}
                 <div class="carousel-item active">
-                    <img src={{this}} class="d-block" alt="1">
+                    <img src={{this}} class="d-block" alt={{this}}>
                 </div>
                 {{/each}}
                 {{!-- <div class="carousel-item">
@@ -27,36 +27,33 @@
                 <span class="visually-hidden">Next</span>
             </button>
             <div class="small-img">
-                <img src="/img/1.jpg" class="small" alt="">
-                <img src="/img/2.jpg" class="small" alt="">
-                <img src="/img/3.jpg" class="small" alt="">
+                {{#each imgCar}}
+                <img src={{this}} class="small" alt={{this}}>
+                {{!-- <img src="/img/2.jpg" class="small" alt="">
+                <img src="/img/3.jpg" class="small" alt=""> --}}
+                {{/each}}
             </div>
 
         </div>
         <div class="detail2">
-            <div class="name">Nhà xe G5 Car</div>
+            <div class="name">Nhà xe {{name}}</div>
             <div class="type">Loại xe: xe Limousine 9 chỗ</div>
-            <div class="fromto">(TP. Hồ Chí Minh) TP HCM <span>&#x27F6;</span> Quãng Ngãi (QN)</div>
+            <div class="fromto">Điểm đón:</div>
+            {{#each fromPlace}}
+                {{!-- <div class="fromto">(TP. Hồ Chí Minh) TP HCM <span>&#x27F6;</span> Quãng Ngãi (QN)</div> --}}
+                <div class ="fromto" style="font-size: 18px;">- {{places}}</div>
+            {{/each}}
+            <div class="fromto">Điểm trả:</div>
+            {{#each toPlace}}
+            {{!-- <div class="fromto">(TP. Hồ Chí Minh) TP HCM <span>&#x27F6;</span> Quãng Ngãi (QN)</div> --}}
+            <div class="fromto" style="font-size: 18px;">- {{places}}</div>
+            {{/each}}
         </div>
 
     </div>
     <div class="choose_seat">
         <span class="wanted">Sơ đồ chỗ ngồi</span>
-        <div class="car-9">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <div class="blank"></div>
-            <div class="blank"></div>
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="wheel" src="/img/wheel.svg" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-            <img class="seat" src="/img/seat.png" alt="">
-
-        </div>
+        {{{ generateTypeOfCar }}}
         <div class="price">
             <span>Tổng tiền: 540.000đ</span>
             <button type="button" class="btn btn-danger">
