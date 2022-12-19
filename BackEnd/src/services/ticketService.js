@@ -69,19 +69,22 @@ let getTicketInfo = async (data) => {
           },
         });
 
-        let tk = {};
+        if (seatBlank.count != 0) {
+          let tk = {};
 
-        tk.id = item.id;
-        tk.carOwnerName = carOwner.name;
-        tk.from = item.from;
-        tk.to = item.to;
-        tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
-        tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
-        tk.price = item["Tickets.price"] + " VND/";
-        tk.blank = seatBlank.count;
-        tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
+          tk.id = item.id;
+          tk.carOwnerName = carOwner.name;
+          tk.from = item.from;
+          tk.to = item.to;
+          tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
+          tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
+          tk.price = item["Tickets.price"] + " VND/";
+          tk.blank = seatBlank.count;
+          tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
 
-        ticket.push(tk);
+          ticket.push(tk);
+        }
+
       });
 
       resolve(ticket);
