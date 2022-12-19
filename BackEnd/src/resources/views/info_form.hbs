@@ -51,7 +51,8 @@
                     <div class="row">
                         <div class="col">
                             <label>Điểm đón</label>
-                            <select class="form-select" aria-label="Default select example" name="fromPlace" required>
+                            <select class="form-select fromPlaces_option" aria-label="Default select example"
+                                name="fromPlace" required>
                                 <option selected value="">Vui lòng chọn điểm đón</option>
                                 {{#each fromList}}
                                 <option value={{id}}>{{places}}</option>
@@ -60,7 +61,8 @@
                         </div>
                         <div class="col">
                             <label>Điểm đến</label>
-                            <select class="form-select" aria-label="Default select example" name="toPlace" required>
+                            <select class="form-select toPlaces_option" aria-label="Default select example"
+                                name="toPlace" required>
                                 <option selected value="">Vui lòng chọn điểm trả</option>
                                 {{#each toList}}
                                 <option value={{id}}>{{places}}</option>

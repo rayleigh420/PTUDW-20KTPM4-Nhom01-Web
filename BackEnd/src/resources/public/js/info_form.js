@@ -52,7 +52,34 @@ if (info) {
     cmnd.value = info.cmnd
 
 
-    // country: document.querySelector('.form_country').value,
-    // fromPlaces: document.querySelector('.form_fromPlaces').value,
-    // toPlaces: document.querySelector('.form_toPlaces').value
+    let country = document.querySelectorAll('.country_option option')
+    country.forEach(item => {
+        if (item.value == info.country) {
+            item.setAttribute('selected', true)
+        }
+        else {
+            item.removeAttribute('selected')
+        }
+    })
+
+    let fromPlaces = document.querySelectorAll('.fromPlaces_option option')
+    fromPlaces.forEach(item => {
+        if (item.textContent == info.fromPlaces) {
+            item.setAttribute('selected', true)
+        }
+        else {
+            item.removeAttribute('selected')
+        }
+    })
+
+    let toPlaces = document.querySelectorAll('.toPlaces_option option')
+    console.log(toPlaces)
+    toPlaces.forEach(item => {
+        if (item.textContent == info.toPlaces) {
+            item.setAttribute('selected', true)
+        }
+        else {
+            item.removeAttribute('selected')
+        }
+    })
 }
