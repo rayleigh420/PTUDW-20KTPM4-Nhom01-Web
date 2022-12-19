@@ -8,11 +8,14 @@ import connectLiveReload from 'connect-livereload'
 
 import configViewEngine from './config/viewEngine';
 import connectDB from './config/connectDB'
-import initTestRoute from './routes/testRoute';
-import initWebRoute from './routes/webRoute';
-import initUserRoute from './routes/userRoute';
-import initListRoute from './routes/listRoute';
-import initDetailRoute from './routes/detailRoute';
+
+// import initTestRoute from './routes/testRoute';
+// import initWebRoute from './routes/webRoute';
+// import initUserRoute from './routes/userRoute';
+// import initListRoute from './routes/listRoute';
+// import initDetailRoute from './routes/detailRoute';
+
+import initRoutes from './routes/routes'
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -49,10 +52,12 @@ configViewEngine(app, __dirname)
 // });
 
 // initTestRoute(app);
-initUserRoute(app)
-initWebRoute(app);
-initDetailRoute(app)
-initListRoute(app)
+// initUserRoute(app)
+// initWebRoute(app);
+// initDetailRoute(app)
+// initListRoute(app)
+
+initRoutes(app)
 connectDB();
 
 app.listen(port, () => {

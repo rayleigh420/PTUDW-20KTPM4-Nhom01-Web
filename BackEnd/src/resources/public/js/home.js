@@ -14,9 +14,6 @@ let date_format = yyyy + "-" + mm + "-" + dd;
 let date = document.querySelector('#date')
 date.setAttribute('min', date_format)
 
-
-
-
 let find = JSON.parse(localStorage.getItem('Find'))
 if (find) {
     let fromOption = document.querySelectorAll('select.from option')
