@@ -23,7 +23,7 @@ if (birthDate) {
     birthDate.birth = new Date(birthDate.birth)
 
     let yyyy = birthDate.birth.getFullYear();
-    let mm = birthDate.birth.getMonth() + 1; // Months start at 0!
+    let mm = birthDate.birth.getMonth() + 1;
     let dd = birthDate.birth.getDate();
 
     if (dd < 10) {

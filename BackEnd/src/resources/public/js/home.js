@@ -1,6 +1,6 @@
 let today = new Date();
 let yyyy = today.getFullYear();
-let mm = today.getMonth() + 1; // Months start at 0!
+let mm = today.getMonth() + 1;
 let dd = today.getDate() + 1;
 
 if (dd < 10) {
