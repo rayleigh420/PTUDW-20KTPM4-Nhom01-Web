@@ -2,7 +2,8 @@ import db from '../models/index'
 
 let createTable = async (req, res) => {
     db.sequelize.sync({
-        force: true
+        force: true,
+        logging: false
     }).then(() => {
         res.send("Success!")
     })

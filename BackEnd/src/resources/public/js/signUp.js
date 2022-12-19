@@ -1,3 +1,8 @@
+let isLogin = JSON.parse(localStorage.getItem('Auth')).isLogin
+if (isLogin) {
+    location.assign('/');
+}
+
 let eyePassword = document.querySelectorAll('.eye');
 
 eyePassword.forEach(item => {
