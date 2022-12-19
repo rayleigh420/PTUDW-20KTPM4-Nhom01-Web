@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Seat.init({
-
+    idBooking: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Seat',
