@@ -17,10 +17,24 @@ btnContinue.onclick = () => {
     }))
 }
 
-let birthDate = localStorage.getItem('Birth')
+let birthDate = JSON.parse(localStorage.getItem('Birth'))
 if (birthDate) {
     let birth = document.querySelector('.form_birth')
-    birth.value = birthDate.birth
+    birthDate.birth = new Date(birthDate.birth)
+
+    let yyyy = birthDate.birth.getFullYear();
+    let mm = birthDate.birth.getMonth() + 1; // Months start at 0!
+    let dd = birthDate.birth.getDate();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    let birth_format = yyyy + "-" + mm + "-" + dd;
+    birth.value = birth_format
 }
 
 let info = JSON.parse(localStorage.getItem("Info"))
