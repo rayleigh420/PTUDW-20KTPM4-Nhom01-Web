@@ -3,7 +3,7 @@
 <main>
     <div class="form_search_wrapper">
         <div class="form_search">
-            <form action="list?from={from}&?to={to}&?date={date}" method="GET">
+            <form id="form_find" action="list?from={from}&?to={to}&?date={date}" method="GET">
                 <div class="form_title">
                     <p>
                         Nhập thông tin chuyến xe cần tìm
@@ -40,8 +40,6 @@
                 </div>
                 <div class="row btn_find_wrapper">
                     <button type="submit" class="btn btn-primary btn_search col-md-2 offset-md-10">
-                        <a href="list">
-                        </a>
                         <ion-icon class="find_icon" name="search"></ion-icon>
                         Tìm chuyến xe
                     </button>
