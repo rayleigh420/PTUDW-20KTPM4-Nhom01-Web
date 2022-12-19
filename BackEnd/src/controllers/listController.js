@@ -1,4 +1,5 @@
 import ticketService from "../services/ticketService"
+import carOwnerService from "../services/carOwnerService"
 
 let getListPage = async (req, res) => {
     try {
@@ -6,11 +7,12 @@ let getListPage = async (req, res) => {
         let fromName = await ticketService.getProvinceName(req.query.from) + " (" + req.query.from + ")"
         let toName = await ticketService.getProvinceName(req.query.to) + " (" + req.query.to + ")"
         let weekDay = ticketService.getWeekDay(req.query.date)
-        console.log("list", list)
+        let nameCar = await carOwnerService.getListCarOwner()
 
         res.render("list", {
             style: ["list.css"],
             js: ["navigation.js"],
+            carOwner: nameCar,
             list: list,
             fromName: fromName,
             toName: toName,
