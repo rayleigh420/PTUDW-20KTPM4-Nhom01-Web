@@ -1,3 +1,22 @@
+let today = new Date();
+let yyyy = today.getFullYear();
+let mm = today.getMonth() + 1; // Months start at 0!
+let dd = today.getDate() + 1;
+
+if (dd < 10) {
+    dd = '0' + dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+
+let date_format = yyyy + "-" + mm + "-" + dd;
+let date = document.querySelector('#date')
+date.setAttribute('min', date_format)
+
+
+
+
 let find = JSON.parse(localStorage.getItem('Find'))
 if (find) {
     let fromOption = document.querySelectorAll('select.from option')
