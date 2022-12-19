@@ -56,7 +56,7 @@ main {
         line-height: 34px;
         letter-spacing: 0.045em;
 
-        a{
+        a {
             display: block;
             text-decoration: none;
             width: 100%;
@@ -107,6 +107,15 @@ main {
     padding: 0 0 20px 0;
     display: flex;
     flex-direction: column;
+
+    .ticket_mess {
+        text-align: center;
+        padding-top: 8%;
+        color: red;
+        font-weight: 500;
+        letter-spacing: 0.045em;
+        font-size: 18px;
+    }
 
     .ticket {
         width: 100%;
@@ -164,37 +173,37 @@ main {
             display: flex;
             align-items: center;
 
-            p{
+            p {
                 font-family: 'Roboto';
                 font-style: normal;
                 font-weight: 400;
                 letter-spacing: 0.045em;
             }
 
-            .time_from{
+            .time_from {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
             }
 
-            .where{
+            .where {
                 background: rgba(217, 217, 217, 0.33);
                 border-radius: 40px;
                 transform: translateY(-10px);
             }
 
-            .total_time{
+            .total_time {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 margin: 0 20px;
 
-                p{
+                p {
                     font-size: 14px;
                 }
 
-                .line{
+                .line {
                     height: 0.5px;
                     width: 90px;
                     border: 1px solid #000000;
@@ -202,7 +211,7 @@ main {
                 }
             }
 
-            .time_to{
+            .time_to {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -219,7 +228,7 @@ main {
             font-family: 'Roboto';
             font-style: normal;
 
-            .price{
+            .price {
                 font-weight: 500;
                 font-size: 20px;
                 line-height: 34px;
@@ -227,17 +236,17 @@ main {
 
                 color: #FF5E1F;
 
-                span{
+                span {
                     font-size: 14px;
                     color: #000000;
                 }
             }
 
-            button{
+            button {
                 width: 160px;
                 font-weight: 500;
-                
-                a{
+
+                a {
                     display: block;
                     width: 100%;
                     text-decoration: none;
@@ -250,6 +259,6 @@ main {
 
 }
 
-.ticket + .ticket {
+.ticket+.ticket {
     margin-top: 35px;
 }

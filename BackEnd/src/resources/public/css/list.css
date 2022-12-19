@@ -87,6 +87,14 @@ main {
   display: flex;
   flex-direction: column;
 }
+.list_ticket .ticket_mess {
+  text-align: center;
+  padding-top: 8%;
+  color: red;
+  font-weight: 500;
+  letter-spacing: 0.045em;
+  font-size: 18px;
+}
 .list_ticket .ticket {
   width: 100%;
   background: #FFFFFF;
