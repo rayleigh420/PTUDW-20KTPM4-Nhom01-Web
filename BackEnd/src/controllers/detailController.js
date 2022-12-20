@@ -13,7 +13,8 @@ let getDetailPage = async (req, res) => {
     // console.log(toPlace.length);
 
     // console.log(idTicket)
-
+    console.log(items.phone);
+    console.log(items.address);
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
@@ -23,6 +24,9 @@ let getDetailPage = async (req, res) => {
       toPlace: toPlace,
       id: req.params.idTicket,
       type: carOwner.type,
+      price: items.price,
+      phone: items.phone,
+      address: items.address,
     });
   } catch (e) {
     console.log(e);

@@ -55,7 +55,7 @@
         <span class="wanted">Sơ đồ chỗ ngồi</span>
         {{{ generateTypeOfCar type }}}
         <div class="price">
-            <span>Tổng tiền: 540.000đ</span>
+            <span>Tổng tiền: {{price}}đ</span>
             <button type="button" class="btn btn-danger">
                 <a href="/info_form/{{id}}">
                     Đặt vé
@@ -67,13 +67,11 @@
     <div class="detail_nhaxe">
         <span>Thông tin nhà xe</span>
         <div class="chitietnhaxe">
-            <p>- Tổng đài đặt vé & CSKH Phương Trang 24/7: 1900 6067.</p>
-            <p>- Số điện thoại hotline xe Phương Trang: 1900 6667 (Vận chuyển hành khách) – 1900 6767 (Vận chuyển hàng
-                hóa).25 thg
-                7,
-                2021</p>
-            <p>- Bến xe Nam Định: 0228 386 3863</p>
-            <p>- Bến xe Giáp Bát: 0243 864 1919</p>
+            <p>- Tổng đài đặt vé & CSKH nhà xe {{name}} 24/7: {{phone}}.</p>
+            {{#each address}}
+            <p>- {{this}}</p>
+            {{!-- <p>- Bến xe Giáp Bát: 0243 864 1919</p> --}}
+            {{/each}}
         </div>
 
     </div>

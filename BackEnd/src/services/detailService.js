@@ -41,6 +41,9 @@ let getDetailPage = async (id) => {
       tk.carOwner = carOwner;
       tk.FromProvince = Trip["from"];
       tk.ToProvince = Trip["to"];
+      tk.price = items["price"];
+      tk.phone = carOwner["phone"];
+      tk.address = carOwner["address"].split("/");
       // console.log(Trip["from"]);
       // console.log(Trip["to"]);
       tk.FromDB = FromDB;
