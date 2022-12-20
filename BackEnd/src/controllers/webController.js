@@ -119,7 +119,7 @@ let getHistoryPage = async (req, res) => {
   try {
     res.render("history", {
       style: ["history.css"],
-      js: ["navigation.js"],
+      js: ["navigation.js", "history.js"],
     });
   } catch (e) {
     console.log(e);
