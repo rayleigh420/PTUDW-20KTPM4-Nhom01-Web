@@ -9,6 +9,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/F4msnjv",
+        type: 9,
         imgCar: [
           "https://i.ibb.co/cXX4MTz/1.jpg",
           "https://i.ibb.co/Dr6mBqq/2.jpg",
@@ -20,6 +21,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/WV7SPT2",
+        type: 32,
         imgCar: [
           "https://i.ibb.co/kxDpnZq/1661771439561.jpg",
           "https://i.ibb.co/Sx5mTQC/1661771440079.jpg",
@@ -31,6 +33,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/2W4kr5x",
+        type: 22,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -42,6 +45,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -53,6 +57,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -64,6 +69,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -75,6 +81,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 9,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -86,6 +93,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 22,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -97,6 +105,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
@@ -108,6 +117,7 @@ module.exports = {
         address: "",
         phone: "",
         imgLogo: "https://ibb.co/tzzs5rg",
+        type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
           "https://ibb.co/nPV4XWW",
