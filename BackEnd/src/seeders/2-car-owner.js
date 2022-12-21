@@ -9,7 +9,7 @@ module.exports = {
         address:
           "Chi nhánh Ninh Thuận: 222 Lê Duẫn, Phủ Hà, Phan Rang/Chi nhánh TP.HCM: 85 Bờ Bao Tân Thắng, P. Sơn Kỳ, Q. Tân Phú/Chi nhánh Đà Lạt: 4C Yersin, Phường 10 (Kế bên Công viên Yersin), TP. Đà Lạt",
         phone: "1900 8678",
-        imgLogo: "https://ibb.co/F4msnjv",
+        imgLogo: "https://i.ibb.co/DfzGLSX/cropped-Logo-2.png",
         type: 9,
         imgCar: [
           "https://i.ibb.co/cXX4MTz/1.jpg",
@@ -22,7 +22,7 @@ module.exports = {
         address:
           "Chi nhánh Bình Dương: Bến xe Bình Dương - 233 Đường 30 Tháng 4, Thủ Dầu Mộ, Bình Dương/Chi nhánh TP.HCM: Bến xe Miền Đông - 292 Đinh Bộ Lĩnh, TPHCM/Chi nhánh Quảng Ngãi: Bến xe Quảng Ngãi  - 02 Trần Khánh Dư, Quảng Ngãi",
         phone: "1900 888684 - 1900 888843",
-        imgLogo: "https://ibb.co/WV7SPT2",
+        imgLogo: "https://i.ibb.co/nP4hnWL/ANTIENPHAT.webp",
         type: 32,
         imgCar: [
           "https://i.ibb.co/kxDpnZq/1661771439561.jpg",
@@ -35,7 +35,7 @@ module.exports = {
         address:
           "Chi nhánh Quy Nhơn: Bến xe Quy Nhơn - 71 Tây Sơn, Quy Nhơn, Bình Định/Chi nhánh TP.HCM: Bến xe Miền Đông - Dãy số 9",
         phone: "1900 888684 ",
-        imgLogo: "https://ibb.co/2W4kr5x",
+        imgLogo: "https://i.ibb.co/mbWcKSk/1605848869347.jpg",
         type: 22,
         imgCar: [
           "https://ibb.co/M55FWNq",
@@ -48,7 +48,7 @@ module.exports = {
         address:
           "Chi nhánh Phan Thiết: 165-167 Đỗ Hành, P. Phú Thủy/Chi nhánh TP.HCM: 270 Trần Phú, P.8",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo: "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
         type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
@@ -60,7 +60,7 @@ module.exports = {
         name: "Dũng Lệ",
         address: "Chi nhánh TP.HCM: 1023 Hương Lộ 2",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo: "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
         type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",

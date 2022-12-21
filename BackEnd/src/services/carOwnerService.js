@@ -1,5 +1,6 @@
 import db from "../models/index";
 import moment from "moment/moment";
+import { Sequelize } from "sequelize";
 
 let getListCarOwner = () => {
     return new Promise(async (resolve, reject) => {
@@ -22,7 +23,9 @@ let getListTypeCar = () => {
     return new Promise(async (resolve, reject) => {
         try {
             let typeCar = await db.CarOwner.findAll({
-                attributes: ['type'],
+                attributes: [
+                    [Sequelize.fn('DISTINCT', Sequelize.col('type')), 'type'],
+                ],
                 raw: true
             })
 
