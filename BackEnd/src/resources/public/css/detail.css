@@ -222,7 +222,7 @@ div .name {
 .rating {
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 400px;
+    height: auto;
 }
 .rate-overall  {
     display: inline;
@@ -242,7 +242,7 @@ div .name {
     margin-top: 10px;
     padding-left: 10px;
 }
-.write-comment input{
+.write-comment input.cmt{
     margin-top: 10px;
     display: block;
     background-color: #F2F3F3;
@@ -261,11 +261,36 @@ div .name {
     margin-top: 20px;
     padding-left: 10px;
     font-size: 16px !important;
-    line-height: 30px;
+    /* line-height: 30px; */
+    margin-bottom: 20px;
 }
 .rate .users {
     font-weight: none;
 }
 .rate .comments{
     width: 100% !important;
+}
+.write-comment .star {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 19px;
+}
+
+.star-label {
+    color: #000000;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.star-label:hover,
+.star-label:hover~label,
+.rate-by-star:checked~label {
+    color: #DC3545;
+
+
+
+}
+
+.rate-by-star {
+    display: none;
 }

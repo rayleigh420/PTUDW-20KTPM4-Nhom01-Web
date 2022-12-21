@@ -93,52 +93,45 @@
     <div class="rating">
         <span class="rate-overall">Đánh giá
             <span class="star">
-                <i class="fa fa-star"></i>
+                {{!-- <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i> --}}
+                {{{generateStarList carOwnerStar}}}
             </span>
         </span>
-        <form action="" class="write-comment">
+        <form action="" class="write-comment" method="POST">
             <span>Viết đánh giá của bạn</span>
             <span class="star">
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" value ="2"></i>
-                <i class="fa fa-star" value = "3"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                <!-- <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> -->
+                <input type="radio" name="ratestar" id="5-star" class="rate-by-star" value="5"> <label for="5-star"
+                    class="star-label"><i class="fa fa-star"></i></label>
+                <input type="radio" name="ratestar" id="4-star" class="rate-by-star" value="4"> <label for="4-star"
+                    class="star-label"><i class="fa fa-star"></i></label>
+                <input type="radio" name="ratestar" id="3-star" class="rate-by-star" value="3"> <label for="3-star"
+                    class="star-label"><i class="fa fa-star"></i></label>
+                <input type="radio" name="ratestar" id="2-star" class="rate-by-star" value="2"> <label for="2-star"
+                    class="star-label"><i class="fa fa-star"></i></label>
+                <input type="radio" name="ratestar" id="1-star" class="rate-by-star" value="1"> <label for="1-star"
+                    class="star-label"><i class="fa fa-star"></i></label>
             </span>
-            <input type="text" placeholder="Đánh giá...." name="rate_cmt">
-            <!-- <button type="submit" class = "btn btn-danger" >Gửi</button> -->
+            <input type="text" placeholder="Đánh giá...." name="content" class="cmt">
+            <input type="submit" class="btn btn-danger">
         </form>
-
+        {{#each rates}}
         <div class="rate">
-            <span class="users">NDuy</span>
+            <span class="users">{{username}}</span>
             <span class="star">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
+                {{{generateStarList star}}}
 
             </span>
-            <span class="comments">rất hài lòng về chuyến đi, lần sau sẽ tiếp tục đi chuyến này lorem ipsum dolor sit
-                amet consectetur, adipisicing elit. Provident, distinctio?</span>
+            <span class="comments">{{content}}</span>
         </div>
-        <div class="rate">
-            <span class="users">KLong</span>
-            <span class="star">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-
-            </span>
-            <span class="comments">rất không thoải mái với chuyến đi này lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Provident, distinctio? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Alias, eius. </span>
-        </div>
+        {{/each}}
     </div>
 </main>

@@ -104,4 +104,27 @@ helper.generateTypeOfCar = (type) => {
   return str;
 };
 
+helper.generateStarList = (stars) => {
+  let str = ``;
+  let starCanDraw = stars;
+  let i = 0;
+  for (i; i < stars; i++) {
+    str += `<i class="fa fa-star"></i>`;
+    starCanDraw -= 1;
+    if (starCanDraw > 0 && starCanDraw < 1) {
+      if (starCanDraw > 0.5) {
+        str += `<i class="fa fa-star-half-o"></i>`;
+        i++;
+        i++; //lag
+        break;
+      }
+    }
+  }
+  for (i; i < 5; i++) {
+    str += `<i class="fa fa-star-o"></i>`;
+  }
+
+  return str;
+};
+
 module.exports = helper;

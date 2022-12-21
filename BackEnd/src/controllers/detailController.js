@@ -1,4 +1,5 @@
 import detailService from "../services/detailService";
+import db from "../models/index";
 import placeService from "../services/placeService";
 let getDetailPage = async (req, res) => {
   try {
@@ -13,8 +14,9 @@ let getDetailPage = async (req, res) => {
     // console.log(toPlace.length);
 
     // console.log(idTicket)
-    console.log(items.phone);
-    console.log(items.address);
+    console.log(items);
+    // console.log(items.phone);
+    // console.log(items.address);
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
@@ -27,12 +29,34 @@ let getDetailPage = async (req, res) => {
       price: items.price,
       phone: items.phone,
       address: items.address,
+      rates: items.rates,
+      carOwnerStar: items.stars,
     });
   } catch (e) {
     console.log(e);
   }
 };
-
+let handleRate = async (req, res) => {
+  try {
+    let idTicket = req.params.idTicket;
+    let items = await detailService.getDetailPage(idTicket);
+    // console.log(req.query.ratestar);
+    // console.log(req.query.content);
+    let carOwner = items["carOwner"];
+    // console.log(carOwner["id"]);
+    // console.log(req.body);
+    await db.Rate.create({
+      content: req.body.content,
+      star: req.body.ratestar,
+      idCarOwner: carOwner["id"],
+      idUser: "1",
+    });
+    res.redirect("/detail/" + idTicket);
+  } catch (e) {
+    console.log(e);
+  }
+};
 module.exports = {
   getDetailPage,
+  handleRate,
 };

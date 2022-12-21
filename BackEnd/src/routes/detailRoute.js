@@ -1,16 +1,15 @@
-import express from 'express'
-import detailController from '../controllers/detailController'
+import express from "express";
+import detailController from "../controllers/detailController";
 
 let router = express.Router();
 
 const initDetailRoute = (app) => {
-    router.get('/:idTicket', detailController.getDetailPage)
-    // router.get('/', detailController.getDetailPage)
+  router.post("/:idTicket", detailController.handleRate);
+  router.get("/:idTicket", detailController.getDetailPage);
+  // router.post("/:idTicket/rate", detailController.handleRate);
+  // router.get('/', detailController.getDetailPage)
 
-    return app.use('/detail', router)
+  return app.use("/detail", router);
+};
 
-}
-
-export default initDetailRoute
-
-
+export default initDetailRoute;
