@@ -2,7 +2,6 @@ import { Sequelize } from 'sequelize'
 require('dotenv').config()
 
 const sequelize = new Sequelize(`postgres://postgres:postgres@localhost:5432/${process.env.DB_NAME}`, {
-    dialect: 'postgres',
     logging: false
 })
 

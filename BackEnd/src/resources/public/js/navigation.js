@@ -1,5 +1,4 @@
 let auth = JSON.parse(localStorage.getItem('Auth'))
-console.log(auth)
 
 let userNav = document.querySelector('.btn_auth')
 if (auth) {
@@ -42,6 +41,8 @@ else {
 }
 
 let logOut = document.querySelector('.log_out')
-logOut.onclick = () => {
-    localStorage.removeItem("Auth");
+if (logOut) {
+    logOut.onclick = () => {
+        localStorage.removeItem("Auth");
+    }
 }

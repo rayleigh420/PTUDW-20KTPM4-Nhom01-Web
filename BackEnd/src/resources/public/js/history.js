@@ -1,4 +1,3 @@
-console.log("history")
 if (!JSON.parse(localStorage.getItem("Auth"))) {
     location.assign('/')
 }

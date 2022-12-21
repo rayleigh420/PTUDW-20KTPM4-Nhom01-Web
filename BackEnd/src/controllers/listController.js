@@ -11,7 +11,7 @@ let getListPage = async (req, res) => {
 
         res.render("list", {
             style: ["list.css"],
-            js: ["navigation.js"],
+            js: ["navigation.js", "list.js"],
             carOwner: nameCar,
             list: list,
             fromName: fromName,
