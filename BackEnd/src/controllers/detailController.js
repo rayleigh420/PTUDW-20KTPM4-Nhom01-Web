@@ -14,7 +14,7 @@ let getDetailPage = async (req, res) => {
     // console.log(toPlace.length);
 
     // console.log(idTicket)
-    console.log(items);
+    // console.log(items);
     // console.log(items.phone);
     // console.log(items.address);
     res.render("detail", {
