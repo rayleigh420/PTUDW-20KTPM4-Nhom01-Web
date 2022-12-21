@@ -19,40 +19,46 @@ let insertTicket = (ticketFilter) => {
     })
 }
 
-let resetOwnerName = () => {
-    let ticketListCopy = [...ticketList]
-    ticketListCopy = ticketListCopy.filter(item => {
-        let name = item.querySelector('.car_name span')
-        return name.textContent != ownerName
+// let resetOwnerName = () => {
+//     let ticketListCopy = [...ticketList]
+//     ticketListCopy = ticketListCopy.filter(item => {
+//         let name = item.querySelector('.car_name span')
+//         return name.textContent != ownerName
 
-    })
-    insertTicket(ticketListCopy)
-}
+//     })
+//     insertTicket(ticketListCopy)
+// }
 
 let filterTicket = () => {
     let ticketListCopy = [...ticketList]
     ticketListCopy = ticketListCopy.filter(item => {
         let name = item.querySelector('.car_name span')
-        return name.textContent == ownerName
+        let type = item.querySelector('input')
+        console.log(type.value)
+        if (ownerName == '' && typeName == '') {
+            return name.textContent && type.value
+        }
+        else if (ownerName != '' && typeName == '') {
+            return name.textContent == ownerName && type.value
+        }
+        else if (ownerName == '' && typeName != '') {
+            return name.textContent && type.value == typeName
+        }
+        else if (ownerName != '' && typeName != '') {
+            return name.textContent == ownerName && type.value == typeName
+        }
     })
     insertTicket(ticketListCopy)
 }
 
 let carOwner = document.querySelector(".carOwner_option")
 carOwner.onchange = () => {
-    if (carOwner.value == "") {
-        resetOwnerName();
-    }
-    else {
-        ownerName = carOwner.value
-        filterTicket()
-    }
+    ownerName = carOwner.value
+    filterTicket()
 }
 
 let type = document.querySelector(".type_option")
 type.onchange = () => {
-    // if (type.value == ''){
-    //     reset
-    // }
-    // filterTicket()
+    typeName = type.value
+    filterTicket()
 }
