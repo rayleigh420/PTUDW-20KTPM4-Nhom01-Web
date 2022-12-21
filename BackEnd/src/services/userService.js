@@ -34,6 +34,30 @@ let handleSignUp = async (data) => {
     })
 }
 
+let handleCheckSignUp = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let userData = {};
+            let check = await checkUserEmail(data.email)
+            if (check == false) {
+                userData.errCode = 0;
+                userData.errMessage = 'OK';
+                userData.user = {
+                    name: data.name,
+                    email: data.email
+                }
+            }
+            else {
+                userData.errCode = 1;
+                userData.errMessage = 'Email is exist';
+            }
+            resolve(userData)
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
+
 let handleSignIn = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -107,5 +131,5 @@ let hashUserPassword = (password) => {
 }
 
 module.exports = {
-    handleSignUp, handleSignIn
+    handleSignUp, handleSignIn, handleCheckSignUp
 }

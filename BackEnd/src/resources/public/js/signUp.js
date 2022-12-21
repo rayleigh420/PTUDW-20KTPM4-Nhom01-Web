@@ -1,5 +1,5 @@
-let isLogin = JSON.parse(localStorage.getItem('Auth')).isLogin
-if (isLogin) {
+let userAuth = JSON.parse(localStorage.getItem('Auth'))
+if (userAuth) {
     location.assign('/');
 }
 
@@ -17,13 +17,15 @@ eyePassword.forEach(item => {
     }
 })
 
+let name = document.querySelector('#name')
 let email = document.querySelector('#email')
 let password = document.querySelector('#password')
 let re_password = document.querySelector('#rePassword')
+
 let user = {
     isLogin: false
 }
-
+console.log(123)
 let errorMess = ''
 
 let btnSubmit = document.querySelector('.btn-submit');
@@ -31,7 +33,6 @@ btnSubmit.onmouseover = async () => {
     console.log(password.value)
     console.log(re_password.value)
     if (password.value == re_password.value) {
-        console.log(123123123)
         if (email.value && password.value) {
 
             let res = await fetch('user/signUp', {
@@ -40,12 +41,14 @@ btnSubmit.onmouseover = async () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    name: name.value,
                     email: email.value,
-                    password: password.value
+                    password: password.value,
                 }),
             })
 
             let result = await res.json()
+            console.log(result.user)
             errorMess = result.errMessage
             if (result.errCode == 0) {
                 user = {

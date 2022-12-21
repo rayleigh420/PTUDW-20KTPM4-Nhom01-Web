@@ -1,5 +1,5 @@
-let isLogin = JSON.parse(localStorage.getItem('Auth')).isLogin
-if (isLogin) {
+let userAuth = JSON.parse(localStorage.getItem('Auth'))
+if (userAuth) {
     location.assign('/');
 }
 
