@@ -1,14 +1,12 @@
-import express from 'express'
-import mailController from "../controllers/mailController"
+import express from "express";
+import mailController from "../controllers/mailController";
 
 let router = express.Router();
 
 const initMailRoute = (app) => {
-    router.post('/sengrid', mailController.sengridAPI)
+  router.post("/sengrid", mailController.sengridAPI);
 
-    return app.use('/api', router)
+  return app.use("/api", router);
+};
 
-}
-
-export default initMailRoute
-
+export default initMailRoute;
