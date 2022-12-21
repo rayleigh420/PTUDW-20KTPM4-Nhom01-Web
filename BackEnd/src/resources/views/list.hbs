@@ -34,9 +34,9 @@
 
             <select class="form-select col type_option" aria-label="Default select example">
                 <option selected>Loại xe</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                {{#each typeCar}}
+                <option value="{{type}}">{{type}} chỗ</option>
+                {{/each}}
             </select>
         </div>
 
@@ -53,6 +53,7 @@
         {{#if list}}
         {{#each list}}
         <div class="ticket">
+            <input type="hidden" value="{{typeCar}}">
             <div class="ticket_car ">
                 <div class="car_name">
                     <img src="img/PT_logo.png" alt="Phuong Trang">

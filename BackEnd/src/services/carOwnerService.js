@@ -18,7 +18,24 @@ let getListCarOwner = () => {
     })
 }
 
+let getListTypeCar = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let typeCar = await db.CarOwner.findAll({
+                attributes: ['type'],
+                raw: true
+            })
+
+            console.log(typeCar)
+
+            resolve(typeCar)
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    getListCarOwner
+    getListCarOwner, getListTypeCar
 };
 

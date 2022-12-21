@@ -8,11 +8,13 @@ let getListPage = async (req, res) => {
         let toName = await ticketService.getProvinceName(req.query.to) + " (" + req.query.to + ")"
         let weekDay = ticketService.getWeekDay(req.query.date)
         let nameCar = await carOwnerService.getListCarOwner()
+        let typeCar = await carOwnerService.getListTypeCar()
 
         res.render("list", {
             style: ["list.css"],
             js: ["navigation.js", "list.js"],
             carOwner: nameCar,
+            typeCar: typeCar,
             list: list,
             fromName: fromName,
             toName: toName,
