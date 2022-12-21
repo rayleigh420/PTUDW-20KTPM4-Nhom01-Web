@@ -11,7 +11,7 @@ let getTicketInfoById = async (id) => {
       let dateStart = moment(new Date(items["start"]));
       let dateEnd = moment(new Date(items["end"]));
       let carOwner = await db.CarOwner.findOne({
-        attributes: ["name"],
+        attributes: ["name", "imgLogo"],
         where: { id: items["idCarOwner"] },
         raw: true,
       });
@@ -21,6 +21,7 @@ let getTicketInfoById = async (id) => {
       });
       tk.id = items.id;
       tk.carOwner = carOwner.name;
+      tk.imgLogo = carOwner.imgLogo
       tk.from = Trip.from;
       tk.to = Trip.to;
       tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
