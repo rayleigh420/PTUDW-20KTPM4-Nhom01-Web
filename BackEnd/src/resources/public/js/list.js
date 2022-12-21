@@ -19,21 +19,23 @@ let insertTicket = (ticketFilter) => {
     })
 }
 
-// let resetOwnerName = () => {
-//     let ticketListCopy = [...ticketList]
-//     ticketListCopy = ticketListCopy.filter(item => {
-//         let name = item.querySelector('.car_name span')
-//         return name.textContent != ownerName
-
-//     })
-//     insertTicket(ticketListCopy)
-// }
-
 let filterTicket = () => {
     let ticketListCopy = [...ticketList]
+    if (price != '') {
+        ticketListCopy.sort((a, b) => {
+            let aPrice = parseInt(a.querySelector('input.price').value)
+            let bPrice = parseInt(b.querySelector('input.price').value)
+
+            if (price == 'INCR') {
+                return aPrice - bPrice
+            }
+            else
+                return bPrice - aPrice
+        })
+    }
     ticketListCopy = ticketListCopy.filter(item => {
         let name = item.querySelector('.car_name span')
-        let type = item.querySelector('input')
+        let type = item.querySelector('.type')
         console.log(type.value)
         if (ownerName == '' && typeName == '') {
             return name.textContent && type.value
@@ -60,5 +62,11 @@ carOwner.onchange = () => {
 let type = document.querySelector(".type_option")
 type.onchange = () => {
     typeName = type.value
+    filterTicket()
+}
+
+let sort = document.querySelector(".price_option")
+sort.onchange = () => {
+    price = sort.value
     filterTicket()
 }

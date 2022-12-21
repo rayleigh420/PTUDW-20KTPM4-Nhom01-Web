@@ -42,7 +42,7 @@
 
         <div class="cost_filter col-md-2">
             <select class="form-select col price_option" aria-label="Default select example">
-                <option selected>Giá tiền</option>
+                <option selected value="">Giá tiền</option>
                 <option value="INCR">Từ thấp đến cao</option>
                 <option value="DESC">Từ cao đến thâp</option>
             </select>
@@ -53,7 +53,7 @@
         {{#if list}}
         {{#each list}}
         <div class="ticket">
-            <input type="hidden" value="{{typeCar}}">
+            <input class="type" type="hidden" value="{{typeCar}}">
             <div class="ticket_car ">
                 <div class="car_name">
                     <img src="{{imgLogo}}" alt="{{carOwnerName}}">
@@ -78,6 +78,7 @@
                 </div>
             </div>
             <div class="ticket_price">
+                <input class="price" type="hidden" value="{{price}}">
                 <div class="price">
                     {{price}}<span>khách</span>
                 </div>
