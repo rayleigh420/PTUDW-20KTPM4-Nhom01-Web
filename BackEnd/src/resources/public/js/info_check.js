@@ -12,6 +12,12 @@ edit.onclick = () => {
     }))
 }
 
+let emailUser = document.querySelector('input.email_user')
+let emailOfUser = JSON.parse(localStorage.getItem('Auth'))
+if (emailOfUser) {
+    emailUser.value = emailOfUser.email
+}
+
 let verify = document.querySelector('.btn_continue')
 verify.onclick = () => {
     localStorage.removeItem('Info')

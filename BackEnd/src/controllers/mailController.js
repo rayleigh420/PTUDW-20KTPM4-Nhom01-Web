@@ -1,8 +1,10 @@
 import mailService from "../services/mailService"
+import seatService from "../services/seatService"
 
 let sengridAPI = async (req, res) => {
   try {
-    let result = await mailService.sendMail(req.body)
+    let result = await seatService.bookSeat(req.body)
+    // let result = await mailService.sendMail(req.body)
   } catch (e) {
     console.log(e);
   }

@@ -19,7 +19,6 @@ let sendMail = async (data) => {
             Đến: ${to}
             Vào ngày: ${data.date}
             Quý khách lựa chọn điểm đón: ${data.from} - điểm trả: ${data.to}
-
             `,
       //   html: "<strong>and easy to do anywhere, even with Node.js</strong>",
     };

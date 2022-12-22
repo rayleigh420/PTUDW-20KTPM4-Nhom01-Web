@@ -67,6 +67,7 @@ let getTicketInfo = async (data) => {
           where: {
             idTicket: item["Tickets.id"],
             idUser: null,
+            idBooking: null,
           },
         });
 
