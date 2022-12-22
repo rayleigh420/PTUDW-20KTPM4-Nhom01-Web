@@ -4,13 +4,13 @@ hoverSeat = () => {
     seats[i].addEventListener(
       "mouseover",
       (hover = () => {
-        seats[i].src = "../img/seat-hover.png";
+        seats[i].src = "/img/seat-hover.png";
       })
     );
     seats[i].addEventListener(
       "mouseout",
       (handleHover = () => {
-        seats[i].src = "../img/seat.png";
+        seats[i].src = "/img/seat.png";
       })
     );
   }
