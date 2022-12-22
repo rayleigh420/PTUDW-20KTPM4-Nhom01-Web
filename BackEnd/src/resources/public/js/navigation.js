@@ -1,7 +1,28 @@
 let auth = JSON.parse(localStorage.getItem('Auth'))
+let checkUser = false
+
+const check = async () => {
+    let res = await fetch('user/checkLocal', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: auth.email,
+            name: auth.name
+        }),
+    })
+    let result = await res.json()
+    checkUser = result
+    if (!result) {
+        localStorage.removeItem('Auth')
+    }
+}
+
+check();
 
 let userNav = document.querySelector('.btn_auth')
-if (auth) {
+if (checkUser) {
     userNav.innerHTML = `
     <button type="button" class="btn btn_user">
         <ion-icon class="user_icon" name="person-circle"></ion-icon>

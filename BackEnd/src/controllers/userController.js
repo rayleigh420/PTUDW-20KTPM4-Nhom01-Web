@@ -56,6 +56,17 @@ let apiSignUp = async (req, res) => {
     }
 }
 
+let checkUser = async (req, res) => {
+    try {
+        console.log(req.body)
+        let result = await userService.checkUserExist(req.body)
+        console.log(result)
+        res.json(result)
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
-    signIn, signUp, apiSignIn, apiSignUp
+    signIn, signUp, apiSignIn, apiSignUp, checkUser
 }

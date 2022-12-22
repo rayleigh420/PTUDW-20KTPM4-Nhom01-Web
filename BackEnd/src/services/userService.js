@@ -125,6 +125,7 @@ let hashUserPassword = (password) => {
     }
   });
 };
+
 let getUserByEmail = (email) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -143,9 +144,33 @@ let getUserByEmail = (email) => {
   });
 };
 
+let checkUserExist = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let user = await db.User.findOne({
+        where: {
+          email: data.email,
+          name: data.name
+        },
+        raw: true,
+      });
+
+      if (user) {
+        resolve(true)
+      }
+      else {
+        resolve(false)
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+}
+
 module.exports = {
   handleSignUp,
   handleSignIn,
   handleCheckSignUp,
   getUserByEmail,
+  checkUserExist
 };
