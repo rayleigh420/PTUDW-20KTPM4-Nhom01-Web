@@ -15,5 +15,10 @@ hoverSeat = () => {
     );
   }
 };
-
 hoverSeat();
+let user = JSON.parse(localStorage.getItem("Auth"));
+console.log("Auth", user);
+if (user) {
+  let email = document.querySelector("#parseUser");
+  email.value = user.email;
+}

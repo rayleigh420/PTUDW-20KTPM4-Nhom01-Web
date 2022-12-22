@@ -2,12 +2,12 @@ import db from "../models/index";
 import detailService from "../services/detailService";
 import rateService from "../services/rateService";
 import placeService from "../services/placeService";
-
+import userService from "../services/userService";
 
 let getDetailPage = async (req, res) => {
   try {
     let idTicket = req.params.idTicket;
-    let rateInfo = await rateService.getRates(idTicket)
+    let rateInfo = await rateService.getRates(idTicket);
     let items = await detailService.getDetailPage(idTicket);
     let carOwner = items["carOwner"];
     let fromPlace = items["FromDB"];
@@ -16,7 +16,6 @@ let getDetailPage = async (req, res) => {
     // console.log(carOwner);
     // console.log(fromPlace.length);
     // console.log(toPlace.length);
-
     // console.log(idTicket)
     // console.log(items);
     // console.log(items.phone);
@@ -34,7 +33,7 @@ let getDetailPage = async (req, res) => {
       phone: items.phone,
       address: items.address,
       rates: rateInfo.rates,
-      carOwnerStar: rateInfo.stars
+      carOwnerStar: rateInfo.stars,
       // rates: items.rates,
       // carOwnerStar: items.stars,
     });
@@ -51,11 +50,15 @@ let handleRate = async (req, res) => {
     let carOwner = items["carOwner"];
     // console.log(carOwner["id"]);
     // console.log(req.body);
+    let email = req.body.email;
+    let user = await userService.getUserByEmail(email);
+    // console.log(user.user.id);
+    // console.log(user["id"]);
     await db.Rate.create({
       content: req.body.content,
       star: req.body.ratestar,
       idCarOwner: carOwner["id"],
-      idUser: "1",
+      idUser: user.user.id,
     });
     res.redirect("/detail/" + idTicket);
   } catch (e) {
