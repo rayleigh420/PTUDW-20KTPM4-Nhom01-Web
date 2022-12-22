@@ -12,6 +12,11 @@
 
                 <form id="myform" action="/api/sengrid" method="POST">
                     <input type="hidden" value="{{name}}" name="name">
+                    <input type="hidden" name="from" value="{{from}}">
+                    <input type="hidden" name="to" value="{{to}}">
+                    <input type="hidden" name="start" value="{{timeStart}}">
+                    <input type="hidden" name="end" value="{{timeEnd}}">
+                    <input type="hidden" name="date" value="{{date}}">
                     <div class="row">
                         <div class="col">
                             <label>Số điện thoại</label>

@@ -15,6 +15,23 @@ let getProvince = async () => {
     })
 }
 
+let getProvinceName = async (province) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let provinces = await db.Province.findOne({
+                attribute: ['provinceName'],
+                where: {
+                    province: province
+                },
+                raw: true
+            })
+            resolve(provinces.provinceName)
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    getProvince
+    getProvince, getProvinceName
 }
