@@ -92,7 +92,7 @@ module.exports = {
       {
         idBooking: "",
         idTicket: 5,
-        idUser: 1,
+        idUser: null,
       },
     ];
     items.forEach((item) => {
