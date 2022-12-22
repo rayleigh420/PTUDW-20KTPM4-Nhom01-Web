@@ -1,9 +1,13 @@
-import detailService from "../services/detailService";
 import db from "../models/index";
+import detailService from "../services/detailService";
+import rateService from "../services/rateService";
 import placeService from "../services/placeService";
+
+
 let getDetailPage = async (req, res) => {
   try {
     let idTicket = req.params.idTicket;
+    let rateInfo = await rateService.getRates(idTicket)
     let items = await detailService.getDetailPage(idTicket);
     let carOwner = items["carOwner"];
     let fromPlace = items["FromDB"];
@@ -29,8 +33,10 @@ let getDetailPage = async (req, res) => {
       price: items.price,
       phone: items.phone,
       address: items.address,
-      rates: items.rates,
-      carOwnerStar: items.stars,
+      rates: rateInfo.rates,
+      carOwnerStar: rateInfo.stars
+      // rates: items.rates,
+      // carOwnerStar: items.stars,
     });
   } catch (e) {
     console.log(e);
