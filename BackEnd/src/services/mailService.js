@@ -6,8 +6,8 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 let sendMail = async (data) => {
     try {
         console.log(data)
-        let province = await provinceService.getProvinceName(data.from)
-        console.log(province)
+        let from = await provinceService.getProvinceName(data.from)
+        let to = await provinceService.getProvinceName(data.to)
         let msg = {
             to: data.email,
             from: "klong31122001@gmail.com", // Change to your verified sender
@@ -15,7 +15,11 @@ let sendMail = async (data) => {
             text: `
             Kinh gửi Quý Khách ${data.name},
             Yêu cầu đặt vé của quý khách đã được xác nhận thành công. Quý khách vui lòng xem thông tin điện tử.
-            From: 
+            Từ: ${from}
+            Đến: ${to}
+            Vào ngày: ${data.date}
+            Quý khách lựa chọn điểm đón: ${data.from} - điểm trả: ${data.to}
+
             `
             //   html: "<strong>and easy to do anywhere, even with Node.js</strong>",
         };
