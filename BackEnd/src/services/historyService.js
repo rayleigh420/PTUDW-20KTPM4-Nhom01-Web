@@ -3,7 +3,7 @@ import moment from "moment/moment";
 import placeService from "../services/placeService";
 import ticketService from "../services/ticketService";
 
-function getSummaryName(data) {
+let getSummaryName = (data) {
   let split = data.split(" ");
   if (split.length == 1) {
     if (split[0].length == 1) return split[0][0];

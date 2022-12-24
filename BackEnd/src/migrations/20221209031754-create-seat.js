@@ -12,6 +12,12 @@ module.exports = {
       idBooking: {
         type: Sequelize.STRING
       },
+      fromPlace: {
+        type: Sequelize.STRING
+      },
+      toPlace: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

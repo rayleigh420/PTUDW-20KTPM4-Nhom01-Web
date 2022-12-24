@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Seat.init({
-    idBooking: DataTypes.STRING
+    idBooking: DataTypes.STRING,
+    fromPlace: DataTypes.STRING,
+    toPlace: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Seat',
