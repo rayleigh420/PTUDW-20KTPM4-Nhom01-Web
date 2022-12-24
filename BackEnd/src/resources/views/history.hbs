@@ -4,8 +4,8 @@
     <div class="container">
         <div class="person_history1">
             <div class="name">
-                <div class="objName">ND</div>
-                <div class="actualName">Nhat Duy</div>
+                <div class="objName">{{summaryName}}</div>
+                <div class="actualName">{{name}}</div>
             </div>
             <div class="lsdv">
                 <div class="lichsudatve">
@@ -13,7 +13,7 @@
                     <span>Lịch sử đặt vé</span>
                 </div>
                 <div class="logout">
-                    <a href="./">
+                    <a href="../">
                         <i class="fa fa-power-off"></i>
                         <span>Đăng xuất</span>
                     </a>
@@ -22,7 +22,34 @@
         </div>
         <div class="person_history2">
             <span>Lịch sử đặt vé</span>
+            {{#each tickets}}
             <div class="items">
+                <div class="item">
+                    <div class="id-time">
+                        <div class="id">Mã vé: {{idTicket}}</div>
+                        <div class="time">{{dayStart}} - {{timeStart}}</div>
+                    </div>
+                    <div class="detail">
+                        <div class="fromto">
+                            <i class="fa fa-taxi"></i>
+                            <div class="from">{{from}}</div>
+                            <span>&#x27F6;</span>
+
+                            <div class="to">{{to}}</div>
+                        </div>
+                        <div class="pay">
+                            <div class="tt">
+                                <i class="fa fa-money"></i>
+                                Tổng tiền:
+                            </div>
+                            <div class="price">{{price}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {{/each}}
+            {{!-- <div class="items">
                 <div class="item">
                     <div class="id-time">
                         <div class="id">Mã vé: 1000220020</div>
@@ -46,32 +73,7 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="items">
-                <div class="item">
-                    <div class="id-time">
-                        <div class="id">Mã vé: 1000220020</div>
-                        <div class="time">11/9/2022 - 9:28AM</div>
-                    </div>
-                    <div class="detail">
-                        <div class="fromto">
-                            <i class="fa fa-taxi"></i>
-                            <div class="from">TP.HCM</div>
-                            <span>&#x27F6;</span>
-
-                            <div class="to">Quãng Ngãi</div>
-                        </div>
-                        <div class="pay">
-                            <div class="tt">
-                                <i class="fa fa-money"></i>
-                                Tổng tiền:
-                            </div>
-                            <div class="price">250.000đ</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            </div> --}}
         </div>
     </div>
 </main>
