@@ -3,7 +3,7 @@ import moment from "moment/moment";
 import ticketService from "../services/ticketService";
 import userService from "../services/userService";
 import historyService from "../services/historyService";
-import provinceService from "../services/provinceService";
+
 let getHistoryPage = async (req, res) => {
   try {
     let email = req.params.email;
