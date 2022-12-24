@@ -3,7 +3,6 @@ if (!JSON.parse(localStorage.getItem("Auth"))) {
 }
 
 let logOutELement = document.querySelector('.logout')
-
 logOutELement.onclick = () => {
     localStorage.removeItem('Auth')
 }

@@ -2,7 +2,7 @@ let auth = JSON.parse(localStorage.getItem('Auth'))
 // let checkUser;
 
 const check = async () => {
-    let res = await fetch('user/checkLocal', {
+    let res = await fetch('/user/checkLocal', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'

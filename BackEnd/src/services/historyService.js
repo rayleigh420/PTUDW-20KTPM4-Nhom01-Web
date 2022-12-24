@@ -1,6 +1,5 @@
 import db from "../models/index";
 import moment from "moment/moment";
-import { Op } from "sequelize";
 import placeService from "../services/placeService";
 import ticketService from "../services/ticketService";
 
@@ -53,6 +52,22 @@ let getHistoryPage = async (id) => {
   });
 };
 
+let addHistory = async (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let result = await db.History.create({
+        idUser: data.idUser,
+        idTicket: data.idTicket,
+        idSeat: data.idSeat
+      })
+
+      resolve(result)
+    } catch (e) {
+      console.log(e)
+    }
+  })
+}
+
 module.exports = {
-  getHistoryPage,
+  getHistoryPage, addHistory
 };

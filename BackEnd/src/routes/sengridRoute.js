@@ -4,7 +4,7 @@ import mailController from "../controllers/mailController";
 let router = express.Router();
 
 const initMailRoute = (app) => {
-  router.get("/sengrid", mailController.sengridAPI);
+  router.post("/sengrid", mailController.sengridAPI);
 
   return app.use("/api", router);
 };

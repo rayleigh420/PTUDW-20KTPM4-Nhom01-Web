@@ -1,5 +1,6 @@
 import db from "../models/index";
 import userService from "../services/userService"
+import historyService from "../services/historyService"
 
 let bookSeat = (data) => {
     return new Promise(async (resolve, reject) => {
@@ -8,7 +9,7 @@ let bookSeat = (data) => {
             let id
             if (data.emailUser != '') {
                 let user = await userService.getUserByEmail(data.emailUser)
-                id = user.id
+                id = user.user.id
                 console.log("user", user)
             }
             let idBooking = Date.now()
@@ -28,21 +29,19 @@ let bookSeat = (data) => {
                     idBooking: idBooking,
                     idUser: data.emailUser ? id : null
                 });
+
+                if (data.emailUser) {
+                    let result = await historyService.addHistory({
+                        idSeat: seat.id,
+                        idUser: id,
+                        idTicket: data.idTicket
+                    })
+
+                    console.log(result)
+                }
             }
 
-            // await seat.save();
-            // if (seat) {
-            //     seat.idBooking = idBooking
-            //     if (data.emailUser) {
-            //         let user = await userService.getUserByEmail(data.emailUser)
-            //         seat.idUser = user.id
-            //     }
 
-            // } else {
-
-            // }
-
-            // console.log(seat)
         } catch (e) {
             console.log(e);
         }
