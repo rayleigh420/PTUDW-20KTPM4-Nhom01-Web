@@ -2,17 +2,23 @@ let auth = JSON.parse(localStorage.getItem('Auth'))
 // let checkUser;
 
 const check = async () => {
-    let res = await fetch('/user/checkLocal', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: auth.email,
-            name: auth.name
-        }),
-    })
-    let result = await res.json()
+    let result;
+    if (auth) {
+        let res = await fetch('/user/checkLocal', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: auth.email,
+                name: auth.name
+            }),
+        })
+        result = await res.json()
+    }
+    else {
+        result = false;
+    }
 
     let userNav = document.querySelector('.btn_auth')
     if (result) {
@@ -31,7 +37,7 @@ const check = async () => {
                         <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
                     </a>
                 </li>
-                <li class="list-group-item log_out" onClick="logOut">
+                <li class="list-group-item log_out">
                     <a href="/">
                         <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>
                         Đăng xuất
@@ -56,17 +62,20 @@ const check = async () => {
             </a>
         </button> `
     }
+
+    let logOut = document.querySelector('.log_out')
+    if (logOut) {
+        logOut.onclick = () => {
+            localStorage.removeItem("Auth");
+        }
+    }
 }
 
 check();
-console.log("123")
 
-const logOut = () => {
-    console.log("Log out")
-    localStorage.removeItem("Auth");
-}
+// console.log("123")
 
-// let logOut = document.querySelector('.log_out')
-// if (logOut) {
-//     console.log(logOut)
+// const logOut = () => {
+//     console.log("Log out")
+//     localStorage.removeItem("Auth");
 // }
