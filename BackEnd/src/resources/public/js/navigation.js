@@ -18,23 +18,24 @@ const check = async () => {
     if (result) {
         userNav.innerHTML = `
         <button type="button" class="btn btn_user">
-        <ion-icon class="user_icon" name="person-circle"></ion-icon>
-        ${auth.name}
+            <ion-icon class="user_icon" name="person-circle"></ion-icon>
+            ${auth.name}
         </button>
         <div class="list">
-        <ul class="list-group">
-        <li class="list-group-item list_title">
-        Tài khoản
-        </li>
-        <li class="list-group-item">
-        <a href="/history">
-        <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
-        </a>
-        </li>
-        <li class="list-group-item log_out">
-        <a href="/">
-        <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>Đăng xuất
-        </a>
+            <ul class="list-group">
+            <li class="list-group-item list_title">
+            Tài khoản
+                </li>
+                <li class="list-group-item">
+                    <a href="/history">
+                        <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
+                    </a>
+                </li>
+                <li class="list-group-item log_out" onClick="logOut">
+                    <a href="/">
+                        <ion-icon class="user_option_icon" name="log-out" size="small"></ion-icon>
+                        Đăng xuất
+                    </a>
                 </li>
             </ul>
         </div> `
@@ -58,10 +59,14 @@ const check = async () => {
 }
 
 check();
+console.log("123")
 
-let logOut = document.querySelector('.log_out')
-if (logOut) {
-    logOut.onclick = () => {
-        localStorage.removeItem("Auth");
-    }
+const logOut = () => {
+    console.log("Log out")
+    localStorage.removeItem("Auth");
 }
+
+// let logOut = document.querySelector('.log_out')
+// if (logOut) {
+//     console.log(logOut)
+// }

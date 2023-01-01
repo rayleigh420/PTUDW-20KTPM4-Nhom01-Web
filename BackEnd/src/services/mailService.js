@@ -9,10 +9,9 @@ let sendMail = async (data) => {
     console.log("Data Mail: ", data);
     let from = await provinceService.getProvinceName(data.from);
     let to = await provinceService.getProvinceName(data.to);
-    // to: data.email,
     let msg = {
-      to: "nhatduy0409@gmail.com",
-      from: "lnduy20@clc.fitus.edu.vn", // Change to your verified sender
+      to: data.email,
+      from: process.env.FROM_MAIL, // Change to your verified sender
       subject: "[Vexere] Thông Tin Vé Điện Tử của Quý Khách",
       // text: `
       //       Kinh gửi Quý Khách ${data.name},
