@@ -22,3 +22,8 @@ if (user) {
   let email = document.querySelector("#parseUser");
   email.value = user.email;
 }
+// hide form when user not login or sign up
+else {
+  let comment = document.querySelector('.write-comment');
+  comment.setAttribute('hidden', 'true');
+}
