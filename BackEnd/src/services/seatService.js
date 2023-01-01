@@ -28,8 +28,8 @@ let bookSeat = (data) => {
                     idTicket: data.idTicket,
                     idBooking: idBooking,
                     idUser: data.emailUser ? id : null,
-                    fromPlace: data.fromPlaces,
-                    toPlace: data.toPlaces
+                    fromPlace: data.fromPlace,
+                    toPlace: data.toPlace
                 });
 
                 if (data.emailUser) {
