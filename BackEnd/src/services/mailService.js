@@ -1,17 +1,18 @@
 import sgMail from "@sendgrid/mail";
 import provinceService from "./provinceService";
+require('dotenv').config()
 // const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-let sendMail = async () => {
+let sendMail = async (data) => {
   try {
-    // console.log(data);
-    // let from = await provinceService.getProvinceName(data.from);
-    // let to = await provinceService.getProvinceName(data.to);
+    console.log("Data Mail: ", data);
+    let from = await provinceService.getProvinceName(data.from);
+    let to = await provinceService.getProvinceName(data.to);
     // to: data.email,
     let msg = {
-      to: "klong100000@gmail.com",
-      from: "klong25112001@gmail.com", // Change to your verified sender
+      to: "nhatduy0409@gmail.com",
+      from: "lnduy20@clc.fitus.edu.vn", // Change to your verified sender
       subject: "[Vexere] Thông Tin Vé Điện Tử của Quý Khách",
       // text: `
       //       Kinh gửi Quý Khách ${data.name},
@@ -21,7 +22,14 @@ let sendMail = async () => {
       //       Vào ngày: ${data.date}
       //       Quý khách lựa chọn điểm đón: ${data.from} - điểm trả: ${data.to}
       //       `,
-      html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+      html: `
+            <h2>Kinh gửi Quý Khách ${data.name}, </h2>
+            <p>Yêu cầu đặt vé của quý khách đã được xác nhận thành công. Quý khách vui lòng xem thông tin điện tử. </p>
+            <p><b>Từ:</b> ${from}</p>
+            <p><b>Đến:</b> ${to}</p>
+            <p><b>Vào ngày:</b> ${data.date} </p>
+            <p><b>Quý khách lựa chọn điểm đón:</b> ${data.from} - <b>điểm trả:</b> ${data.to}</p>
+            `,
     };
     await sgMail
       .send(msg)
