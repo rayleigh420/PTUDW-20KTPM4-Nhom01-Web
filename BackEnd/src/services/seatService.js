@@ -50,7 +50,23 @@ let bookSeat = (data) => {
     })
 }
 
+let getIdBooking = (idSeat) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let idBooking = await db.Seat.findOne({
+                where: {
+                    id: idSeat
+                },
+                raw: true
+            })
+            resolve(idBooking.idBooking)
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
+
 module.exports = {
-    bookSeat,
+    bookSeat, getIdBooking
 };
 
