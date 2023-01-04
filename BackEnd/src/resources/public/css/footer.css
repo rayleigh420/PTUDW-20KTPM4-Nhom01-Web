@@ -1,14 +1,14 @@
 .footer {
     background-color: #1b1b1b;
     height: 80px;
-    width: 100vw;
+    width: 100%;
     padding: 0 30px;
     color: #fff !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    position: fixed;
+    margin-top: 200px;
     bottom: 0;
 }
 
