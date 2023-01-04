@@ -13,6 +13,7 @@ let getListPage = async (req, res) => {
         res.render("list", {
             style: ["list.css"],
             js: ["navigation.js", "list.js"],
+            amount: req.query.amount ? req.query.amount : 1,
             carOwner: nameCar,
             typeCar: typeCar,
             list: list,

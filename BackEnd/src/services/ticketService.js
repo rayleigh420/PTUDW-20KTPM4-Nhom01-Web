@@ -71,7 +71,7 @@ let getTicketInfo = async (data) => {
           },
         });
 
-        if (seatBlank.count != 0) {
+        if (seatBlank.count >= (data.amount ? parseInt(data.amount) : 1)) {
           let tk = {};
 
           tk.id = item.id;
