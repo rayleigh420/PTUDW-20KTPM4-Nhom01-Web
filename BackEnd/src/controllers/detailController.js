@@ -6,9 +6,10 @@ import userService from "../services/userService";
 
 let getDetailPage = async (req, res) => {
   try {
-    let idTicket = req.params.idTicket;
+
+    let [idTicket, amount] = req.params.idTicket.split("_");
     let rateInfo = await rateService.getRates(idTicket);
-    let items = await detailService.getDetailPage(idTicket);
+    let items = await detailService.getDetailPage(idTicket, amount);
     let carOwner = items["carOwner"];
     let fromPlace = items["FromDB"];
     let toPlace = items["ToDB"];
@@ -23,11 +24,12 @@ let getDetailPage = async (req, res) => {
     res.render("detail", {
       style: ["detail.css"],
       js: ["navigation.js", "detail.js"],
+      amount: amount,
       ...carOwner,
       imgCar: imgCar,
       fromPlace: fromPlace,
       toPlace: toPlace,
-      id: req.params.idTicket,
+      id: idTicket,
       type: carOwner.type,
       price: items.price,
       phone: items.phone,

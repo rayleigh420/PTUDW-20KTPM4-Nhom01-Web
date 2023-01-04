@@ -72,7 +72,7 @@ let getSignInPage = async (req, res) => {
 
 let getInfoFormPage = async (req, res) => {
   try {
-    let idTicket = req.params.idTicket;
+    let [idTicket, amount] = req.params.idTicket.split("_");
     let ticket = await ticketService.getTicketInfoById(idTicket);
     let fromList = await placeService.getListPlace(ticket.from)
     let toList = await placeService.getListPlace(ticket.to)
@@ -81,6 +81,7 @@ let getInfoFormPage = async (req, res) => {
       style: ["info_form.css"],
       js: ["navigation.js", "info_form.js"],
       id: idTicket,
+      amount: amount,
       fromList: fromList,
       toList: toList,
       date: ticket.dayStart,
@@ -95,8 +96,9 @@ let getInfoFormPage = async (req, res) => {
 let getInfoCheckPage = async (req, res) => {
   try {
     console.log(req.body)
-    let idTicket = req.body.id
-    let ticket = await ticketService.getTicketInfoById(idTicket);
+    let idTicket = req.body.id;
+    let amount = req.body.amount;
+    let ticket = await ticketService.getTicketInfoById(idTicket, amount);
     let fromPlace = await placeService.getPlacaNameById(req.body.fromPlace)
     let toPlace = await placeService.getPlacaNameById(req.body.toPlace)
 

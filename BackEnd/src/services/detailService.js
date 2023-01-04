@@ -3,7 +3,7 @@ import moment from "moment/moment";
 import { Op } from "sequelize";
 
 import placeService from "../services/placeService";
-let getDetailPage = async (id) => {
+let getDetailPage = async (id, amount) => {
   return new Promise(async (resolve, reject) => {
     try {
       let items = await db.Ticket.findByPk(id, {
@@ -57,7 +57,7 @@ let getDetailPage = async (id) => {
       tk.carOwner = carOwner;
       tk.FromProvince = Trip["from"];
       tk.ToProvince = Trip["to"];
-      tk.price = items["price"];
+      tk.price = parseInt(items["price"]) * parseInt(amount);
       tk.phone = carOwner["phone"];
       tk.address = carOwner["address"].split("/");
       // console.log(Trip["from"]);
