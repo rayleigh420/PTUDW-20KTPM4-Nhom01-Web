@@ -14,33 +14,37 @@ let bookSeat = (data) => {
             }
             let idBooking = Date.now()
 
-            let seat = await db.Seat.findOne({
+            let seat = await db.Seat.findAll({
                 where: {
                     idUser: null,
                     idBooking: null,
                     idTicket: data.idTicket
                 },
+                limit: data.amount,
                 raw: true
             })
-            if (seat) {
-                await db.Seat.upsert({
-                    id: seat.id,
-                    idTicket: data.idTicket,
-                    idBooking: idBooking,
-                    idUser: data.emailUser ? id : null,
-                    fromPlace: data.fromPlace,
-                    toPlace: data.toPlace
+
+            if (seat.length > 0) {
+                seat.forEach(async (item) => {
+                    await db.Seat.upsert({
+                        id: item.id,
+                        idTicket: data.idTicket,
+                        idBooking: idBooking,
+                        idUser: data.emailUser ? id : null,
+                        fromPlace: data.fromPlace,
+                        toPlace: data.toPlace
+                    });
+
+                    if (data.emailUser) {
+                        let result = await historyService.addHistory({
+                            idSeat: item.id,
+                            idUser: id,
+                            idTicket: data.idTicket
+                        })
+
+                        console.log(result)
+                    }
                 });
-
-                if (data.emailUser) {
-                    let result = await historyService.addHistory({
-                        idSeat: seat.id,
-                        idUser: id,
-                        idTicket: data.idTicket
-                    })
-
-                    console.log(result)
-                }
             }
 
 
@@ -65,6 +69,10 @@ let getIdBooking = (idSeat) => {
         }
     })
 }
+
+// let checkBlank = (data) => {
+
+// }
 
 module.exports = {
     bookSeat, getIdBooking
