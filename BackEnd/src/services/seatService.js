@@ -26,7 +26,7 @@ let bookSeat = (data) => {
 
             if (seat.length > 0) {
                 seat.forEach(async (item) => {
-                    await db.Seat.upsert({
+                    let result = await db.Seat.upsert({
                         id: item.id,
                         idTicket: data.idTicket,
                         idBooking: idBooking,
@@ -35,6 +35,7 @@ let bookSeat = (data) => {
                         toPlace: data.toPlace
                     });
 
+
                     if (data.emailUser) {
                         let result = await historyService.addHistory({
                             idSeat: item.id,
@@ -42,9 +43,12 @@ let bookSeat = (data) => {
                             idTicket: data.idTicket
                         })
 
-                        console.log(result)
                     }
                 });
+                resolve(true);
+            }
+            else {
+                resolve(false);
             }
 
 
@@ -70,11 +74,32 @@ let getIdBooking = (idSeat) => {
     })
 }
 
-// let checkBlank = (data) => {
+let checkBlank = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let seat = await db.Seat.findAll({
+                where: {
+                    idUser: null,
+                    idBooking: null,
+                    idTicket: data.idTicket
+                },
+                limit: data.amount,
+                raw: true
+            })
 
-// }
+            if (seat.length > 0) {
+                resolve(true);
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
 
 module.exports = {
-    bookSeat, getIdBooking
+    bookSeat, getIdBooking, checkBlank
 };
 
