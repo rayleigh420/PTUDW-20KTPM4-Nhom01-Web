@@ -103,9 +103,10 @@ i.fa.fa-power-off {
 }
 .items {
     margin-top: 30px;
+    margin-bottom: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    height:133px;
+    height:200px;
     display: grid;
     grid-template-rows: 40% 60%;
 }
@@ -125,9 +126,9 @@ i.fa.fa-power-off {
 }
 .detail {
     background-color: lightgray;
-    height:100%;
+    height: auto;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
 }
 .fromto{
     padding-top: 10px;
@@ -149,7 +150,22 @@ i.fa.fa-power-off {
 .pay i {
     padding-left: 10px;
     padding-right: 10px;
+
 }
-.pay .price {
+.amount {
+    padding-top: 8px;
+}
+.amount i {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+.pay .price,.amount .amt {
     padding-right: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.amt .amt2 {
+    font-size: 16px;
+    font-weight: bold;
 }
