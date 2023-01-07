@@ -9,6 +9,7 @@ module.exports = {
         email: "admin3112@gmail.com",
         password:
           "$2a$10$aX9zLI2gSKjVwr3JKX4ObOhf/FdF6mMCRSTSX5DPfhEnvQG7t2ELG", //klong31122001
+        role: "admin"
       },
     ];
     items.forEach((item) => {

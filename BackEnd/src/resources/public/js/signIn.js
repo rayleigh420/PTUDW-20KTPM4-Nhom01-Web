@@ -23,6 +23,7 @@ let user = {
     isLogin: false
 }
 let errorMess = ""
+let role = ""
 
 let btnSubmit = document.querySelector('.btn-submit');
 btnSubmit.onmouseover = async () => {
@@ -41,6 +42,7 @@ btnSubmit.onmouseover = async () => {
 
         let result = await res.json()
         errorMess = result.errMessage
+        role = result.user.role
         if (result.errCode == 0) {
             user = {
                 isLogin: true,
@@ -54,8 +56,10 @@ btnSubmit.onmouseover = async () => {
 btnSubmit.onclick = (e) => {
     console.log(errorMess)
     if (errorMess == 'OK') {
-        if (user.isLogin) {
-            localStorage.setItem('Auth', JSON.stringify(user))
+        if (role == "user") {
+            if (user.isLogin) {
+                localStorage.setItem('Auth', JSON.stringify(user))
+            }
         }
     }
     else {

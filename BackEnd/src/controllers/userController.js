@@ -5,7 +5,12 @@ let signIn = async (req, res) => {
         let result = await userService.handleSignIn(req.body)
         console.log(result)
         if (result.errCode == 0) {
-            res.redirect('/')
+            if (result.user.role == "user") {
+                res.redirect('/')
+            }
+            else if (result.user.role = "admin") {
+                res.json(result)
+            }
         }
         else if (result.errCode == 1) {
             return res.status(500).json(result)

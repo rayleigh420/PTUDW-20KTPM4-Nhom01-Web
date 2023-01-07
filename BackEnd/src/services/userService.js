@@ -15,6 +15,7 @@ let handleSignUp = async (data) => {
           name: data.name,
           email: data.email,
           password: hashPassWordFromBcrypt,
+          role: "user",
         });
 
         userData.errCode = 0;
@@ -64,7 +65,7 @@ let handleSignIn = async (data) => {
       let check = await checkUserEmail(data.email);
       if (check == true) {
         let user = await db.User.findOne({
-          attributes: ["name", "email", "password"],
+          attributes: ["name", "email", "password", "role"],
           where: { email: data.email },
           raw: true,
         });
