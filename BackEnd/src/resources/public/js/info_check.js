@@ -40,9 +40,12 @@ verify.onmouseover = async () => {
 
 verify.onclick = (e) => {
     if (blank) {
+        alert("Booking ticket success! Please check your information in email.")
         localStorage.removeItem('Info')
     }
     else {
+        alert("Something went wrong! Please try later!")
         e.preventDefault();
+
     }
 }
