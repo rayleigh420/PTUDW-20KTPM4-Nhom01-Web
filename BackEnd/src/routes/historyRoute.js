@@ -4,7 +4,7 @@ import historyController from "../controllers/historyController";
 let router = express.Router();
 
 const initHistoryRoute = (app) => {
-  router.get("/:email", historyController.getHistoryPage);
+  router.get("/:id", historyController.getHistoryPage);
 
   return app.use("/history", router);
 };
