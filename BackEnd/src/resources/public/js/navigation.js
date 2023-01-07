@@ -3,6 +3,7 @@ let auth = JSON.parse(localStorage.getItem("Auth"));
 
 const check = async () => {
   let result;
+  let id;
   if (auth) {
     let res = await fetch("/user/checkLocal", {
       method: "post",
@@ -14,11 +15,23 @@ const check = async () => {
         name: auth.name,
       }),
     });
+    let res2 = await fetch("/user/getIdByEmail", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: auth.email,
+      }),
+    });
+    id = await res2.json();
     result = await res.json();
   } else {
     result = false;
   }
 
+  console.log("result" + result);
+  console.log("id" + id);
   let userNav = document.querySelector(".btn_auth");
   if (result) {
     userNav.innerHTML = `
@@ -32,7 +45,7 @@ const check = async () => {
             Tài khoản
                 </li>
                 <li class="list-group-item">
-                    <a href="/history/${auth.email}">
+                    <a href="/history/${id}">
                         <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
                     </a>
                 </li>
