@@ -26,7 +26,7 @@ let user = {
     isLogin: false
 }
 console.log(123)
-let errorMess = ''
+let errorMess = 'Something went wrong'
 
 let btnSubmit = document.querySelector('.btn-submit');
 btnSubmit.onmouseover = async () => {
@@ -62,6 +62,10 @@ btnSubmit.onmouseover = async () => {
     else {
         errorMess = 'Re-enter password does not match!'
     }
+}
+
+btnSubmit.onmouseout = () => {
+    errorMess = 'Something went wrong';
 }
 
 btnSubmit.onclick = (e) => {

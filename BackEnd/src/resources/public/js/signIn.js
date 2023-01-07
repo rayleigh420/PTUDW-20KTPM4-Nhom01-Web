@@ -22,7 +22,7 @@ let password = document.querySelector('#password')
 let user = {
     isLogin: false
 }
-let errorMess = ""
+let errorMess = "Something went wrong!"
 let role = ""
 
 let btnSubmit = document.querySelector('.btn-submit');
@@ -51,6 +51,11 @@ btnSubmit.onmouseover = async () => {
             }
         }
     }
+}
+
+btnSubmit.onmouseout = () => {
+    errorMess = 'Something went wrong';
+    role = '';
 }
 
 btnSubmit.onclick = (e) => {
