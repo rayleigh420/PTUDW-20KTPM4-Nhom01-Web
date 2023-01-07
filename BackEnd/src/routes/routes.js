@@ -4,8 +4,10 @@ import initListRoute from "./listRoute";
 import initDetailRoute from "./detailRoute";
 import initMailRoute from "./sengridRoute";
 import initHistoryRoute from "./historyRoute";
+import initSeatRoute from "./seatRoute";
 
 let initRoutes = (app) => {
+  initSeatRoute(app);
   initUserRoute(app);
   initWebRoute(app);
   initDetailRoute(app);

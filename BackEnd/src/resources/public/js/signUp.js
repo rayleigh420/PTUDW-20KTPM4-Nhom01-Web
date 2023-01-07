@@ -65,7 +65,6 @@ btnSubmit.onmouseover = async () => {
 }
 
 btnSubmit.onclick = (e) => {
-    e.preventDefault
     console.log(errorMess)
     if (errorMess == 'OK') {
         if (user.isLogin) {
