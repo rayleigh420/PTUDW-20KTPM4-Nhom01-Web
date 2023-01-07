@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Denk One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/denkone/v15/dg4m_pzhrqcFb2IzROtH.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Denk One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/denkone/v15/dg4m_pzhrqcFb2IzROtH.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+body {
+  background-color: #F7F9FA;
+  box-sizing: border-box;
+}
+main {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+}
+form {
+  margin-top: 20px;
+}
+form label {
+  margin-bottom: 10px;
+  font-weight: 449;
+  font-size: 16.5px;
+  line-height: 23px;
+  font-stretch: 100;
+}
+form .row + .row {
+  margin-top: 19px;
+}

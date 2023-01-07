@@ -9,7 +9,7 @@ let signIn = async (req, res) => {
                 res.redirect('/')
             }
             else if (result.user.role = "admin") {
-                res.json(result)
+                res.redirect('/admin')
             }
         }
         else if (result.errCode == 1) {

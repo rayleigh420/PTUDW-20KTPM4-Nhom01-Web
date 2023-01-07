@@ -1,3 +1,4 @@
+import initAdminRoute from "./adminRoute";
 import initWebRoute from "./webRoute";
 import initUserRoute from "./userRoute";
 import initListRoute from "./listRoute";
@@ -7,6 +8,7 @@ import initHistoryRoute from "./historyRoute";
 import initSeatRoute from "./seatRoute";
 
 let initRoutes = (app) => {
+  initAdminRoute(app);
   initSeatRoute(app);
   initUserRoute(app);
   initWebRoute(app);

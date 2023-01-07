@@ -1,0 +1,106 @@
+{{!-- <button>Trip</button>
+<button>Ticket</button>
+<button>Seat</button> --}}
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>An Anh Limousine</td>
+            <td>Chi nhánh Ninh Thuận: 222 Lê Duẫn, Phủ Hà, Phan Rang/Chi nhánh TP.HCM: 85 Bờ Bao Tân Thắng, P. Sơn Kỳ,
+                Q. Tân Phú/Chi nhánh Đà Lạt: 4C Yersin, Phường 10 (Kế bên Công viên Yersin), TP. Đà Lạt</td>
+            <td>1900 8678</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Detail</th>
+            <td colspan="3">
+                <form id="myform" action="/api/sengrid" method="POST">
+                    <div class="row">
+                        <div class="col">
+                            <label>Số điện thoại</label>
+                            <input type="text" class="form-control-plaintext form_phone" value="0905811741"
+                                name="phone">
+                        </div>
+                        <div class="col">
+                            <label>Email</label>
+                            <input type="email" class="form-control-plaintext form_email" value="nhatduy0409@gmail.com"
+                                name="email">
+                        </div>
+                    </div>
+                    {{!-- <div class="row">
+                        <div class="col">
+                            <label>CMND/CCCD</label>
+                            <input type="text" class="form-control-plaintext form_cmnd" value={{cmnd}} name="cmnd">
+                        </div>
+                        <div class="col">
+                            <label>Quốc tịch</label>
+                            <input type="text" class="form-control-plaintext form_country" value={{country}}
+                                name="country">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>Điểm đón</label>
+                            <input type="text" class="form-control-plaintext form_fromPlaces" value="{{fromPlaces}}"
+                                name="fromPlace">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Điểm đến</label>
+                            <input type="text" class="form-control-plaintext form_toPlaces" value="{{toPlaces}}"
+                                name="toPlace">
+                        </div>
+                    </div> --}}
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<form id="myform" action="/api/sengrid" method="POST">
+    <div class="row">
+        <div class="col">
+            <label>Số điện thoại</label>
+            <input type="text" class="form-control-plaintext form_phone" value="09005811741" name="phone">
+        </div>
+        <div class="col">
+            <label>Email</label>
+            <input type="email" class="form-control-plaintext form_email" value={{email}} name="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>CMND/CCCD</label>
+            <input type="text" class="form-control-plaintext form_cmnd" value={{cmnd}} name="cmnd">
+        </div>
+        <div class="col">
+            <label>Quốc tịch</label>
+            <input type="text" class="form-control-plaintext form_country" value={{country}} name="country">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Điểm đón</label>
+            <input type="text" class="form-control-plaintext form_fromPlaces" value="{{fromPlaces}}" name="fromPlace">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Điểm đến</label>
+            <input type="text" class="form-control-plaintext form_toPlaces" value="{{toPlaces}}" name="toPlace">
+        </div>
+    </div>
+</form>
