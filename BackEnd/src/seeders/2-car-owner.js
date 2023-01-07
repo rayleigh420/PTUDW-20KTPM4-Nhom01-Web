@@ -25,9 +25,9 @@ module.exports = {
         imgLogo: "https://i.ibb.co/nP4hnWL/ANTIENPHAT.webp",
         type: 32,
         imgCar: [
-          "https://i.ibb.co/kxDpnZq/1661771439561.jpg",
-          "https://i.ibb.co/Sx5mTQC/1661771440079.jpg",
-          "https://i.ibb.co/wRw9Tz4/1661771440795.jpg",
+          "https://static.vexere.com/production/images/1620363250861.jpeg",
+          "https://static.vexere.com/production/images/1620363251243.jpeg",
+          "https://static.vexere.com/production/images/1620363271706.jpeg",
         ],
       },
       {
@@ -38,9 +38,9 @@ module.exports = {
         imgLogo: "https://i.ibb.co/mbWcKSk/1605848869347.jpg",
         type: 22,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1605848824197.jpeg",
+          "https://static.vexere.com/production/images/1605848872856.jpeg",
+          "https://static.vexere.com/production/images/1639452217048.jpeg",
         ],
       },
       {
@@ -48,19 +48,21 @@ module.exports = {
         address:
           "Chi nhánh Phan Thiết: 165-167 Đỗ Hành, P. Phú Thủy/Chi nhánh TP.HCM: 270 Trần Phú, P.8",
         phone: "1900 888684",
-        imgLogo: "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
+        imgLogo:
+          "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
         type: 32,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/c/i/10824/xe-cao-lam-VeXeRe-GSSIYfT-1000x600.jpeg",
+          "https://static.vexere.com/c/i/10824/xe-cao-lam-VeXeRe-IjR2ml2-1000x600.jpeg",
+          "https://static.vexere.com/c/i/10824/xe-cao-lam-VeXeRe-EUK3m7f-1000x600.jpeg",
         ],
       }, //
       {
         name: "Dũng Lệ",
         address: "Chi nhánh TP.HCM: 1023 Hương Lộ 2",
         phone: "1900 888684",
-        imgLogo: "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
+        imgLogo:
+          "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
         type: 32,
         imgCar: [
           "https://ibb.co/M55FWNq",
