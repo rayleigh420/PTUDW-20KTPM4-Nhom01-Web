@@ -1,28 +1,27 @@
-let auth = JSON.parse(localStorage.getItem('Auth'))
+let auth = JSON.parse(localStorage.getItem("Auth"));
 // let checkUser;
 
 const check = async () => {
-    let result;
-    if (auth) {
-        let res = await fetch('/user/checkLocal', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: auth.email,
-                name: auth.name
-            }),
-        })
-        result = await res.json()
-    }
-    else {
-        result = false;
-    }
+  let result;
+  if (auth) {
+    let res = await fetch("/user/checkLocal", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: auth.email,
+        name: auth.name,
+      }),
+    });
+    result = await res.json();
+  } else {
+    result = false;
+  }
 
-    let userNav = document.querySelector('.btn_auth')
-    if (result) {
-        userNav.innerHTML = `
+  let userNav = document.querySelector(".btn_auth");
+  if (result) {
+    userNav.innerHTML = `
         <button type="button" class="btn btn_user">
             <ion-icon class="user_icon" name="person-circle"></ion-icon>
             ${auth.name}
@@ -33,7 +32,7 @@ const check = async () => {
             Tài khoản
                 </li>
                 <li class="list-group-item">
-                    <a href="/history">
+                    <a href="/history/${auth.email}">
                         <ion-icon class="user_option_icon" name="book" size="small"></ion-icon>Lịch sử đặt vé
                     </a>
                 </li>
@@ -44,12 +43,11 @@ const check = async () => {
                     </a>
                 </li>
             </ul>
-        </div> `
-    }
-    else {
-        localStorage.removeItem('Auth')
+        </div> `;
+  } else {
+    localStorage.removeItem("Auth");
 
-        userNav.innerHTML = `
+    userNav.innerHTML = `
         <button type="button" class="btn btn_signIn">
         <a href="/signIn">
         <ion-icon class="signIn_icon" name="people-circle"></ion-icon>
@@ -60,16 +58,16 @@ const check = async () => {
             <a href="/signUp">
                 Đăng ký
             </a>
-        </button> `
-    }
+        </button> `;
+  }
 
-    let logOut = document.querySelector('.log_out')
-    if (logOut) {
-        logOut.onclick = () => {
-            localStorage.removeItem("Auth");
-        }
-    }
-}
+  let logOut = document.querySelector(".log_out");
+  if (logOut) {
+    logOut.onclick = () => {
+      localStorage.removeItem("Auth");
+    };
+  }
+};
 
 check();
 

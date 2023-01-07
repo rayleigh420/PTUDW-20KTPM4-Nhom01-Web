@@ -27,8 +27,8 @@ let getHistoryPage = async (id) => {
         where: { idUser: id },
         raw: true,
       });
-      console.log(items);
-      console.log(1);
+      // console.log(items);
+      // console.log(1);
       let tk = {};
       let provinces = await db.Province.findAll({
         raw: true,
@@ -37,12 +37,12 @@ let getHistoryPage = async (id) => {
         where: { id: id },
         raw: true,
       });
-      user.summaryName = await getSummaryName(user["name"]);
+      user.summaryName = getSummaryName(user["name"]);
       let ProvinceMap = new Map();
       provinces.forEach((item) => {
         ProvinceMap.set(item.province, item.provinceName);
       });
-      console.log(3);
+      // console.log(3);
       //   let tickets = await db.Ticket.findAll({
       //     where: { id: items["idTicket"] },
       //     raw: true,
