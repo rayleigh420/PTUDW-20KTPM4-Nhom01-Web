@@ -21,3 +21,27 @@ btnSave.onclick = () => {
 const deleteCar = () => {
     alert("Delete Success!")
 }
+
+let listName = document.querySelectorAll(`#myform1 input[name="name"]`)
+console.log(listName)
+
+console.log(listName)
+
+const form2 = document.querySelector("#myform2")
+const formName = form2.querySelector(`input[name="name"]`)
+
+const btnAdd = document.querySelector('.btnAdd')
+btnAdd.onclick = (e) => {
+    let flag = false;
+    listName.forEach(item => {
+        if (item.value == formName.value) {
+            flag = true;
+        }
+    })
+    if (flag) {
+        e.preventDefault();
+    }
+    else {
+        alert("Add Success!")
+    }
+}
