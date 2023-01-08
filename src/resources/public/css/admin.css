@@ -53,16 +53,31 @@ main {
   font-family: 'Roboto';
   font-style: normal;
 }
-form {
+table .id {
+  max-width: 20px;
+}
+table .action {
+  width: 30px;
+}
+table tbody .detail form {
+  font-family: 'Roboto';
+  font-style: normal;
   margin-top: 20px;
 }
-form label {
+table tbody .detail form .btnSave {
+  margin-top: 30px;
+  border-radius: 3px;
+}
+table tbody .detail form input {
+  max-width: 90vw;
+}
+table tbody .detail form label {
   margin-bottom: 10px;
   font-weight: 449;
   font-size: 16.5px;
   line-height: 23px;
   font-stretch: 100;
 }
-form .row + .row {
+table tbody .detail form .row + .row {
   margin-top: 19px;
 }

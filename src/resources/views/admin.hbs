@@ -6,101 +6,51 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Address</th>
             <th scope="col">Phone</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
+        {{#each car}}
         <tr>
-            <th scope="row">1</th>
-            <td>An Anh Limousine</td>
-            <td>Chi nhánh Ninh Thuận: 222 Lê Duẫn, Phủ Hà, Phan Rang/Chi nhánh TP.HCM: 85 Bờ Bao Tân Thắng, P. Sơn Kỳ,
-                Q. Tân Phú/Chi nhánh Đà Lạt: 4C Yersin, Phường 10 (Kế bên Công viên Yersin), TP. Đà Lạt</td>
-            <td>1900 8678</td>
+            <th scope="row" class="id">{{id}}</th>
+            <td>{{name}}</td>
+            <td>{{phone}}</td>
+            <td class="action">
+                <ion-icon name="create" onclick="show({{id}})"></ion-icon>
+                <a href="car/api/deleteCarOwner/{{id}}"><ion-icon name="trash"></ion-icon></a>
+            </td>
         </tr>
-
-        <tr>
-            <th scope="row">Detail</th>
+        <tr class="detail detail_{{id}}" hidden>
+            <th scope="row" class="id">Detail</th>
             <td colspan="3">
                 <form id="myform" action="/api/sengrid" method="POST">
                     <div class="row">
                         <div class="col">
-                            <label>Số điện thoại</label>
-                            <input type="text" class="form-control-plaintext form_phone" value="0905811741"
-                                name="phone">
+                            <label>Name</label>
+                            <input type="text" class="form-control form_name" value="{{name}}" name="name">
                         </div>
                         <div class="col">
-                            <label>Email</label>
-                            <input type="email" class="form-control-plaintext form_email" value="nhatduy0409@gmail.com"
-                                name="email">
-                        </div>
-                    </div>
-                    {{!-- <div class="row">
-                        <div class="col">
-                            <label>CMND/CCCD</label>
-                            <input type="text" class="form-control-plaintext form_cmnd" value={{cmnd}} name="cmnd">
-                        </div>
-                        <div class="col">
-                            <label>Quốc tịch</label>
-                            <input type="text" class="form-control-plaintext form_country" value={{country}}
-                                name="country">
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <label>Điểm đón</label>
-                            <input type="text" class="form-control-plaintext form_fromPlaces" value="{{fromPlaces}}"
-                                name="fromPlace">
+                            <label>Phone</label>
+                            <input type="text" class="form-control form_phone" value="{{phone}}" name="phone">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label>Điểm đến</label>
-                            <input type="text" class="form-control-plaintext form_toPlaces" value="{{toPlaces}}"
-                                name="toPlace">
+                            <label>Address</label>
+                            <input type="text" class="form-control form_address" value="{{address}}" name="address">
                         </div>
-                    </div> --}}
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>Logo Image Link</label>
+                            <input type="text" class="form-control form_img" value="{{imgLogo}}" name="imgLogo">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary btnSave">Save</button>
                 </form>
             </td>
         </tr>
+        {{/each}}
     </tbody>
 </table>
-
-<form id="myform" action="/api/sengrid" method="POST">
-    <div class="row">
-        <div class="col">
-            <label>Số điện thoại</label>
-            <input type="text" class="form-control-plaintext form_phone" value="09005811741" name="phone">
-        </div>
-        <div class="col">
-            <label>Email</label>
-            <input type="email" class="form-control-plaintext form_email" value={{email}} name="email">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label>CMND/CCCD</label>
-            <input type="text" class="form-control-plaintext form_cmnd" value={{cmnd}} name="cmnd">
-        </div>
-        <div class="col">
-            <label>Quốc tịch</label>
-            <input type="text" class="form-control-plaintext form_country" value={{country}} name="country">
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <label>Điểm đón</label>
-            <input type="text" class="form-control-plaintext form_fromPlaces" value="{{fromPlaces}}" name="fromPlace">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label>Điểm đến</label>
-            <input type="text" class="form-control-plaintext form_toPlaces" value="{{toPlaces}}" name="toPlace">
-        </div>
-    </div>
-</form>

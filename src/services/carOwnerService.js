@@ -2,6 +2,20 @@ import db from "../models/index";
 import moment from "moment/moment";
 import { Sequelize } from "sequelize";
 
+let getAllCarOwner = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let car = await db.CarOwner.findAll({
+                raw: true
+            })
+
+            resolve(car)
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 let getListCarOwner = () => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -39,6 +53,6 @@ let getListTypeCar = () => {
 }
 
 module.exports = {
-    getListCarOwner, getListTypeCar
+    getListCarOwner, getListTypeCar, getAllCarOwner
 };
 
