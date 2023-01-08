@@ -6,7 +6,6 @@ import userService from "../services/userService";
 
 let getDetailPage = async (req, res) => {
   try {
-
     let [idTicket, amount] = req.params.idTicket.split("_");
     let rateInfo = await rateService.getRates(idTicket);
     let items = await detailService.getDetailPage(idTicket, amount);
