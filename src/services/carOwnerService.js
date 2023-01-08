@@ -13,8 +13,6 @@ let addCarOwner = (data) => {
                 type: data.type
             })
 
-            console.log("Car: ", car)
-
             if (car) {
                 resolve(true)
             }
