@@ -62,12 +62,12 @@ module.exports = {
         address: "Chi nhánh TP.HCM: 1023 Hương Lộ 2",
         phone: "1900 888684",
         imgLogo:
-          "https://i.ibb.co/jzzMFXm/images-q-tbn-ANd9-Gc-TX7g-Svw-4f-Q-M0s53-d-Lmafuoa-CJcs-UJw-I3-Qagmac-RAay-3-3vqr-LMo5te-PVtb2nqs-R0.jpg",
+          "https://static.vexere.com/production/images/1595585677492.jpeg?w=250&h=250",
         type: 32,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1595585678678.jpeg",
+          "https://static.vexere.com/production/images/1595585675282.jpeg",
+          "https://static.vexere.com/production/images/1595585676259.jpeg",
         ],
       },
       {
@@ -75,24 +75,26 @@ module.exports = {
         address:
           "Chi nhánh Phan Rang: Lô 10D Trung Tâm Thương Mại Thanh Hà/Chi nhánh TP.HCM: 509 Nhật Tảo, Phường 7",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo:
+          "https://static.vexere.com/production/images/1587289772561.jpeg?w=250&h=250",
         type: 32,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1587289704079.jpeg",
+          "https://static.vexere.com/production/images/1587289763293.jpeg",
+          "https://static.vexere.com/production/images/1587289766049.jpeg",
         ],
       },
       {
         name: "Thiên Kim Limousine",
         address: "Chi nhánh TP.HCM: 1249 đường 3 tháng 2",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo:
+          "https://static.vexere.com/production/images/1661771441869.jpeg?w=250&h=250",
         type: 9,
         imgCar: [
-          "https://i.ibb.co/kxDpnZq/1661771439561.jpg",
-          "https://i.ibb.co/Sx5mTQC/1661771440079.jpg",
-          "https://i.ibb.co/wRw9Tz4/1661771440795.jpg",
+          "https://static.vexere.com/production/images/1661771439561.jpeg",
+          "https://static.vexere.com/production/images/1661771440079.jpeg",
+          "https://static.vexere.com/production/images/1661771440795.jpeg",
         ],
       },
       {
@@ -103,9 +105,9 @@ module.exports = {
         imgLogo: "https://ibb.co/tzzs5rg",
         type: 22,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1605848824197.jpeg",
+          "https://static.vexere.com/production/images/1605848872856.jpeg",
+          "https://static.vexere.com/production/images/1639452217048.jpeg",
         ],
       },
       {
@@ -116,9 +118,9 @@ module.exports = {
         imgLogo: "https://ibb.co/tzzs5rg",
         type: 32,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1595585678678.jpeg",
+          "https://static.vexere.com/production/images/1595585675282.jpeg",
+          "https://static.vexere.com/production/images/1595585676259.jpeg",
         ],
       },
       {
@@ -129,9 +131,9 @@ module.exports = {
         imgLogo: "https://ibb.co/tzzs5rg",
         type: 32,
         imgCar: [
-          "https://ibb.co/M55FWNq",
-          "https://ibb.co/nPV4XWW",
-          "https://ibb.co/HrTBm7K",
+          "https://static.vexere.com/production/images/1595585678678.jpeg",
+          "https://static.vexere.com/production/images/1595585675282.jpeg",
+          "https://static.vexere.com/production/images/1595585676259.jpeg",
         ],
       },
     ];

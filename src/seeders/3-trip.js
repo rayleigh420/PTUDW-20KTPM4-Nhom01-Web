@@ -32,6 +32,14 @@ module.exports = {
         from: "SG",
         to: "ĐL", //7
       },
+      {
+        from: "SG",
+        to: "PY", //8 Phu Yen
+      },
+      {
+        from: "SG",
+        to: "BV", //9 Ba Ria Vung Tau
+      },
     ];
     items.forEach((item) => {
       item.createdAt = Sequelize.literal("NOW() ");

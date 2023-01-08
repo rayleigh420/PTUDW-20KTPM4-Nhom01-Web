@@ -59,6 +59,12 @@ module.exports = {
       { province: "GL", places: "Mang Yang" },
       { province: "GL", places: "Ngã 3 Phú Mỹ" },
       { province: "GL", places: "Bến xe Đức Long Gia Lai" },
+      { province: "PY", places: "Nội Ô Thành Phố Tuy Hoà" },
+      { province: "PY", places: "Thị Trấn Chí Thạnh" },
+      { province: "PY", places: "VP Tuy Hoà" },
+      { province: "BV", places: "Cây xăng Kim Hải" },
+      { province: "BV", places: "Cổng chào Bà Rịa" },
+      { province: "BV", places: "Nội thành Vũng Tàu" },
     ];
     items.forEach((item) => {
       item.createdAt = Sequelize.literal("NOW() ");
