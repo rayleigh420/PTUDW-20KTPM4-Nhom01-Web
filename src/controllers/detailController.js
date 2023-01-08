@@ -44,7 +44,8 @@ let getDetailPage = async (req, res) => {
 };
 let handleRate = async (req, res) => {
   try {
-    let idTicket = req.params.idTicket;
+    let idTicket1 = req.params.idTicket;
+    let idTicket = idTicket1.split("_")[0];
     let items = await detailService.getDetailPage(idTicket);
     // console.log(req.query.ratestar);
     // console.log(req.query.content);
@@ -61,7 +62,7 @@ let handleRate = async (req, res) => {
       idCarOwner: carOwner["id"],
       idUser: user.user.id,
     });
-    res.redirect("/detail/" + idTicket);
+    res.redirect("/detail/" + idTicket1);
   } catch (e) {
     console.log(e);
   }
