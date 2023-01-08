@@ -2,6 +2,31 @@ import db from "../models/index";
 import moment from "moment/moment";
 import { Sequelize } from "sequelize";
 
+let addCarOwner = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let car = await db.CarOwner.create({
+                name: data.name,
+                address: data.address,
+                phone: data.phone,
+                imgLogo: data.imgLogo,
+                type: data.type
+            })
+
+            console.log("Car: ", car)
+
+            if (car) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 let getAllCarOwner = () => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -109,6 +134,6 @@ let deleteCarOwner = (id) => {
 }
 
 module.exports = {
-    getListCarOwner, getListTypeCar, getAllCarOwner, updateCarOwner, deleteCarOwner
+    getListCarOwner, getListTypeCar, getAllCarOwner, updateCarOwner, deleteCarOwner, addCarOwner
 };
 

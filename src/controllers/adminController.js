@@ -16,6 +16,17 @@ let getAdminPage = async (req, res) => {
     }
 }
 
+let addCarOwner = async (req, res) => {
+    try {
+        let result = await carOwnerService.addCarOwner(req.body)
+        if (result) {
+            res.redirect("/admin")
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 let updateCarOwner = async (req, res) => {
     try {
         let result = await carOwnerService.updateCarOwner(req.params.id, req.body)
@@ -40,5 +51,5 @@ let deleteCarOwner = async (req, res) => {
 
 
 module.exports = {
-    getAdminPage, updateCarOwner, deleteCarOwner
+    getAdminPage, updateCarOwner, deleteCarOwner, addCarOwner
 }

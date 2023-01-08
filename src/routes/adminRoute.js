@@ -5,6 +5,7 @@ let router = express.Router();
 
 const initAdminRoute = (app) => {
     router.get('/', adminController.getAdminPage)
+    router.post('/addCarOwner', adminController.addCarOwner)
     router.post('/updateCarOwner/:id', adminController.updateCarOwner)
     router.get('/deleteCarOwner/:id', adminController.deleteCarOwner)
 
