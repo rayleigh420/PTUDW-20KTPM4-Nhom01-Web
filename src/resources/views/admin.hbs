@@ -18,13 +18,13 @@
             <td>{{phone}}</td>
             <td class="action">
                 <ion-icon name="create" onclick="show({{id}})"></ion-icon>
-                <a href="car/api/deleteCarOwner/{{id}}"><ion-icon name="trash"></ion-icon></a>
+                <a href="admin/deleteCarOwner/{{id}}"><ion-icon name="trash" onclick="deleteCar()"></ion-icon></a>
             </td>
         </tr>
         <tr class="detail detail_{{id}}" hidden>
-            <th scope="row" class="id">Detail</th>
+            <th scope="row" class="id"></th>
             <td colspan="3">
-                <form id="myform" action="/api/sengrid" method="POST">
+                <form id="myform" action="/admin/updateCarOwner/{{id}}" method="POST">
                     <div class="row">
                         <div class="col">
                             <label>Name</label>
@@ -45,6 +45,10 @@
                         <div class="col">
                             <label>Logo Image Link</label>
                             <input type="text" class="form-control form_img" value="{{imgLogo}}" name="imgLogo">
+                        </div>
+                        <div class="col">
+                            <label>Type of car</label>
+                            <input type="text" class="form-control form_type" value="{{type}}" name="type">
                         </div>
                     </div>
                     <button type="submit" class="btn-primary btnSave">Save</button>

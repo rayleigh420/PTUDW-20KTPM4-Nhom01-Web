@@ -1,10 +1,23 @@
 const show = (id) => {
     const detailList = document.querySelectorAll('.detail')
-    console.log(detailList)
+    const detail = document.querySelector(`.detail_${id}`)
+
+    const showOrNot = detail.hidden
+
     detailList.forEach(item => {
         item.setAttribute('hidden', true)
     })
 
-    const detail = document.querySelector(`.detail_${id}`)
-    detail.removeAttribute('hidden')
+    if (showOrNot) {
+        detail.removeAttribute('hidden')
+    }
+}
+
+const btnSave = document.querySelector('.btnSave')
+btnSave.onclick = () => {
+    alert("Update success!")
+}
+
+const deleteCar = () => {
+    alert("Delete Success!")
 }

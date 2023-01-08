@@ -6,6 +6,9 @@ let getAllCarOwner = () => {
     return new Promise(async (resolve, reject) => {
         try {
             let car = await db.CarOwner.findAll({
+                order: [
+                    ['id', 'ASC'],
+                ],
                 raw: true
             })
 
@@ -52,7 +55,60 @@ let getListTypeCar = () => {
     })
 }
 
+let updateCarOwner = async (id, data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let carOwner = await db.CarOwner.findOne({
+                where: {
+                    id: id
+                },
+                raw: true
+            })
+
+            let result = await db.CarOwner.upsert({
+                id: carOwner.id,
+                ...data
+            });
+
+            if (result) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
+let deleteCarOwner = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let result = await db.CarOwner.destroy({
+                where: {
+                    id: id
+                },
+                cascade: true,
+                raw: true
+            })
+
+            console.log(result)
+
+            if (result > 0) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+
+}
+
 module.exports = {
-    getListCarOwner, getListTypeCar, getAllCarOwner
+    getListCarOwner, getListTypeCar, getAllCarOwner, updateCarOwner, deleteCarOwner
 };
 
