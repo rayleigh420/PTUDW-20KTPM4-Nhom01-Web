@@ -102,7 +102,8 @@ module.exports = {
         address:
           "Chi nhánh Hàm Tân: 26 QL 55, Xã Tân Hà, Huyện Hàm Tân, tỉnh Bình Thuận/Chi nhánh TP.HCM:  2 Hồ Đắc Di - Tân Phú - Hồ Chí Minh",
         phone: "1900 7070",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo:
+          "https://static.vexere.com/c/i/29120/xe-thuy-ha-linh-VeXeRe-eGlsaFI-1000x600.jpeg?w=250&h=250",
         type: 22,
         imgCar: [
           "https://static.vexere.com/production/images/1605848824197.jpeg",
@@ -115,7 +116,8 @@ module.exports = {
         address:
           "Chi nhánh Bình Thuận: T1 Võ Văn Kiệt, P. Phú Thuỷ/Chi nhánh TP.HCM:  85A Nguyễn Cư Trinh",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo:
+          "https://static.vexere.com/c/i/11792/xe-trung-nga-VeXeRe-0leTCs6-1000x600.jpeg?w=250&h=250",
         type: 32,
         imgCar: [
           "https://static.vexere.com/production/images/1595585678678.jpeg",
@@ -128,12 +130,13 @@ module.exports = {
         address:
           "Chi nhánh Khánh Hòa: 18C Trần Hưng Đạo/Chi nhánh TP.HCM:  263 Phạm Ngũ Lão",
         phone: "1900 888684",
-        imgLogo: "https://ibb.co/tzzs5rg",
+        imgLogo:
+          "https://static.vexere.com/production/images/1594792171273.jpeg?w=250&h=250",
         type: 32,
         imgCar: [
-          "https://static.vexere.com/production/images/1595585678678.jpeg",
-          "https://static.vexere.com/production/images/1595585675282.jpeg",
-          "https://static.vexere.com/production/images/1595585676259.jpeg",
+          "https://static.vexere.com/production/images/1594792171731.jpeg",
+          "https://static.vexere.com/production/images/1575348054986.jpeg",
+          "https://static.vexere.com/production/images/1640833518394.jpeg",
         ],
       },
     ];
