@@ -112,7 +112,7 @@ helper.generateStarList = (stars) => {
     str += `<i class="fa fa-star"></i>`;
     starCanDraw -= 1;
     if (starCanDraw > 0 && starCanDraw < 1) {
-      if (starCanDraw > 0.5) {
+      if (starCanDraw >= 0.5) {
         str += `<i class="fa fa-star-half-o"></i>`;
         i++;
         i++; //lag
