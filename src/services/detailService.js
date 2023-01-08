@@ -57,7 +57,7 @@ let getDetailPage = async (id, amount) => {
       tk.carOwner = carOwner;
       tk.FromProvince = Trip["from"];
       tk.ToProvince = Trip["to"];
-      tk.price = parseInt(items["price"]) * parseInt(amount);
+      tk.price = new Intl.NumberFormat('vn-VN').format(parseInt(items["price"]) * parseInt(amount));
       tk.phone = carOwner["phone"];
       tk.address = carOwner["address"].split("/");
       // console.log(Trip["from"]);

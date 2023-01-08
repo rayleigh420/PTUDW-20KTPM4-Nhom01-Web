@@ -26,7 +26,7 @@ let getTicketInfoById = async (id) => {
             tk.to = Trip.to;
             tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
             tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
-            tk.price = items["price"] + " VND/";
+            tk.price = new Intl.NumberFormat('vn-VN').format(items["price"]) + " VND/";
             tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
             tk.dayStart = getDayName(dateStart)
             resolve(tk);
@@ -82,7 +82,7 @@ let getTicketInfo = async (data) => {
                     tk.to = item.to;
                     tk.timeStart = dateStart.hour() + ":" + dateStart.minute();
                     tk.timeEnd = dateEnd.hour() + ":" + dateEnd.minute();
-                    tk.price = item["Tickets.price"] + " VND/";
+                    tk.price = new Intl.NumberFormat('vn-VN').format(item["Tickets.price"]) + " VND/";
                     tk.blank = seatBlank.count;
                     tk.hours = moment.duration(dateEnd.diff(dateStart)).asHours();
                     tk.amount = data.amount ? data.amount : 1;

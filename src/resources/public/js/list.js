@@ -23,8 +23,8 @@ let filterTicket = () => {
     let ticketListCopy = [...ticketList]
     if (price != '') {
         ticketListCopy.sort((a, b) => {
-            let aPrice = parseInt(a.querySelector('input.price').value)
-            let bPrice = parseInt(b.querySelector('input.price').value)
+            let aPrice = parseFloat(a.querySelector('input.price').value)
+            let bPrice = parseFloat(b.querySelector('input.price').value)
 
             if (price == 'INCR') {
                 return aPrice - bPrice
