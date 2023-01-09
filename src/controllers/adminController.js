@@ -1,6 +1,19 @@
 import carOwnerService from "../services/carOwnerService"
+import tripService from "../services/tripService"
 
 let getAdminPage = async (req, res) => {
+    try {
+        res.render("admin", {
+            layout: "adminLayout",
+            style: ["admin.css"],
+            // js: ["carOwnerAdmin.js"],
+        })
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+let getCarOwnerAdmin = async (req, res) => {
     try {
         let car = await carOwnerService.getAllCarOwner();
         console.log(car);
@@ -49,7 +62,25 @@ let deleteCarOwner = async (req, res) => {
     }
 }
 
+let getTripAdmin = async (req, res) => {
+    try {
+        let trip = await tripService.getAllTrip();
+        console.log(trip);
+
+        res.render("admin/adminTrip", {
+            layout: "adminLayout",
+            // style: ["adminCarOwner.css"],
+            // js: ["carOwnerAdmin.js"],
+            trip: trip
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 
 module.exports = {
-    getAdminPage, updateCarOwner, deleteCarOwner, addCarOwner
+    getAdminPage,
+    getCarOwnerAdmin, updateCarOwner, deleteCarOwner, addCarOwner,
+    getTripAdmin
 }

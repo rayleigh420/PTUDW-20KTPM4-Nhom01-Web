@@ -4,7 +4,9 @@ import adminController from "../controllers/adminController"
 let router = express.Router();
 
 const initAdminRoute = (app) => {
-    router.get('/adminCarOwner', adminController.getAdminPage)
+    router.get('/', adminController.getAdminPage)
+    router.get('/adminCarOwner', adminController.getCarOwnerAdmin)
+    router.get('/adminTrip', adminController.getTripAdmin)
 
 
 

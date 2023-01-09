@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         from: "SG",
-        to: "NH", //4
+        to: "HN", //4
       },
       {
         from: "SG",
