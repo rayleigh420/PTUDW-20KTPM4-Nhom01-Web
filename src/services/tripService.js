@@ -101,7 +101,7 @@ let addTrip = async (data) => {
     })
 }
 
-let deleteTrip = async (data) => {
+let deleteTrip = async (id) => {
     return new Promise(async (resolve, reject) => {
         try {
             let result = await db.Trip.destroy({
