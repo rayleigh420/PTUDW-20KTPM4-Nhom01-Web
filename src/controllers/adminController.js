@@ -1,5 +1,6 @@
 import carOwnerService from "../services/carOwnerService"
 import tripService from "../services/tripService"
+import seatService from "../services/seatService"
 import provinceService from "../services/provinceService"
 
 let getAdminPage = async (req, res) => {
@@ -115,7 +116,7 @@ let addTrip = async (req, res) => {
 
 let getSeatAdmin = async (req, res) => {
     try {
-        // let seat = await tripService.getAllTrip();
+        let seat = await seatService.getAllSeat();
         // let provinces = await provinceService.getProvince();
 
         res.render("admin/adminSeat", {

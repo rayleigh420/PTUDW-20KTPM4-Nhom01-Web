@@ -2,6 +2,39 @@ import db from "../models/index";
 import userService from "../services/userService"
 import historyService from "../services/historyService"
 
+let getAllSeat = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            // let Ticket = await db.Ticket.findAll({
+            //     raw: true,
+            // });
+
+            // console.log(Ticket)
+
+            // Ticket.forEach(async (item) => {
+            //     let seat = await db.Seat.findAll({
+            //         where: {
+            //             idTicket: item.id
+            //         },
+            //         raw: true
+            //     })
+            //     item.seat = seat
+            // })
+
+            let seat = await db.Seat.findAll({
+                where: {
+                    idTicket: 1
+                },
+                raw: true
+            })
+
+            console.log(seat)
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 let bookSeat = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -100,6 +133,6 @@ let checkBlank = (data) => {
 }
 
 module.exports = {
-    bookSeat, getIdBooking, checkBlank
+    bookSeat, getIdBooking, checkBlank, getAllSeat
 };
 
