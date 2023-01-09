@@ -16,24 +16,34 @@
             <td>{{toName}}</td>
             <td class="action">
                 <ion-icon name="create" onclick="show({{id}})"></ion-icon>
-                <a href="admin/deleteCarOwner/{{id}}"><ion-icon name="trash" onclick="deleteCar()"></ion-icon></a>
+                <a href="admin/deleteTrip/{{id}}"><ion-icon name="trash" onclick="deleteTrip()"></ion-icon></a>
             </td>
         </tr>
-        {{!-- <tr class="detail detail_{{id}}" hidden>
+        <tr class="detail detail_{{id}}" hidden>
             <th scope="row" class="id"></th>
             <td colspan="3">
-                <form id="myform1" action="/admin/updateCarOwner/{{id}}" method="POST">
+                <form id="myform1" action="/admin/updateTrip/{{id}}" method="POST">
                     <div class="row">
                         <div class="col">
-                            <label>Name</label>
-                            <input type="text" class="form-control form_name" value="{{name}}" name="name">
+                            <label for="from">From</label>
+                            <select name="from" class="form-control from" id="formPlace" required>
+                                <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option>
+                                {{#each provinces}}
+                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                                {{/each}}
+                            </select>
                         </div>
                         <div class="col">
-                            <label>Phone</label>
-                            <input type="text" class="form-control form_phone" value="{{phone}}" name="phone">
+                            <label for="to">To</label>
+                            <select name="to" class="form-control to" id="toPlace" required>
+                                <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option>
+                                {{#each provinces}}
+                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                                {{/each}}
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
+                    {{!-- <div class="row">
                         <div class="col">
                             <label>Address</label>
                             <input type="text" class="form-control form_address" value="{{address}}" name="address">
@@ -48,14 +58,16 @@
                             <label>Type of car</label>
                             <input type="number" class="form-control form_type" value="{{type}}" name="type">
                         </div>
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn-primary btnSave">Save</button>
                 </form>
             </td>
-        </tr> --}}
+        </tr>
         {{/each}}
     </tbody>
 </table>
+
+
 
 <div class="form_wrapper">
     <p>Add more trip</p>

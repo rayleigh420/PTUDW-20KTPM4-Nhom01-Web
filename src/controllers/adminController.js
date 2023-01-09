@@ -1,5 +1,6 @@
 import carOwnerService from "../services/carOwnerService"
 import tripService from "../services/tripService"
+import provinceService from "../services/provinceService"
 
 let getAdminPage = async (req, res) => {
     try {
@@ -20,7 +21,7 @@ let getCarOwnerAdmin = async (req, res) => {
 
         res.render("admin/adminCarOwner", {
             layout: "adminLayout",
-            style: ["admin.css"],
+            // style: ["admin.css"],
             js: ["carOwnerAdmin.js"],
             car: car
         })
@@ -65,13 +66,14 @@ let deleteCarOwner = async (req, res) => {
 let getTripAdmin = async (req, res) => {
     try {
         let trip = await tripService.getAllTrip();
-        console.log(trip);
+        let provinces = await provinceService.getProvince();
 
         res.render("admin/adminTrip", {
             layout: "adminLayout",
             // style: ["adminCarOwner.css"],
-            // js: ["carOwnerAdmin.js"],
-            trip: trip
+            js: ["tripAdmin.js"],
+            trip: trip,
+            provinces: provinces
         })
     } catch (e) {
         console.log(e)
