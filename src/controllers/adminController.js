@@ -5,7 +5,7 @@ let getAdminPage = async (req, res) => {
         let car = await carOwnerService.getAllCarOwner();
         console.log(car);
 
-        res.render("admin", {
+        res.render("admin/adminCarOwner", {
             layout: "adminLayout",
             style: ["admin.css"],
             js: ["carOwnerAdmin.js"],
@@ -20,7 +20,7 @@ let addCarOwner = async (req, res) => {
     try {
         let result = await carOwnerService.addCarOwner(req.body)
         if (result) {
-            res.redirect("/admin")
+            res.redirect("/admin/adminCarOwner")
         }
     } catch (e) {
         console.log(e)
@@ -31,7 +31,7 @@ let updateCarOwner = async (req, res) => {
     try {
         let result = await carOwnerService.updateCarOwner(req.params.id, req.body)
         if (result) {
-            res.redirect("/admin")
+            res.redirect("/admin/adminCarOwner")
         }
     } catch (e) {
         console.log(e)
@@ -42,7 +42,7 @@ let deleteCarOwner = async (req, res) => {
     try {
         let result = await carOwnerService.deleteCarOwner(req.params.id)
         if (result) {
-            res.redirect('/admin')
+            res.redirect('/admin/adminCarOwner')
         }
     } catch (e) {
         console.log(e)
