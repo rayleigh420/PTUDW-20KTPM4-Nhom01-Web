@@ -113,8 +113,26 @@ let addTrip = async (req, res) => {
     }
 }
 
+let getSeatAdmin = async (req, res) => {
+    try {
+        // let seat = await tripService.getAllTrip();
+        // let provinces = await provinceService.getProvince();
+
+        res.render("admin/adminSeat", {
+            layout: "adminLayout",
+            // style: ["adminCarOwner.css"],
+            // js: ["tripAdmin.js"],
+            // trip: trip,
+            // provinces: provinces
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
     getAdminPage,
     getCarOwnerAdmin, updateCarOwner, deleteCarOwner, addCarOwner,
-    getTripAdmin, updateTrip, deleteTrip, addTrip
+    getTripAdmin, updateTrip, deleteTrip, addTrip,
+    getSeatAdmin
 }

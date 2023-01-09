@@ -1,0 +1,85 @@
+<p>List Seat</p>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each trip}}
+        <tr>
+            <th scope="row" class="id">{{id}}</th>
+            <td>{{fromName}}</td>
+            <td>{{toName}}</td>
+            <td class="action">
+                <ion-icon name="create" onclick="show({{id}})"></ion-icon>
+                <a href="/admin/deleteTrip/{{id}}"><ion-icon name="trash" onclick="deleteTrip()"></ion-icon></a>
+            </td>
+        </tr>
+        <tr class="detail detail_{{id}}" hidden>
+            <th scope="row" class="id"></th>
+            <td colspan="3">
+                <form id="myform1" action="/admin/updateTrip/{{id}}" method="POST">
+                    <input type="hidden" value="{{from}}" name="fromSelected">
+                    <input type="hidden" value="{{to}}" name="toSelected">
+                    <div class="row">
+                        <div class="col">
+                            <label for="from">From</label>
+                            <select name="from" class="form-control from" id="formPlace" required>
+                                {{!-- <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option> --}}
+                                {{#each provinces}}
+                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="to">To</label>
+                            <select name="to" class="form-control to" id="toPlace" required>
+                                {{!-- <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option> --}}
+                                {{#each provinces}}
+                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary btnSave">Save</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+
+<div class="form_wrapper">
+    <p>Add more trip</p>
+    <form id="myform2" action="/admin/addTrip" method="POST">
+        {{!-- <input type="hidden" value="{{from}}" name="fromSelected">
+        <input type="hidden" value="{{to}}" name="toSelected"> --}}
+        <div class="row">
+            <div class="col">
+                <label for="from">From</label>
+                <select name="from" class="form-control from" id="formPlace" required>
+                    <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option>
+                    {{#each provinces}}
+                    <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col">
+                <label for="to">To</label>
+                <select name="to" class="form-control to" id="toPlace" required>
+                    <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option>
+                    {{#each provinces}}
+                    <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn-primary btnAdd">Add</button>
+    </form>
+</div>
