@@ -57,31 +57,27 @@
 
 <div class="form_wrapper">
     <p>Add more trip</p>
-    <form id="myform2" action="/admin/addCarOwner" method="POST">
+    <form id="myform2" action="/admin/addTrip" method="POST">
+        {{!-- <input type="hidden" value="{{from}}" name="fromSelected">
+        <input type="hidden" value="{{to}}" name="toSelected"> --}}
         <div class="row">
             <div class="col">
-                <label>Name</label>
-                <input type="text" class="form-control form_name" name="name" required>
+                <label for="from">From</label>
+                <select name="from" class="form-control from" id="formPlace" required>
+                    <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option>
+                    {{#each provinces}}
+                    <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                    {{/each}}
+                </select>
             </div>
             <div class="col">
-                <label>Phone</label>
-                <input type="text" class="form-control form_phone" name="phone" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label>Address</label>
-                <input type="text" class="form-control form_address" name="address" required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label>Logo Image Link</label>
-                <input type="text" class="form-control form_img" name="imgLogo" required>
-            </div>
-            <div class="col">
-                <label>Type of car</label>
-                <input type="number" class="form-control form_type" name="type" required>
+                <label for="to">To</label>
+                <select name="to" class="form-control to" id="toPlace" required>
+                    <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option>
+                    {{#each provinces}}
+                    <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                    {{/each}}
+                </select>
             </div>
         </div>
         <button type="submit" class="btn-primary btnAdd">Add</button>

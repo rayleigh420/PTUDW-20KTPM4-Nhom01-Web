@@ -1,7 +1,7 @@
 const detailList = document.querySelectorAll('.detail')
 detailList.forEach(item => {
-    const fromSelected = document.querySelector('input[name="fromSelected"]').value
-    const toSelected = document.querySelector('input[name="toSelected"]').value
+    const fromSelected = item.querySelector('input[name="fromSelected"]').value
+    const toSelected = item.querySelector('input[name="toSelected"]').value
 
     console.log(fromSelected, toSelected)
 
@@ -45,21 +45,30 @@ const deleteTrip = () => {
 
 // console.log(listName)
 
-// const form2 = document.querySelector("#myform2")
-// const formName = form2.querySelector(`input[name="name"]`)
+const form2 = document.querySelector("#myform2")
+const from = form2.querySelector("select.from")
+const to = form2.querySelector("select.to")
 
-// const btnAdd = document.querySelector('.btnAdd')
-// btnAdd.onclick = (e) => {
-//     let flag = false;
-//     listName.forEach(item => {
-//         if (item.value == formName.value) {
-//             flag = true;
-//         }
-//     })
-//     if (flag) {
-//         e.preventDefault();
-//     }
-//     else {
-//         alert("Add Success!")
-//     }
-// }
+
+const btnAdd = document.querySelector('.btnAdd')
+btnAdd.onclick = async (e) => {
+    console.log("add")
+    let res = await fetch('/admin/api/checkTrip', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            from: from.value,
+            to: to.value
+        }),
+    })
+
+    let result = await res.json()
+    if (result) {
+        e.preventDefault();
+    }
+    else {
+        alert("Add Success!")
+    }
+}

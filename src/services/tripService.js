@@ -54,8 +54,33 @@ let updateTrip = async (id, data) => {
     })
 }
 
+let checkTrip = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let trip = await db.Trip.findOne({
+                where: {
+                    from: data.from,
+                    to: data.to
+                },
+                raw: true
+            })
+
+            console.log(trip)
+
+            if (trip) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    getAllTrip, updateTrip
+    getAllTrip, updateTrip, checkTrip
 };
 
 
