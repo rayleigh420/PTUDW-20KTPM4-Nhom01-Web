@@ -26,8 +26,36 @@ let getAllTrip = () => {
     })
 }
 
+let updateTrip = async (id, data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let trip = await db.Trip.findOne({
+                where: {
+                    id: id
+                },
+                raw: true
+            })
+
+            let result = await db.Trip.upsert({
+                id: trip.id,
+                from: data.from,
+                to: data.to
+            });
+
+            if (result) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    getAllTrip
+    getAllTrip, updateTrip
 };
 
 

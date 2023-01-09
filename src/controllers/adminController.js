@@ -80,9 +80,20 @@ let getTripAdmin = async (req, res) => {
     }
 }
 
+let updateTrip = async (req, res) => {
+    try {
+        let result = await tripService.updateTrip(req.params.id, req.body)
+        if (result) {
+            res.redirect("/admin/adminTrip")
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 
 module.exports = {
     getAdminPage,
     getCarOwnerAdmin, updateCarOwner, deleteCarOwner, addCarOwner,
-    getTripAdmin
+    getTripAdmin, updateTrip
 }
