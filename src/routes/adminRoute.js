@@ -14,6 +14,7 @@ const initAdminRoute = (app) => {
 
     router.post('/addTrip', adminController.addTrip)
     router.post('/updateTrip/:id', adminController.updateTrip)
+    router.get('/deleteTrip/:id', adminController.deleteTrip)
 
     return app.use('/admin', router)
 

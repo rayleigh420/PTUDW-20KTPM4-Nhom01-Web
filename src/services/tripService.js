@@ -79,8 +79,55 @@ let checkTrip = async (data) => {
     })
 }
 
+let addTrip = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let trip = await db.Trip.create({
+                from: data.from,
+                to: data.to
+            })
+
+            console.log(trip)
+
+            if (trip) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
+let deleteTrip = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let result = await db.Trip.destroy({
+                where: {
+                    id: id
+                },
+                cascade: true,
+                raw: true
+            })
+
+            console.log(result)
+
+            if (result > 0) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    getAllTrip, updateTrip, checkTrip
+    getAllTrip, updateTrip, checkTrip, addTrip, deleteTrip
 };
 
 

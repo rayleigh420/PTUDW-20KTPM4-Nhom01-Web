@@ -91,9 +91,30 @@ let updateTrip = async (req, res) => {
     }
 }
 
+let deleteTrip = async (req, res) => {
+    try {
+        let result = await tripService.deleteTrip(req.params.id)
+        if (result) {
+            res.redirect('/admin/adminTrip')
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+let addTrip = async (req, res) => {
+    try {
+        let result = await tripService.addTrip(req.body)
+        if (result) {
+            res.redirect("/admin/adminTrip")
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
 
 module.exports = {
     getAdminPage,
     getCarOwnerAdmin, updateCarOwner, deleteCarOwner, addCarOwner,
-    getTripAdmin, updateTrip
+    getTripAdmin, updateTrip, deleteTrip, addTrip
 }
