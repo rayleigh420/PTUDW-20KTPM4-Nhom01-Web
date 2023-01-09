@@ -11,9 +11,12 @@ let getAllTrip = () => {
                 raw: true
             })
 
+            let provinces = await provinceService.getProvince();
+
             trip.forEach(async (item) => {
                 item.fromName = await provinceService.getProvinceName(item.from)
                 item.toName = await provinceService.getProvinceName(item.to)
+                item.provinces = provinces
             })
 
             resolve(trip)
