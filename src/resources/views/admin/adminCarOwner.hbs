@@ -23,6 +23,7 @@
             <th scope="row" class="id"></th>
             <td colspan="3">
                 <form id="myform1" action="/admin/updateCarOwner/{{id}}" method="POST">
+                    <input type="hidden" value="{{type}}" name="typeSelected">
                     <div class="row">
                         <div class="col">
                             <label>Name</label>
@@ -46,7 +47,11 @@
                         </div>
                         <div class="col">
                             <label>Type of car</label>
-                            <input type="number" class="form-control form_type" value="{{type}}" name="type">
+                            <select name="type" class="form-control type" id="type" required>
+                                <option value"9">9</option>
+                                <option value"22">22</option>
+                                <option value"32">32</option>
+                            </select>
                         </div>
                     </div>
                     <button type="submit" class="btn-primary btnSave">Save</button>
