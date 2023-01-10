@@ -2,6 +2,7 @@ const detailList = document.querySelectorAll(".detail");
 
 detailList.forEach(item => {
     const carOwnerSelected = item.querySelector('input[name="carOwnerSelected"]').value
+    const fromtoSelected = item.querySelector('input[name="fromtoSelected"]').value
     // const fromSelected = item.querySelector('input[name="fromSelected"]').value
     // const toSelected = item.querySelector('input[name="toSelected"]').value
 
@@ -13,7 +14,14 @@ detailList.forEach(item => {
     // const optionTo = item.querySelector(`select[name="toPlace"] option[value="${toSelected}"]`)
     // optionTo.setAttribute("selected", "true")
 
-    const optionCarOwner = item.querySelectorAll(`select[name="idCarOwner"] option`)
+    const optionCarOwner = item.querySelectorAll(`select[name="idTrip"] option`)
+    optionCarOwner.forEach(item => {
+        if (item.innerText == fromtoSelected) {
+            item.setAttribute("selected", "true")
+        }
+    })
+
+    const optionFromTo = item.querySelectorAll(`select[name=""] option`)
     optionCarOwner.forEach(item => {
         if (item.innerText == carOwnerSelected) {
             item.setAttribute("selected", "true")
