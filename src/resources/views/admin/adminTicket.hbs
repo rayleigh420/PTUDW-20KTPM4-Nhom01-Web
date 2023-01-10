@@ -29,6 +29,8 @@
             {{!-- <th scope="row" class="id"></th> --}}
             <td colspan="10">
                 <form id="myform1" action="/admin/updateTicket/{{id}}" method="POST">
+                    <input type="hidden" name="carOwnerSelected" value="{{carOwnerName}}">
+
                     <div class="row">
                         <div class="col">
                             <label>Start</label>
