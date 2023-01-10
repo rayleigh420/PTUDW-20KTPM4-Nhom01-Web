@@ -5,19 +5,25 @@ import { Sequelize } from "sequelize";
 let addCarOwner = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let car = await db.CarOwner.create({
-                name: data.name,
-                address: data.address,
-                phone: data.phone,
-                imgLogo: data.imgLogo,
-                type: data.type
-            })
+            let check = await checkCarOwner(data)
+            if (!check) {
+                let car = await db.CarOwner.create({
+                    name: data.name,
+                    address: data.address,
+                    phone: data.phone,
+                    imgLogo: data.imgLogo,
+                    type: data.type
+                })
 
-            if (car) {
-                resolve(true)
+                if (car) {
+                    resolve(true)
+                }
+                else {
+                    resolve(false)
+                }
             }
             else {
-                resolve(false)
+                resolve(true)
             }
         } catch (e) {
             console.log(e)
@@ -81,24 +87,30 @@ let getListTypeCar = () => {
 let updateCarOwner = async (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let carOwner = await db.CarOwner.findOne({
-                where: {
-                    id: id
-                },
-                raw: true
-            })
+            let check = await checkCarOwner(data)
+            if (!check) {
+                let carOwner = await db.CarOwner.findOne({
+                    where: {
+                        id: id
+                    },
+                    raw: true
+                })
 
-            let result = await db.CarOwner.upsert({
-                id: carOwner.id,
-                ...data
-            });
-
-            if (result) {
-                resolve(true)
+                let result = await db.CarOwner.upsert({
+                    id: carOwner.id,
+                    ...data
+                });
+                if (result) {
+                    resolve(true)
+                }
+                else {
+                    resolve(false)
+                }
             }
             else {
-                resolve(false)
+                resolve(true)
             }
+
         } catch (e) {
             console.log(e)
         }

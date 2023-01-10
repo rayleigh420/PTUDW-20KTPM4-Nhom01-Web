@@ -29,25 +29,32 @@ let getAllTrip = () => {
 let updateTrip = async (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let trip = await db.Trip.findOne({
-                where: {
-                    id: id
-                },
-                raw: true
-            })
+            let check = await checkTrip(data)
+            if (!check) {
+                let trip = await db.Trip.findOne({
+                    where: {
+                        id: id
+                    },
+                    raw: true
+                })
 
-            let result = await db.Trip.upsert({
-                id: trip.id,
-                from: data.from,
-                to: data.to
-            });
+                let result = await db.Trip.upsert({
+                    id: trip.id,
+                    from: data.from,
+                    to: data.to
+                });
 
-            if (result) {
-                resolve(true)
+                if (result) {
+                    resolve(true)
+                }
+                else {
+                    resolve(false)
+                }
             }
             else {
-                resolve(false)
+                resolve(true)
             }
+
         } catch (e) {
             console.log(e)
         }
@@ -82,18 +89,24 @@ let checkTrip = async (data) => {
 let addTrip = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let trip = await db.Trip.create({
-                from: data.from,
-                to: data.to
-            })
+            let check = await checkTrip(data)
+            if (!check) {
+                let trip = await db.Trip.create({
+                    from: data.from,
+                    to: data.to
+                })
 
-            console.log(trip)
+                console.log(trip)
 
-            if (trip) {
-                resolve(true)
+                if (trip) {
+                    resolve(true)
+                }
+                else {
+                    resolve(false)
+                }
             }
             else {
-                resolve(false)
+                resolve(true)
             }
         } catch (e) {
             console.log(e)
