@@ -181,7 +181,7 @@ let addTicket = async (data) => {
       });
       //get car type
       let item = await db.CarOwner.findOne({
-        where: { id: id },
+        where: { id: data.idCarOwner },
         raw: true,
       });
       let type = item.type;
@@ -249,14 +249,12 @@ let deleteTicket = async (id) => {
         where: {
           id: id,
         },
-        cascade: true,
         raw: true,
       });
       let result = await db.Ticket.destroy({
         where: {
           id: id,
         },
-        cascade: true,
         raw: true,
       });
 
