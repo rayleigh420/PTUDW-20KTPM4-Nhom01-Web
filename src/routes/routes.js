@@ -9,15 +9,15 @@ import initHistoryRoute from "./historyRoute";
 import initSeatRoute from "./seatRoute";
 
 let initRoutes = (app) => {
-  initAdminRoute(app);
-  initAdminAPIRoute(app);
-  initSeatRoute(app);
-  initUserRoute(app);
-  initWebRoute(app);
-  initDetailRoute(app);
-  initListRoute(app);
-  initMailRoute(app);
-  initHistoryRoute(app);
+    initAdminRoute(app);
+    initAdminAPIRoute(app);
+    initSeatRoute(app);
+    initUserRoute(app);
+    initWebRoute(app);
+    initDetailRoute(app);
+    initListRoute(app);
+    initMailRoute(app);
+    initHistoryRoute(app);
 };
 
 export default initRoutes;

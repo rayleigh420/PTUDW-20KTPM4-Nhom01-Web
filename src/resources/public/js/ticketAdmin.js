@@ -1,18 +1,18 @@
 const detailList = document.querySelectorAll(".detail");
 
 const show = (id) => {
-  const detailList = document.querySelectorAll(".detail");
-  const detail = document.querySelector(`.detail_${id}`);
+    const detailList = document.querySelectorAll(".detail");
+    const detail = document.querySelector(`.detail_${id}`);
 
-  // const fromSelected = detail.querySelector('.select[name="from"] option[value=')
+    // const fromSelected = detail.querySelector('.select[name="from"] option[value=')
 
-  const showOrNot = detail.hidden;
+    const showOrNot = detail.hidden;
 
-  detailList.forEach((item) => {
-    item.setAttribute("hidden", true);
-  });
+    detailList.forEach((item) => {
+        item.setAttribute("hidden", true);
+    });
 
-  if (showOrNot) {
-    detail.removeAttribute("hidden");
-  }
+    if (showOrNot) {
+        detail.removeAttribute("hidden");
+    }
 };

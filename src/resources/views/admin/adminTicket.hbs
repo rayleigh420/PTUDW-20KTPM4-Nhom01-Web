@@ -44,20 +44,20 @@
                             <label>From-To</label>
                             <select name="idTrip" class="form-control fromto" id="trip" required>
                                 {{#each trips}}
-                                <option value={{id}} >{{from}}-{{to}}</option>
+                                <option value={{id}}>{{from}}-{{to}}</option>
                                 {{/each}}
                             </select>
-                    
+
                         </div>
                         <div class="col">
                             <label>Car Owner</label>
-                    
+
                             <select name="idCarOwner" class="form-control carowner" id="carowner" required>
                                 {{#each cars}}
                                 <option value={{id}}>{{name}}</option>
                                 {{/each}}
                             </select>
-                    
+
                         </div>
                     </div>
                     <div class="row">
@@ -90,30 +90,30 @@
         <div class="row">
             <div class="col">
                 <label>From-To</label>
-                
+
                 <select name="idTrip" class="form-control" required>
                     {{#each trips}}
                     <option value={{id}}>{{from}}-{{to}}</option>
                     {{/each}}
                 </select>
-                
+
             </div>
             <div class="col">
                 <label>Car Owner</label>
-                
+
                 <select name="idCarOwner" class="form-control" required>
                     {{#each cars}}
                     <option value={{id}}>{{name}}</option>
                     {{/each}}
                 </select>
-                
+
             </div>
         </div>
         <div class="row">
-                <div class="price">
-                    <label>Price</label>
-                    <input type="text" class="form-control" name="price" required>
-                </div>
+            <div class="price">
+                <label>Price</label>
+                <input type="text" class="form-control" name="price" required>
+            </div>
         </div>
         <button type="submit" class="btn-primary btnAdd">Add</button>
     </form>
