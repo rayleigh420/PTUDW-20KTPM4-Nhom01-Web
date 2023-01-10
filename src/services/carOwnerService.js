@@ -128,10 +128,33 @@ let deleteCarOwner = (id) => {
             console.log(e)
         }
     })
+}
 
+let checkCarOwner = async (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let car = await db.CarOwner.findOne({
+                where: {
+                    name: data.name
+                },
+                raw: true
+            })
+
+            console.log(car)
+
+            if (car) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
 }
 
 module.exports = {
-    getListCarOwner, getListTypeCar, getAllCarOwner, updateCarOwner, deleteCarOwner, addCarOwner
+    getListCarOwner, getListTypeCar, getAllCarOwner, updateCarOwner, deleteCarOwner, addCarOwner, checkCarOwner
 };
 

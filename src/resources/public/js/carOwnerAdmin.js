@@ -14,8 +14,25 @@ const show = (id) => {
 }
 
 const btnSave = document.querySelector('.btnSave')
-btnSave.onclick = () => {
-    alert("Update success!")
+btnSave.onclick = async (e) => {
+    let nameInput = document.querySelector('#myform1 input[name="name"]').value
+    let res = await fetch('/admin/api/checkCarOwner', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: nameInput
+        }),
+    })
+
+    let result = await res.json()
+    if (result) {
+        e.preventDefault();
+    }
+    else {
+        alert("Update Success!")
+    }
 }
 
 const deleteCar = () => {

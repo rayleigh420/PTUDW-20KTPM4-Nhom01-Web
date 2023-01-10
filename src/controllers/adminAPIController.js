@@ -11,7 +11,16 @@ let checkTrip = async (req, res) => {
     }
 }
 
+let checkCarOwner = async (req, res) => {
+    try {
+        let result = await carOwnerService.checkCarOwner(req.body)
+        res.json(result)
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
-    checkTrip
+    checkTrip, checkCarOwner
 }
 

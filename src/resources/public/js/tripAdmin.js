@@ -12,8 +12,6 @@ detailList.forEach(item => {
     optionTo.setAttribute("selected", "true")
 })
 
-
-
 const show = (id) => {
     const detailList = document.querySelectorAll('.detail')
     const detail = document.querySelector(`.detail_${id}`)
