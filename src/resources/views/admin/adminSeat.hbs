@@ -27,26 +27,26 @@
         </tr>
         <tr class="detail detail_{{id}}" hidden>
             <th scope="row" class="id"></th>
-            <td colspan="4">
+            <td colspan="5">
                 <form id="myform1" action="/admin/updateTrip/{{id}}" method="POST">
-                    {{!-- <input type="hidden" value="{{from}}" name="fromSelected">
-                    <input type="hidden" value="{{to}}" name="toSelected"> --}}
+                    <input type="hidden" value="{{fromID}}" name="fromSelected">
+                    <input type="hidden" value="{{toID}}" name="toSelected">
                     <div class="row">
                         <div class="col">
-                            <label for="from">From</label>
-                            <select name="from" class="form-control from" id="formPlace" required>
-                                {{!-- <option value="" onclick="getValue(e)" selected>Chọn điểm đi</option> --}}
-                                {{#each provinces}}
-                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                            <label>From Place</label>
+                            <select name="fromPlace" class="form-select fromPlaces_option" required>
+                                {{!-- <option selected value="">Vui lòng chọn điểm đón</option> --}}
+                                {{#each fromList}}
+                                <option value={{id}}>{{places}}</option>
                                 {{/each}}
                             </select>
                         </div>
                         <div class="col">
-                            <label for="to">To</label>
-                            <select name="to" class="form-control to" id="toPlace" required>
-                                {{!-- <option value="" onclick="getValue(e)" selected>Chọn điểm đến</option> --}}
-                                {{#each provinces}}
-                                <option value={{province}} onclick="getValue(e)">{{provinceName}}</option>
+                            <label>To Place</label>
+                            <select name="toPlace" class="form-select toPlaces_option" required>
+                                {{!-- <option selected value="">Vui lòng chọn điểm trả</option> --}}
+                                {{#each toList}}
+                                <option value={{id}}>{{places}}</option>
                                 {{/each}}
                             </select>
                         </div>

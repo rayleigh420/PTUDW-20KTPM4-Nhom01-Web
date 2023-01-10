@@ -123,7 +123,7 @@ let getSeatAdmin = async (req, res) => {
         res.render("admin/adminSeat", {
             layout: "adminLayout",
             // style: ["adminCarOwner.css"],
-            // js: ["tripAdmin.js"],
+            js: ["seatAdmin.js"],
             // trip: trip,
             // provinces: provinces
             seat: seat

@@ -35,7 +35,24 @@ let getPlacaNameById = (id) => {
     })
 }
 
+let getIDByPlace = async (place) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let id = await db.Place.findOne({
+                attributes: ['id'],
+                where: {
+                    places: place,
+                },
+                raw: true
+            })
+            resolve(id.id)
+        } catch (e) {
+
+        }
+    })
+}
+
 module.exports = {
-    getListPlace, getPlacaNameById
+    getListPlace, getPlacaNameById, getIDByPlace
 }
 

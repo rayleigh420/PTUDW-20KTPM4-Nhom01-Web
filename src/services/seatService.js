@@ -1,26 +1,12 @@
 import db from "../models/index";
+import { Op } from "Sequelize"
 import userService from "../services/userService"
 import historyService from "../services/historyService"
-import { Op } from "Sequelize"
+import placeService from "../services/placeService"
 
 let getAllSeat = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            // let ticket = await db.Ticket.findAll({
-            //     raw: true,
-            // });
-
-            // ticket.forEach(async item => {
-            //     let seat = await db.Seat.findAll({
-            //         where: {
-            //             idTicket: item.id
-            //         },
-            //         raw: true
-            //     })
-            //     item.seat = seat
-            //     item.rowSpan = item.seat.length
-            // })
-
             let seat = await db.Seat.findAll({
                 order: [
                     ['id', 'ASC'],
@@ -33,24 +19,32 @@ let getAllSeat = () => {
                 raw: true
             })
 
-            // Ticket.forEach(async (item) => {
-            //     let seat = await db.Seat.findAll({
-            //         where: {
-            //             idTicket: item.id
-            //         },
-            //         raw: true
-            //     })
-            //     item.seat = seat
-            // })
+            seat.forEach(async item => {
+                let fromID = await placeService.getIDByPlace(item.fromPlace)
+                let toID = await placeService.getIDByPlace(item.toPlace)
 
-            // let seat = await db.Seat.findAll({
-            //     where: {
-            //         idTicket: 1
-            //     },
-            //     raw: true
-            // })
+                item.fromID = fromID
+                item.toID = toID
 
-            // console.log(seat)
+                let ticket = await db.Ticket.findOne({
+                    where: {
+                        id: item.idTicket
+                    },
+                    raw: true
+                })
+
+                let trip = await db.Trip.findOne({
+                    where: {
+                        id: ticket.idTrip
+                    },
+                    raw: true
+                })
+                let fromList = await placeService.getListPlace(trip.from)
+                let toList = await placeService.getListPlace(trip.to)
+
+                item.fromList = fromList
+                item.toList = toList
+            })
             resolve(seat)
         } catch (e) {
             console.log(e)
