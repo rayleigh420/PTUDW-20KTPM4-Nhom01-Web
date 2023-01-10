@@ -135,12 +135,34 @@ let getSeatAdmin = async (req, res) => {
     }
 };
 
+let updateSeat = async (req, res) => {
+    try {
+        let result = await seatService.updateSeat(req.params.id, req.body);
+        if (result) {
+            res.redirect("/admin/adminSeat");
+        }
+    } catch (e) {
+        console.log(e);
+    }
+};
+
 let getTicketAdmin = async (req, res) => {
     try {
         // let provinces = await provinceService.getProvince();
         let cars = await carOwnerService.getAllCarOwner();
         let trips = await tripService.getAllTrip();
         let tickets = await ticketService.getAllTicket();
+
+        // get full name of province
+        trips.forEach(async item => {
+            item.fromName = await provinceService.getProvinceName(item.from)
+            item.toName = await provinceService.getProvinceName(item.to)
+        })
+
+        tickets.forEach(item => {
+            item.cars = cars
+            item.trips = trips
+        })
 
         let trip2 = trips;
         let car2 = cars;
@@ -165,17 +187,6 @@ let getTicketAdmin = async (req, res) => {
             // trip: trip,
             // provinces: provinces
         });
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-let updateSeat = async (req, res) => {
-    try {
-        let result = await seatService.updateSeat(req.params.id, req.body);
-        if (result) {
-            res.redirect("/admin/adminSeat");
-        }
     } catch (e) {
         console.log(e);
     }
