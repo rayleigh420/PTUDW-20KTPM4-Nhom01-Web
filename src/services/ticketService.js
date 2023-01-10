@@ -219,9 +219,9 @@ let getAllTicket = () => {
         ProvinceMap.set(item.province, item.provinceName);
       });
       r.forEach(async (co) => {
-        co.start = new Date(co.start).toLocaleString();
+        co.startTime = new Date(co.start).toLocaleString();
 
-        co.end = new Date(co.end).toLocaleString();
+        co.endTime = new Date(co.end).toLocaleString();
 
         co.carOwnerName = await db.CarOwner.findOne({
           where: { id: co["idCarOwner"] },
@@ -242,6 +242,37 @@ let getAllTicket = () => {
   });
 };
 
+let deleteTicket = async (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let result2 = await db.Seat.destroy({
+        where: {
+          id: id,
+        },
+        cascade: true,
+        raw: true,
+      });
+      let result = await db.Ticket.destroy({
+        where: {
+          id: id,
+        },
+        cascade: true,
+        raw: true,
+      });
+
+      console.log(result);
+      console.log(result2);
+
+      if (result > 0 && result2 > 0) {
+        resolve(true);
+      } else {
+        resolve(false);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+};
 module.exports = {
   getTicketInfo,
   getProvinceName,
@@ -250,4 +281,5 @@ module.exports = {
   getDayName,
   addTicket,
   getAllTicket,
+  deleteTicket,
 };

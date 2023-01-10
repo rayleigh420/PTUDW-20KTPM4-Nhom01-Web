@@ -15,8 +15,8 @@
         {{#each tickets}}
         <tr>
             <th scope="row" class="id">{{id}}</th>
-            <td>{{start}}</td>
-            <td>{{end}}</td>
+            <td>{{startTime}}</td>
+            <td>{{endTime}}</td>
             <td>{{price}}</td>
             <td>{{FromTo}}</td>
             <td>{{carOwnerName}}</td>
@@ -26,33 +26,44 @@
             </td>
         </tr>
         <tr class="detail detail_{{id}}" hidden>
-            <th scope="row" class="id"></th>
-            <td colspan="3">
-                <form id="myform1" action="/admin/updateCarOwner/{{id}}" method="POST">
+            {{!-- <th scope="row" class="id"></th> --}}
+            <td colspan="10">
+                <form id="myform1" action="/admin/updateTicket/{{id}}" method="POST">
                     <div class="row">
                         <div class="col">
-                            <label>Name</label>
-                            <input type="text" class="form-control form_name" value="{{name}}" name="name">
+                            <label>Start</label>
+                            <input type="datetime-local" class="form-control" name="start" required>
                         </div>
                         <div class="col">
-                            <label>Phone</label>
-                            <input type="text" class="form-control form_phone" value="{{phone}}" name="phone">
+                            <label>End</label>
+                            <input type="datetime-local" class="form-control" name="end" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label>Address</label>
-                            <input type="text" class="form-control form_address" value="{{address}}" name="address">
+                            <label>From-To</label>
+                            <select name="idTrip" class="form-control fromto" id="trip" required>
+                                {{#each trips}}
+                                <option value={{id}} >{{from}}-{{to}}</option>
+                                {{/each}}
+                            </select>
+                    
+                        </div>
+                        <div class="col">
+                            <label>Car Owner</label>
+                    
+                            <select name="idCarOwner" class="form-control carowner" id="carowner" required>
+                                {{#each cars}}
+                                <option value={{id}}>{{name}}</option>
+                                {{/each}}
+                            </select>
+                    
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <label>Logo Image Link</label>
-                            <input type="text" class="form-control form_img" value="{{imgLogo}}" name="imgLogo">
-                        </div>
-                        <div class="col">
-                            <label>Type of car</label>
-                            <input type="number" class="form-control form_type" value="{{type}}" name="type">
+                        <div class="price">
+                            <label>Price</label>
+                            <input type="text" class="form-control" name="price" required>
                         </div>
                     </div>
                     <button type="submit" class="btn-primary btnSave">Save</button>
@@ -97,12 +108,13 @@
                 </select>
                 
             </div>
-            <div class="price">
-                <label>Price</label>
-                <input type="text" class="form-control" name="price" required>
-            </div>
         </div>
-        
+        <div class="row">
+                <div class="price">
+                    <label>Price</label>
+                    <input type="text" class="form-control" name="price" required>
+                </div>
+        </div>
         <button type="submit" class="btn-primary btnAdd">Add</button>
     </form>
 </div>

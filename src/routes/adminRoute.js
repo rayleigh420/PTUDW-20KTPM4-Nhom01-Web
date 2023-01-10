@@ -21,6 +21,7 @@ const initAdminRoute = (app) => {
 
   router.get("/adminTicketTest", adminController.testInsert);
   router.post("/addTicket", adminController.addTicket);
+  router.get("/deleteTicket/:id", adminController.deleteTicket);
   return app.use("/admin", router);
 };
 

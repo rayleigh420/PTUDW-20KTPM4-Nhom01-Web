@@ -141,13 +141,27 @@ let getTicketAdmin = async (req, res) => {
     let cars = await carOwnerService.getAllCarOwner();
     let trips = await tripService.getAllTrip();
     let tickets = await ticketService.getAllTicket();
+
+    let trip2 = trips;
+    let car2 = cars;
+    trip2.forEach((item) => {
+      item.idTrip = item["id"];
+    });
+    car2.forEach((item) => {
+      item.idCarOwner = item["id"];
+    });
+    // console.log(trip2);
+    // console.log(car2);
     res.render("admin/adminTicket", {
       layout: "adminLayout",
       // style: ["adminCarOwner.css"],
-      js: ["seatAdmin.js"],
+      js: ["ticketAdmin.js"],
+
+      tickets: tickets,
       cars: cars,
       trips: trips,
-      tickets: tickets,
+      trip2: trip2,
+      car2: car2,
       // trip: trip,
       // provinces: provinces
     });
@@ -207,6 +221,30 @@ let addTicket = async (req, res) => {
     console.log(e);
   }
 };
+
+let updateTicket = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let r = ticketService.updateTicket(id, req.body);
+    if (r) {
+      res.redirect("/admin/adminTicket");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+let deleteTicket = async (req, res) => {
+  try {
+    let id = req.params.id;
+    let r = ticketService.deleteTicket(id);
+    if (r) {
+      res.redirect("/admin/adminTicket");
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 module.exports = {
   getAdminPage,
   getCarOwnerAdmin,
@@ -222,4 +260,6 @@ module.exports = {
   testInsert,
   getTicketAdmin,
   addTicket,
+  updateTicket,
+  deleteTicket,
 };
