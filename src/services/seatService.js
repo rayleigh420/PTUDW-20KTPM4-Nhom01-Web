@@ -1,15 +1,37 @@
 import db from "../models/index";
 import userService from "../services/userService"
 import historyService from "../services/historyService"
+import { Op } from "Sequelize"
 
 let getAllSeat = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            // let Ticket = await db.Ticket.findAll({
+            // let ticket = await db.Ticket.findAll({
             //     raw: true,
             // });
 
-            // console.log(Ticket)
+            // ticket.forEach(async item => {
+            //     let seat = await db.Seat.findAll({
+            //         where: {
+            //             idTicket: item.id
+            //         },
+            //         raw: true
+            //     })
+            //     item.seat = seat
+            //     item.rowSpan = item.seat.length
+            // })
+
+            let seat = await db.Seat.findAll({
+                order: [
+                    ['id', 'ASC'],
+                ],
+                where: {
+                    idBooking: {
+                        [Op.not]: null,
+                    }
+                },
+                raw: true
+            })
 
             // Ticket.forEach(async (item) => {
             //     let seat = await db.Seat.findAll({
@@ -21,14 +43,15 @@ let getAllSeat = () => {
             //     item.seat = seat
             // })
 
-            let seat = await db.Seat.findAll({
-                where: {
-                    idTicket: 1
-                },
-                raw: true
-            })
+            // let seat = await db.Seat.findAll({
+            //     where: {
+            //         idTicket: 1
+            //     },
+            //     raw: true
+            // })
 
-            console.log(seat)
+            // console.log(seat)
+            resolve(seat)
         } catch (e) {
             console.log(e)
         }

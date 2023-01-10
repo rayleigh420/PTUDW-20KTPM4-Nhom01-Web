@@ -117,6 +117,7 @@ let addTrip = async (req, res) => {
 let getSeatAdmin = async (req, res) => {
     try {
         let seat = await seatService.getAllSeat();
+        console.log(seat)
         // let provinces = await provinceService.getProvince();
 
         res.render("admin/adminSeat", {
@@ -125,6 +126,7 @@ let getSeatAdmin = async (req, res) => {
             // js: ["tripAdmin.js"],
             // trip: trip,
             // provinces: provinces
+            seat: seat
         })
     } catch (e) {
         console.log(e)

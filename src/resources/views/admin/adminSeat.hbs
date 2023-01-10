@@ -3,28 +3,34 @@
     <thead class="thead-dark">
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Ticket ID</th>
             <th scope="col">From</th>
             <th scope="col">To</th>
+            <th scope="col">Booking ID</th>
+            <th scope="col">User</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        {{#each trip}}
+        {{#each seat}}
         <tr>
             <th scope="row" class="id">{{id}}</th>
-            <td>{{fromName}}</td>
-            <td>{{toName}}</td>
+            <td>{{idTicket}}</td>
+            <td>{{fromPlace}}</td>
+            <td>{{toPlace}}</td>
+            <td>{{idBooking}}</td>
+            <td>{{idUser}}</td>
             <td class="action">
                 <ion-icon name="create" onclick="show({{id}})"></ion-icon>
-                <a href="/admin/deleteTrip/{{id}}"><ion-icon name="trash" onclick="deleteTrip()"></ion-icon></a>
             </td>
+
         </tr>
         <tr class="detail detail_{{id}}" hidden>
             <th scope="row" class="id"></th>
-            <td colspan="3">
+            <td colspan="4">
                 <form id="myform1" action="/admin/updateTrip/{{id}}" method="POST">
-                    <input type="hidden" value="{{from}}" name="fromSelected">
-                    <input type="hidden" value="{{to}}" name="toSelected">
+                    {{!-- <input type="hidden" value="{{from}}" name="fromSelected">
+                    <input type="hidden" value="{{to}}" name="toSelected"> --}}
                     <div class="row">
                         <div class="col">
                             <label for="from">From</label>
