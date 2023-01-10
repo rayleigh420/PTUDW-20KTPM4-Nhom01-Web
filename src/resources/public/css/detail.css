@@ -70,9 +70,9 @@ img.small {
     height: 482px;
 }
 .fromto,div .name,div .type {
-    margin-top: 20px;
+    margin-top: 16px;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: none;
     line-height: 30px;
 }
@@ -80,8 +80,9 @@ img.small {
     margin-top: 16px;
 }
 div .name {
+    margin-top: 20px;
     color:#166FE5;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .choose_seat {
@@ -259,6 +260,7 @@ div .name {
     margin-top: 20px;
     width: 150px;
     margin-left: calc(97% - 150px);
+    margin-bottom: 20px;
 }
 .rate {
     margin-top: 20px;

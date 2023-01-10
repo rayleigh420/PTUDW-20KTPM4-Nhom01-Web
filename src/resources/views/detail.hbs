@@ -37,7 +37,8 @@
         </div>
         <div class="detail2">
             <div class="name">Nhà xe {{name}}</div>
-            <div class="type">Loại xe: xe Limousine 9 chỗ</div>
+            {{!-- <div class="type">Loại xe: xe {{type}} chỗ</div> --}}
+            {{{generateText type}}}
             <div class="fromto">Điểm đón:</div>
             {{#each fromPlace}}
             {{!-- <div class="fromto">(TP. Hồ Chí Minh) TP HCM <span>&#x27F6;</span> Quãng Ngãi (QN)</div> --}}
