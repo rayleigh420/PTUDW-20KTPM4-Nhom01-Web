@@ -52,9 +52,9 @@ main {
   width: 100%;
   color: #FFFFFF !important;
 }
-.search_info button > .find_icon {
+.search_info button.btn_search_again .find_icon {
   color: #000000 !important;
-  transform: translateY(100px) !important;
+  transform: translate(-4px, 4px) !important;
   font-size: 1.3rem;
 }
 .filter {
