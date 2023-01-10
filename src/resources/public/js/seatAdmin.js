@@ -18,8 +18,6 @@ const show = (id) => {
     const detailList = document.querySelectorAll('.detail')
     const detail = document.querySelector(`.detail_${id}`)
 
-    // const fromSelected = detail.querySelector('.select[name="from"] option[value=')
-
     const showOrNot = detail.hidden
 
     detailList.forEach(item => {
@@ -34,43 +32,6 @@ const show = (id) => {
 const btnSave = document.querySelector('.btnSave')
 btnSave.onclick = () => {
     alert("Update success!")
-}
-
-const deleteTrip = () => {
-    alert("Delete Success!")
-}
-
-// let listName = document.querySelectorAll(`#myform1 input[name="name"]`)
-// console.log(listName)
-
-// console.log(listName)
-
-const form2 = document.querySelector("#myform2")
-const from = form2.querySelector("select.from")
-const to = form2.querySelector("select.to")
-
-
-const btnAdd = document.querySelector('.btnAdd')
-btnAdd.onclick = async (e) => {
-    console.log("add")
-    let res = await fetch('/admin/api/checkTrip', {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            from: from.value,
-            to: to.value
-        }),
-    })
-
-    let result = await res.json()
-    if (result) {
-        e.preventDefault();
-    }
-    else {
-        alert("Add Success!")
-    }
 }
 
 
