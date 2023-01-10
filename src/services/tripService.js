@@ -30,6 +30,9 @@ let updateTrip = async (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
             let check = await checkTrip(data)
+            if (data.from == data.to) {
+                check = true
+            }
             if (!check) {
                 let trip = await db.Trip.findOne({
                     where: {
@@ -90,6 +93,9 @@ let addTrip = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
             let check = await checkTrip(data)
+            if (data.from == data.to) {
+                check = true
+            }
             if (!check) {
                 let trip = await db.Trip.create({
                     from: data.from,
