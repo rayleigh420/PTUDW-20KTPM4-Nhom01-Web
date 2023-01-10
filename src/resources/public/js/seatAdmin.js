@@ -6,10 +6,10 @@ detailList.forEach(item => {
 
     console.log(fromSelected, toSelected)
 
-    const optionFrom = item.querySelector(`select[name="fromPlace"]`)
+    const optionFrom = item.querySelector(`select[name="fromPlace"] option[value="${fromSelected}"]`)
     optionFrom.setAttribute("selected", "true")
 
-    const optionTo = item.querySelector(`select[name="toPlace"]`)
+    const optionTo = item.querySelector(`select[name="toPlace"] option[value="${toSelected}"]`)
     optionTo.setAttribute("selected", "true")
 })
 

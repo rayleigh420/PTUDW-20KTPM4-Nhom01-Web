@@ -133,9 +133,20 @@ let getSeatAdmin = async (req, res) => {
     }
 }
 
+let updateSeat = async (req, res) => {
+    try {
+        let result = await seatService.updateSeat(req.params.id, req.body)
+        if (result) {
+            res.redirect("/admin/adminSeat")
+        }
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
     getAdminPage,
     getCarOwnerAdmin, updateCarOwner, deleteCarOwner, addCarOwner,
     getTripAdmin, updateTrip, deleteTrip, addTrip,
-    getSeatAdmin
+    getSeatAdmin, updateSeat
 }

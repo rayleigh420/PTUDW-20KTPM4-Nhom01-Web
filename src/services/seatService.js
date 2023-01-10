@@ -149,7 +149,38 @@ let checkBlank = (data) => {
     })
 }
 
+let updateSeat = async (id, data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let seat = await db.Seat.findOne({
+                where: {
+                    id: id
+                },
+                raw: true
+            })
+
+            let from = await placeService.getPlacaNameById(data.fromPlace)
+            let to = await placeService.getPlacaNameById(data.toPlace)
+
+            let result = await db.Seat.upsert({
+                id: seat.id,
+                fromPlace: from,
+                toPlace: to
+            });
+
+            if (result) {
+                resolve(true)
+            }
+            else {
+                resolve(false)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+    })
+}
+
 module.exports = {
-    bookSeat, getIdBooking, checkBlank, getAllSeat
+    bookSeat, getIdBooking, checkBlank, getAllSeat, updateSeat
 };
 
