@@ -53,6 +53,23 @@ main {
   font-family: 'Roboto';
   font-style: normal;
 }
+.admin_button {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.admin_button a {
+  text-decoration: none;
+  color: #000;
+}
+.admin_button button {
+  border-radius: 3px;
+}
+.admin_button button + button {
+  margin-left: 10px;
+}
 p {
   text-align: center;
   font-size: 20px;
