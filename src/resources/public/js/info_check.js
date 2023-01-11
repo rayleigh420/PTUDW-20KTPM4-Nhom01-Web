@@ -42,6 +42,7 @@ verify.onclick = (e) => {
     if (blank) {
         alert("Booking ticket success! Please check your information in email.")
         localStorage.removeItem('Info')
+        localStorage.removeItem('Birth')
     }
     else {
         alert("Something went wrong! Please try later!")
