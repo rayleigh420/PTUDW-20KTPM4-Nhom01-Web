@@ -8,6 +8,7 @@ import db from "../models";
 let getAdminPage = async (req, res) => {
   try {
     res.render("admin", {
+      title: "Vexere - Admin",
       layout: "adminLayout",
       style: ["admin.css"],
       // js: ["carOwnerAdmin.js"],
@@ -28,6 +29,7 @@ let getCarOwnerAdmin = async (req, res) => {
     console.log(car);
 
     res.render("admin/adminCarOwner", {
+      title: "Vexere - Admin Car Owner",
       layout: "adminLayout",
       // style: ["admin.css"],
       js: ["carOwnerAdmin.js"],
@@ -77,6 +79,7 @@ let getTripAdmin = async (req, res) => {
     let provinces = await provinceService.getProvince();
 
     res.render("admin/adminTrip", {
+      title: "Vexere - Admin Trip",
       layout: "adminLayout",
       // style: ["adminCarOwner.css"],
       js: ["tripAdmin.js"],
@@ -128,6 +131,7 @@ let getSeatAdmin = async (req, res) => {
     // let provinces = await provinceService.getProvince();
 
     res.render("admin/adminSeat", {
+      title: "Vexere - Admin Seat",
       layout: "adminLayout",
       // style: ["adminCarOwner.css"],
       js: ["seatAdmin.js"],
@@ -170,6 +174,7 @@ let getTicketAdmin = async (req, res) => {
     });
 
     res.render("admin/adminTicket", {
+      title: "Vexere - Admin Ticket",
       layout: "adminLayout",
       // style: ["adminCarOwner.css"],
       js: ["ticketAdmin.js"],
