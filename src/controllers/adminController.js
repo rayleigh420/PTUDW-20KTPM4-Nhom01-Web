@@ -177,8 +177,6 @@ let getTicketAdmin = async (req, res) => {
       tickets: tickets,
       cars: cars,
       trips: trips,
-      trip2: trip2,
-      car2: car2,
       // trip: trip,
       // provinces: provinces
     });
