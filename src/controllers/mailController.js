@@ -5,9 +5,9 @@ let sengridAPI = async (req, res) => {
     try {
         let result = await seatService.bookSeat(req.body)
         if (result) {
+            let mailResult = await mailService.sendMail(req.body);
             res.redirect("/")
         }
-        // let mailResult = await mailService.sendMail(req.body);
     } catch (e) {
         console.log(e);
     }
