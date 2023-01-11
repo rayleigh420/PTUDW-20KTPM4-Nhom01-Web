@@ -1,10 +1,9 @@
 const detailList = document.querySelectorAll('.detail')
 detailList.forEach(item => {
     const typeSelected = item.querySelector('input[name="typeSelected"]').value
-    console.log(typeSelected)
 
-    const optionType = item.querySelector(`select[name="fromPlace"] option[value="${typeSelected}"]`)
-    // optionType.setAttribute("selected", "true")
+    const optionType = item.querySelector(`select[name="type"] option[value="${typeSelected}"]`)
+    optionType.setAttribute("selected", "true")
 })
 
 const show = (id) => {
