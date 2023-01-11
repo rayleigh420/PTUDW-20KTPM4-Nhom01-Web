@@ -2,39 +2,43 @@ let auth = JSON.parse(localStorage.getItem("Auth"));
 // let checkUser;
 
 const check = async () => {
-  let result;
-  let id;
-  if (auth) {
-    let res = await fetch("/user/checkLocal", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: auth.email,
-        name: auth.name,
-      }),
-    });
-    let res2 = await fetch("/user/getIdByEmail", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: auth.email,
-      }),
-    });
-    id = await res2.json();
-    result = await res.json();
-  } else {
-    result = false;
-  }
+    let result;
+    let id;
+    if (auth) {
+        let res = await fetch("/user/checkLocal", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: auth.email,
+                name: auth.name,
+            }),
+        });
 
-  console.log("result" + result);
-  console.log("id" + id);
-  let userNav = document.querySelector(".btn_auth");
-  if (result) {
-    userNav.innerHTML = `
+        result = await res.json();
+    } else {
+        result = false;
+    }
+
+    if (result) {
+        let res2 = await fetch("/user/getIdByEmail", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: auth.email,
+            }),
+        });
+        id = await res2.json();
+    }
+
+    // console.log("result" + result);
+    // console.log("id" + id);
+    let userNav = document.querySelector(".btn_auth");
+    if (result) {
+        userNav.innerHTML = `
         <button type="button" class="btn btn_user">
             <ion-icon class="user_icon" name="person-circle"></ion-icon>
             ${auth.name}
@@ -57,10 +61,10 @@ const check = async () => {
                 </li>
             </ul>
         </div> `;
-  } else {
-    localStorage.removeItem("Auth");
+    } else {
+        localStorage.removeItem("Auth");
 
-    userNav.innerHTML = `
+        userNav.innerHTML = `
         <button type="button" class="btn btn_signIn">
         <a href="/signIn">
         <ion-icon class="signIn_icon" name="people-circle"></ion-icon>
@@ -72,14 +76,14 @@ const check = async () => {
                 Đăng ký
             </a>
         </button> `;
-  }
+    }
 
-  let logOut = document.querySelector(".log_out");
-  if (logOut) {
-    logOut.onclick = () => {
-      localStorage.removeItem("Auth");
-    };
-  }
+    let logOut = document.querySelector(".log_out");
+    if (logOut) {
+        logOut.onclick = () => {
+            localStorage.removeItem("Auth");
+        };
+    }
 };
 
 check();
