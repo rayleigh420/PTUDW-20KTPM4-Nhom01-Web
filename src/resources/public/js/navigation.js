@@ -15,7 +15,6 @@ const check = async () => {
                 name: auth.name,
             }),
         });
-
         result = await res.json();
     } else {
         result = false;

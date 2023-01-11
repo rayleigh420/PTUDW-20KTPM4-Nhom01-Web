@@ -44,6 +44,7 @@ let getHistoryPage = async (req, res) => {
         console.log(idBookingMap);
 
         res.render("history", {
+            title: "Vexere - History",
             style: ["history.css"],
             js: ["navigation.js", "history.js"],
             ...userInfo,

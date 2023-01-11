@@ -19,6 +19,7 @@ let getListPage = async (req, res) => {
         let typeCar = await carOwnerService.getListTypeCar();
 
         res.render("list", {
+            title: "Vexere",
             style: ["list.css"],
             js: ["navigation.js", "list.js"],
             amount: req.query.amount ? req.query.amount : 1,

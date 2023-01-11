@@ -9,6 +9,7 @@ let getHomePage = async (req, res) => {
     try {
         let provinces = await provinceService.getProvince();
         res.render("home", {
+            title: "Vexere - Home",
             style: ["home.css"],
             js: ["navigation.js", "home.js"],
             provinces: provinces,
@@ -21,6 +22,7 @@ let getHomePage = async (req, res) => {
 let getSignUpPage = async (req, res) => {
     try {
         res.render("signUp", {
+            title: "Vexere - Sign Up",
             style: ["signUp.css"],
             js: ["signUp.js"],
         });
@@ -32,6 +34,7 @@ let getSignUpPage = async (req, res) => {
 let getSignInPage = async (req, res) => {
     try {
         res.render("signIn", {
+            title: "Vexere - Sign In",
             style: ["signIn.css"],
             js: ["signIn.js"],
         });
@@ -78,6 +81,7 @@ let getInfoFormPage = async (req, res) => {
         let toList = await placeService.getListPlace(ticket.to)
 
         res.render("info_form", {
+            title: "Vexere",
             style: ["info_form.css"],
             js: ["navigation.js", "info_form.js"],
             id: idTicket,
@@ -103,6 +107,7 @@ let getInfoCheckPage = async (req, res) => {
         let toPlace = await placeService.getPlacaNameById(req.body.toPlace)
 
         res.render("info_check", {
+            title: "Vexere",
             style: ["info_check.css"],
             js: ["navigation.js", "info_check.js"],
             id: idTicket,
@@ -120,6 +125,7 @@ let getInfoCheckPage = async (req, res) => {
 let getHistoryPage = async (req, res) => {
     try {
         res.render("history", {
+            title: "Vexere - History",
             style: ["history.css"],
             js: ["navigation.js", "history.js"],
         });

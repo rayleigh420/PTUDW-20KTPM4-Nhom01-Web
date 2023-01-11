@@ -21,6 +21,7 @@ let getDetailPage = async (req, res) => {
         // console.log(items.phone);
         // console.log(items.address);
         res.render("detail", {
+            title: "Vexere",
             style: ["detail.css"],
             js: ["navigation.js", "detail.js"],
             amount: amount,
