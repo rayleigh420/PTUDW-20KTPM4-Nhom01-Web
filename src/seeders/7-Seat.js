@@ -48,9 +48,7 @@ module.exports = {
       { idBooking: null, idTicket: 5, idUser: null },
       { idBooking: null, idTicket: 5, idUser: null },
       { idBooking: null, idTicket: 5, idUser: null },
-      { idBooking: null, idTicket: 5, idUser: null },
       // ticket 9 idOwner 3 22seats
-      { idBooking: null, idTicket: 9, idUser: null },
       { idBooking: null, idTicket: 9, idUser: null },
       { idBooking: null, idTicket: 9, idUser: null },
       { idBooking: null, idTicket: 9, idUser: null },
@@ -96,7 +94,6 @@ module.exports = {
       { idBooking: null, idTicket: 10, idUser: null },
       { idBooking: null, idTicket: 10, idUser: null },
       { idBooking: null, idTicket: 10, idUser: null },
-      { idBooking: null, idTicket: 10, idUser: null },
       // ticket 2 idOwner 1 9seats
       { idBooking: null, idTicket: 2, idUser: null },
       { idBooking: null, idTicket: 2, idUser: null },
@@ -108,7 +105,6 @@ module.exports = {
       { idBooking: null, idTicket: 2, idUser: null },
       { idBooking: null, idTicket: 2, idUser: null },
       // ticket 7 idOwner 2 32seats
-      { idBooking: null, idTicket: 7, idUser: null },
       { idBooking: null, idTicket: 7, idUser: null },
       { idBooking: null, idTicket: 7, idUser: null },
       { idBooking: null, idTicket: 7, idUser: null },

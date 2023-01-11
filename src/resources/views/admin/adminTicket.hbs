@@ -35,11 +35,11 @@
                     <div class="row">
                         <div class="col">
                             <label>Start</label>
-                            <input type="datetime-local" class="form-control" name="start" required>
+                            <input type="datetime-local" class="form-control start" onclick="handle({{id}})" name="start" value ="" required>
                         </div>
                         <div class="col">
                             <label>End</label>
-                            <input type="datetime-local" class="form-control" name="end" required>
+                            <input type="datetime-local" class="form-control end" onclick="handle({{id}})" name="end" value ="" required>
                         </div>
                     </div>
                     <div class="row">
@@ -66,7 +66,7 @@
                     <div class="row">
                         <div class="price">
                             <label>Price</label>
-                            <input type="text" value="{{price}}" class="form-control" name="price" required>
+                            <input type="number" value="{{price}}" class="form-control price" name="price" required>
                         </div>
                     </div>
                     <button type="submit" class="btn-primary btnSave">Save</button>
@@ -83,11 +83,11 @@
         <div class="row">
             <div class="col">
                 <label>Start</label>
-                <input type="datetime-local" class="form-control" name="start" required>
+                <input type="datetime-local" class="form-control start" onclick="date()" name="start" required>
             </div>
             <div class="col">
                 <label>End</label>
-                <input type="datetime-local" class="form-control" name="end" required>
+                <input type="datetime-local" class="form-control end" onclick="date()" name="end" required>
             </div>
         </div>
         <div class="row">
@@ -117,7 +117,7 @@
         <div class="row">
             <div class="price">
                 <label>Price</label>
-                <input type="text" class="form-control" name="price" required>
+                <input type="number" class="form-control price" name="price" required>
             </div>
         </div>
         <button type="submit" class="btn-primary btnAdd">Add</button>
