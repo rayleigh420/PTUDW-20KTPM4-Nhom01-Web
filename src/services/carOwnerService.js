@@ -87,28 +87,29 @@ let getListTypeCar = () => {
 let updateCarOwner = async (id, data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let check = await checkCarOwner(data)
-            if (!check) {
-                let carOwner = await db.CarOwner.findOne({
-                    where: {
-                        id: id
-                    },
-                    raw: true
-                })
+            // let check = await checkCarOwner(data)
+            // if (!check) {
 
-                let result = await db.CarOwner.upsert({
-                    id: carOwner.id,
-                    ...data
-                });
-                if (result) {
-                    resolve(true)
-                }
-                else {
-                    resolve(false)
-                }
+            // }
+            // else {
+            //     resolve(true)
+            // }
+            let carOwner = await db.CarOwner.findOne({
+                where: {
+                    id: id
+                },
+                raw: true
+            })
+
+            let result = await db.CarOwner.upsert({
+                id: carOwner.id,
+                ...data
+            });
+            if (result) {
+                resolve(true)
             }
             else {
-                resolve(true)
+                resolve(false)
             }
 
         } catch (e) {
