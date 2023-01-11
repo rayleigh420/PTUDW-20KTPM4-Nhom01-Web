@@ -24,7 +24,7 @@ let sendMail = async (data) => {
             html: `
             <h2>Kinh gửi Quý Khách ${data.name}, </h2>
             <h3>Yêu cầu đặt vé của quý khách đã được xác nhận thành công. Quý khách vui lòng kiểm tra thông tin điện tử. </h3>
-            <p><b>Số vé:</b> ${data.amount}</p>
+            <p><b>Số vé - Số lượng hành khách:</b> ${data.amount}</p>
             <p><b>Từ:</b> ${from}</p>
             <p><b>Đến:</b> ${to}</p>
             <p><b>Vào ngày:</b> ${data.date}, <b>từ lúc </b>${data.start} <b>đến </b>${data.end} </p>
