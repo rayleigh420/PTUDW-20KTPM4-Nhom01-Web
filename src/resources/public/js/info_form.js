@@ -9,6 +9,20 @@ if (user) {
 }
 
 let birth = document.querySelector('.form_birth')
+let now = new Date()
+
+let yyyy = now.getFullYear();
+let mm = now.getMonth() + 1;
+let dd = now.getDate();
+
+if (dd < 10) {
+    dd = '0' + dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+let birth_max = (yyyy - 1) + "-" + mm + "-" + dd;
+birth.value = birth_max
 
 let btnContinue = document.querySelector('.btn_continue')
 btnContinue.onclick = () => {
