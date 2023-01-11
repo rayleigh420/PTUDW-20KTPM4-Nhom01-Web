@@ -20,6 +20,11 @@ let getAdminPage = async (req, res) => {
 let getCarOwnerAdmin = async (req, res) => {
     try {
         let car = await carOwnerService.getAllCarOwner();
+        // car.typeList = [
+        //     { type: 9 },
+        //     { type: 22 },
+        //     { type: 32 }
+        // ]
         console.log(car);
 
         res.render("admin/adminCarOwner", {
