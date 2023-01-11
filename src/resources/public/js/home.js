@@ -12,7 +12,7 @@ if (mm < 10) {
 
 let date_format = yyyy + "-" + mm + "-" + dd;
 let date = document.querySelector('#date')
-// date.setAttribute('min', date_format)
+date.setAttribute('min', date_format)
 
 let find = JSON.parse(localStorage.getItem('Find'))
 if (find) {

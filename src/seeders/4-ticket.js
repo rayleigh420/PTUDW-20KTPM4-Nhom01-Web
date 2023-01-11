@@ -5,7 +5,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let items = [
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 450000,
@@ -13,7 +13,7 @@ module.exports = {
         idTrip: 1,
       },
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 250000,
@@ -21,7 +21,7 @@ module.exports = {
         idTrip: 2,
       },
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 550000,
@@ -29,7 +29,7 @@ module.exports = {
         idTrip: 3,
       },
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 550000,
@@ -37,7 +37,7 @@ module.exports = {
         idTrip: 4,
       },
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 550000,
@@ -45,7 +45,7 @@ module.exports = {
         idTrip: 5,
       },
       {
-        dayStart: "2023-1-6",
+        dayStart: "2023-1-16",
         start: "2023-1-16 05:30:00",
         end: "2023-1-16 17:30:00",
         price: 550000,
@@ -54,7 +54,7 @@ module.exports = {
         // idTicket: 6,
       },
       {
-        dayStart: "2023-1-7",
+        dayStart: "2023-1-17",
         start: "2023-1-17 00:30:00",
         end: "2023-1-17 11:30:00",
         price: 550000,
@@ -63,7 +63,7 @@ module.exports = {
         // idTicket: 7,
       },
       {
-        dayStart: "2023-1-8",
+        dayStart: "2023-1-18",
         start: "2023-1-18 08:30:00",
         end: "2023-1-18 15:30:00",
         price: 550000,
@@ -72,7 +72,7 @@ module.exports = {
         // idTicket: 8,
       },
       {
-        dayStart: "2023-1-10",
+        dayStart: "2023-1-13",
         start: "2023-1-13 05:30:00",
         end: "2023-1-13 17:30:00",
         price: 650000,
@@ -81,7 +81,7 @@ module.exports = {
         // idTicket: 9,
       },
       {
-        dayStart: "2023-1-10",
+        dayStart: "2023-1-13",
         start: "2023-1-13 05:30:00",
         end: "2023-1-13 17:30:00",
         price: 550000,
@@ -90,7 +90,7 @@ module.exports = {
         // idTicket: 10,
       },
       {
-        dayStart: "2023-1-11",
+        dayStart: "2023-1-13",
         start: "2023-1-13 05:30:00",
         end: "2023-1-13 17:30:00",
         price: 650000,
@@ -99,36 +99,36 @@ module.exports = {
         // idTicket: 11,
       },
       {
-        dayStart: "2023-1-12",
-        start: "2023-1-12 05:30:00",
-        end: "2023-1-12 17:30:00",
+        dayStart: "2023-1-13",
+        start: "2023-1-13 05:30:00",
+        end: "2023-1-13 17:30:00",
         price: 650000,
         idCarOwner: 7,
         idTrip: 8,
         // idTicket: 12,
       },
       {
-        dayStart: "2023-1-12",
-        start: "2023-1-12 05:30:00",
-        end: "2023-1-12 17:30:00",
+        dayStart: "2023-1-13",
+        start: "2023-1-13 05:30:00",
+        end: "2023-1-13 17:30:00",
         price: 650000,
         idCarOwner: 7,
         idTrip: 9,
         // idTicket: 13,
       },
       {
-        dayStart: "2023-1-12",
-        start: "2023-1-12 05:30:00",
-        end: "2023-1-12 17:30:00",
+        dayStart: "2023-1-13",
+        start: "2023-1-13 05:30:00",
+        end: "2023-1-13 17:30:00",
         price: 950000,
         idCarOwner: 8,
         idTrip: 8,
         // idTicket: 14,
       },
       {
-        dayStart: "2023-1-15",
-        start: "2023-1-12 05:30:00",
-        end: "2023-1-12 17:30:00",
+        dayStart: "2023-1-13",
+        start: "2023-1-13 05:30:00",
+        end: "2023-1-13 17:30:00",
         price: 550000,
         idCarOwner: 8,
         idTrip: 6,
