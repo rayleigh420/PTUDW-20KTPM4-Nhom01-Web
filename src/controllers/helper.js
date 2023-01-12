@@ -135,8 +135,8 @@ helper.generateTypeOfCar = (type) => {
 helper.generateStarList = (stars) => {
     let str = ``;
     let starCanDraw = stars;
-    let i = 0;
-    for (i; i < stars; i++) {
+    let i = 1;
+    for (i; i <= stars; i++) {
         str += `<i class="fa fa-star"></i>`;
         starCanDraw -= 1;
         if (starCanDraw > 0 && starCanDraw < 1) {
@@ -148,7 +148,7 @@ helper.generateStarList = (stars) => {
             }
         }
     }
-    for (i; i < 5; i++) {
+    for (i; i <= 5; i++) {
         str += `<i class="fa fa-star-o"></i>`;
     }
 

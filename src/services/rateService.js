@@ -21,8 +21,8 @@ let getRates = (idTicket) => {
                 });
                 rate.username = usname["name"];
             });
-            let star = (stars * 1.0) / Rates.length;
-
+            let star = (Math.round(((stars * 1.0) / Rates.length) * 100) / 100).toFixed(2);
+            // console.log(star,Rates)
             resolve({
                 stars: star,
                 rates: Rates,
